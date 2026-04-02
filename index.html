@@ -1,138 +1,1147 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maximilien Moreau — Marketing, Web & IA</title>
+  <meta name="description" content="Portfolio de Maximilien Moreau — Expert en marketing digital, développement web et intelligence artificielle. À l'intersection de la stratégie, de la technique et de l'innovation.">
+  <meta name="author" content="Maximilien Moreau">
+  <meta property="og:title" content="Maximilien Moreau — Marketing, Web & IA">
+  <meta property="og:description" content="J'aide les entreprises à mieux acquérir, convertir, automatiser et faire évoluer leurs dispositifs digitaux.">
+  <meta property="og:type" content="website">
 
-    <title>Profil — Maximilien Moreau</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <!-- Fontawesome Stylesheet -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v6.1.2/css/all.css"
-    />
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#accueil">
+      <span class="brand-mm">MM</span>
+      <span class="brand-name d-none d-sm-inline">Maximilien Moreau</span>
+    </a>
 
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-    <div class="page">
-      <header class="card header-card">
-        <div class="header-content">
-          <div class="avatar-wrapper">
-            <img
-              src="images/Profile-Picture_Maximilien_Moreau.png"
-              alt="Personne souriante travaillant sur un ordinateur portable"
-              class="avatar"
-            />
-          </div>
-
-          <div class="identity">
-            <h1 class="title">Maximilien Moreau</h1>
-            <h2 class="subtitle">Là, là et là</h2>
-          </div>
-        </div>
-      </header>
-
-      <main class="main">
-        <div class="card">
-          <section class="section">
-            <div class="section-header">
-              <h3 class="section-title">À propos de moi</h3>
-            </div>
-
-            <div class="section-body">
-              <p class="text">
-                Je suis passionné par le développement web et j’aime construire
-                des projets utiles et agréables à utiliser. En ce moment, je
-                progresse en Ruby, SQL et je travaille sur des projets web pour
-                m’améliorer chaque jour.
-              </p>
-
-              <div class="actions">
-                <a href="#" class="btn" role="button">Me contacter</a>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        <div class="card">
-          <section class="section">
-            <div class="section-header">
-              <h3 class="section-title">Réseaux sociaux</h3>
-            </div>
-
-            <div class="section-body">
-              <div class="socials">
-                <ul class="social-list">
-                  <li class="social-item">
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="social-link"
-                    >
-                      <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-                      <span>Facebook</span>
-                    </a>
-                  </li>
-
-                  <li class="social-item">
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="social-link"
-                    >
-                      <i
-                        class="fa-brands fa-linkedin-in"
-                        aria-hidden="true"
-                      ></i>
-                      <span>LinkedIn</span>
-                    </a>
-                  </li>
-
-                  <li class="social-item">
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="social-link"
-                    >
-                      <i class="fa-brands fa-twitter" aria-hidden="true"></i>
-                      <span>Twitter</span>
-                    </a>
-                  </li>
-
-                  <li class="social-item">
-                    <a
-                      href="#"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="social-link"
-                    >
-                      <i class="fa-brands fa-github" aria-hidden="true"></i>
-                      <span>GitHub</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-        </div>
-      </main>
-
-      <footer class="footer">
-        <div class="footer-content">
-          <p>© 2026 — Maximilien Moreau</p>
-        </div>
-      </footer>
+    <div class="d-flex align-items-center gap-2 ms-auto order-lg-last">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btnFr" onclick="setLang('fr')">FR</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+      </div>
+      <a href="#contact" class="btn-nav-cta d-none d-lg-inline-flex">
+        <span data-lang="fr">Réserver un appel</span>
+        <span data-lang="en" hidden>Book a call</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
-  </body>
-  <body>
-  <div class="bg-anim" aria-hidden="true"></div>
-  <div class="page">
-    ...
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-lg-1">
+        <li class="nav-item">
+          <a class="nav-link" href="#accueil">
+            <span data-lang="fr">Accueil</span>
+            <span data-lang="en" hidden>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#apropos">
+            <span data-lang="fr">À propos</span>
+            <span data-lang="en" hidden>About</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#expertises">
+            <span data-lang="fr">Expertises</span>
+            <span data-lang="en" hidden>Expertise</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projets">
+            <span data-lang="fr">Projets</span>
+            <span data-lang="en" hidden>Projects</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
   </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="accueil" class="hero-section">
+  <div class="hero-grid-overlay"></div>
+  <div class="container position-relative h-100">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span data-lang="fr">Disponible pour de nouveaux projets</span>
+        <span data-lang="en" hidden>Open to new opportunities</span>
+      </div>
+      <h1 class="hero-title">Maximilien Moreau</h1>
+      <p class="hero-tagline">
+        <span data-lang="fr">Marketing · Développement web · Intelligence artificielle</span>
+        <span data-lang="en" hidden>Marketing · Web development · Artificial intelligence</span>
+      </p>
+      <p class="hero-desc" data-lang="fr">
+        J'aide les entreprises à mieux acquérir, convertir, automatiser et faire évoluer leurs dispositifs digitaux grâce à une approche à la fois marketing, technique et orientée IA.
+      </p>
+      <p class="hero-desc" data-lang="en" hidden>
+        I help businesses better acquire, convert, automate and scale their digital systems through a marketing, technical and AI-driven approach.
+      </p>
+      <div class="hero-actions">
+        <a href="#projets" class="btn-hero-primary">
+          <span data-lang="fr">Voir mes projets</span>
+          <span data-lang="en" hidden>See my projects</span>
+          <i class="fa-solid fa-arrow-right ms-2"></i>
+        </a>
+        <a href="#contact" class="btn-hero-outline">
+          <span data-lang="fr">Réserver un appel</span>
+          <span data-lang="en" hidden>Book a call</span>
+          <i class="fa-regular fa-calendar ms-2"></i>
+        </a>
+      </div>
+      <div class="hero-tags">
+        <span class="hero-tag">SEO / GEO</span>
+        <span class="hero-tag">CRM</span>
+        <span class="hero-tag">Marketing Automation</span>
+        <span class="hero-tag">Web Dev</span>
+        <span class="hero-tag">IA / AI</span>
+        <span class="hero-tag">Data</span>
+        <span class="hero-tag">HubSpot</span>
+        <span class="hero-tag">Acquisition</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll-hint">
+    <span class="scroll-line"></span>
+    <span class="scroll-dot"></span>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="apropos" class="section-pad bg-white">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-4 text-center">
+        <div class="about-img-wrapper">
+          <img src="images/Profile-Picture_Maximilien_Moreau.png" alt="Maximilien Moreau — Marketing, Web & IA" class="about-img">
+          <div class="about-img-badge">
+            <i class="fa-solid fa-rocket me-1"></i>
+            <span data-lang="fr">Actif depuis 2020</span>
+            <span data-lang="en" hidden>Active since 2020</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="section-label">
+          <span data-lang="fr">À propos</span>
+          <span data-lang="en" hidden>About</span>
+        </div>
+        <h2 class="section-title mb-4">
+          <span data-lang="fr">Un profil hybride au service de votre croissance</span>
+          <span data-lang="en" hidden>A hybrid profile at the service of your growth</span>
+        </h2>
+        <p class="body-text mb-3" data-lang="fr">
+          Depuis 2020, j'évolue à l'intersection du marketing digital, du développement web et de l'intelligence artificielle. Mon parcours n'est pas celui d'un spécialiste enfermé dans une case — c'est celui d'un professionnel transversal qui comprend aussi bien les enjeux business que les contraintes techniques.
+        </p>
+        <p class="body-text mb-3" data-lang="en" hidden>
+          Since 2020, I've been working at the intersection of digital marketing, web development, and artificial intelligence. My path isn't that of a narrow specialist — it's that of a cross-functional professional who understands both business challenges and technical constraints.
+        </p>
+        <p class="body-text mb-4" data-lang="fr">
+          J'ai construit mon expertise sur des projets concrets : stratégies d'acquisition, mise en place de CRM, automatisation de flux marketing, développement de sites et landing pages, analyse de données, et plus récemment, intégration de l'IA dans des cas d'usage réels. Ce qui me distingue : la capacité à relier la stratégie à l'exécution, et le marketing à la technique.
+        </p>
+        <p class="body-text mb-4" data-lang="en" hidden>
+          I built my expertise through concrete projects: acquisition strategies, CRM implementation, marketing flow automation, website and landing page development, data analysis, and more recently, integrating AI into real use cases. What sets me apart: the ability to connect strategy to execution, and marketing to technology.
+        </p>
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <div class="highlight-item">
+              <i class="fa-solid fa-bullseye"></i>
+              <div>
+                <strong data-lang="fr">Marketing & Acquisition</strong>
+                <strong data-lang="en" hidden>Marketing & Acquisition</strong>
+                <p data-lang="fr">SEO, paid media, contenu</p>
+                <p data-lang="en" hidden>SEO, paid media, content</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="highlight-item">
+              <i class="fa-solid fa-gears"></i>
+              <div>
+                <strong data-lang="fr">CRM & Automatisation</strong>
+                <strong data-lang="en" hidden>CRM & Automation</strong>
+                <p data-lang="fr">HubSpot, Make, workflows</p>
+                <p data-lang="en" hidden>HubSpot, Make, workflows</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="highlight-item">
+              <i class="fa-solid fa-code"></i>
+              <div>
+                <strong data-lang="fr">Développement Web</strong>
+                <strong data-lang="en" hidden>Web Development</strong>
+                <p data-lang="fr">HTML/CSS/JS, WordPress</p>
+                <p data-lang="en" hidden>HTML/CSS/JS, WordPress</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="highlight-item">
+              <i class="fa-solid fa-microchip"></i>
+              <div>
+                <strong data-lang="fr">IA appliquée</strong>
+                <strong data-lang="en" hidden>Applied AI</strong>
+                <p data-lang="fr">Workflows IA, GEO, agents</p>
+                <p data-lang="en" hidden>AI workflows, GEO, agents</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERTISES ===== -->
+<section id="expertises" class="section-pad bg-light-custom">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label">
+        <span data-lang="fr">Expertises</span>
+        <span data-lang="en" hidden>Expertise</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="fr">5 piliers, une approche intégrée</span>
+        <span data-lang="en" hidden>5 pillars, one integrated approach</span>
+      </h2>
+      <p class="section-subtitle">
+        <span data-lang="fr">Des compétences complémentaires qui se renforcent mutuellement pour créer plus de valeur.</span>
+        <span data-lang="en" hidden>Complementary skills that reinforce each other to create more value.</span>
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-xl-4">
+        <div class="expertise-card h-100">
+          <div class="expertise-icon-wrap" style="--icon-color: #6d28d9; --icon-bg: #ede9fe;">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3 class="expertise-title">Marketing & Acquisition</h3>
+          <p class="expertise-desc" data-lang="fr">Stratégies d'acquisition multicanales pour attirer et convertir les bonnes audiences au bon moment, sur les bons canaux.</p>
+          <p class="expertise-desc" data-lang="en" hidden>Multi-channel acquisition strategies to attract and convert the right audiences at the right time, on the right channels.</p>
+          <div class="expertise-tags">
+            <span class="skill-tag">SEO / GEO</span>
+            <span class="skill-tag">Google Ads</span>
+            <span class="skill-tag">Meta Ads</span>
+            <span class="skill-tag">Email Marketing</span>
+            <span class="skill-tag">Content Strategy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <div class="expertise-card h-100">
+          <div class="expertise-icon-wrap" style="--icon-color: #0ea5e9; --icon-bg: #e0f2fe;">
+            <i class="fa-solid fa-gears"></i>
+          </div>
+          <h3 class="expertise-title">CRM & Automatisation</h3>
+          <p class="expertise-desc" data-lang="fr">Mise en place et optimisation de CRM, création de workflows automatisés pour fluidifier les processus marketing et commerciaux.</p>
+          <p class="expertise-desc" data-lang="en" hidden>CRM setup and optimization, creating automated workflows to streamline marketing and sales processes.</p>
+          <div class="expertise-tags">
+            <span class="skill-tag">HubSpot</span>
+            <span class="skill-tag">Make</span>
+            <span class="skill-tag">Zapier</span>
+            <span class="skill-tag">Brevo</span>
+            <span class="skill-tag">ActiveCampaign</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <div class="expertise-card h-100">
+          <div class="expertise-icon-wrap" style="--icon-color: #059669; --icon-bg: #d1fae5;">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="expertise-title" data-lang="fr">Développement Web</h3>
+          <h3 class="expertise-title" data-lang="en" hidden>Web Development</h3>
+          <p class="expertise-desc" data-lang="fr">Création de sites, landing pages et interfaces web orientées performance et conversion, avec une attention forte à l'expérience utilisateur.</p>
+          <p class="expertise-desc" data-lang="en" hidden>Building websites, landing pages and web interfaces focused on performance and conversion, with strong attention to user experience.</p>
+          <div class="expertise-tags">
+            <span class="skill-tag">HTML / CSS / JS</span>
+            <span class="skill-tag">Bootstrap</span>
+            <span class="skill-tag">WordPress</span>
+            <span class="skill-tag">Webflow</span>
+            <span class="skill-tag">CRO</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <div class="expertise-card h-100">
+          <div class="expertise-icon-wrap" style="--icon-color: #d97706; --icon-bg: #fef3c7;">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="expertise-title">Data & Performance</h3>
+          <p class="expertise-desc" data-lang="fr">Analyse des données pour prendre des décisions éclairées, optimiser les performances et démontrer la valeur des actions marketing.</p>
+          <p class="expertise-desc" data-lang="en" hidden>Data analysis to make informed decisions, optimize performance and demonstrate the value of marketing actions.</p>
+          <div class="expertise-tags">
+            <span class="skill-tag">Google Analytics 4</span>
+            <span class="skill-tag">Looker Studio</span>
+            <span class="skill-tag">Search Console</span>
+            <span class="skill-tag">Tag Manager</span>
+            <span class="skill-tag">A/B Testing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <div class="expertise-card h-100">
+          <div class="expertise-icon-wrap" style="--icon-color: #dc2626; --icon-bg: #fee2e2;">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h3 class="expertise-title">IA & Innovation</h3>
+          <p class="expertise-desc" data-lang="fr">Intégration concrète de l'IA dans les processus marketing, CRM et digitaux pour gagner en efficacité et en pertinence à grande échelle.</p>
+          <p class="expertise-desc" data-lang="en" hidden>Concrete integration of AI into marketing, CRM and digital processes to gain efficiency and relevance at scale.</p>
+          <div class="expertise-tags">
+            <span class="skill-tag">GPT-4 / Claude</span>
+            <span class="skill-tag">Prompt Engineering</span>
+            <span class="skill-tag">AI Workflows</span>
+            <span class="skill-tag">RAG / Agents</span>
+            <span class="skill-tag">GEO</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <div class="expertise-card expertise-card-dark h-100">
+          <div class="expertise-icon-wrap" style="--icon-color: #ffffff; --icon-bg: rgba(255,255,255,0.15);">
+            <i class="fa-solid fa-infinity"></i>
+          </div>
+          <h3 class="expertise-title text-white" data-lang="fr">Approche transversale</h3>
+          <h3 class="expertise-title text-white" data-lang="en" hidden>Cross-functional approach</h3>
+          <p class="expertise-desc text-white opacity-80" data-lang="fr">La vraie valeur ajoutée ? Relier ces 5 piliers pour créer des stratégies cohérentes, où marketing, technique et IA s'articulent pour un impact maximal.</p>
+          <p class="expertise-desc text-white opacity-80" data-lang="en" hidden>The real added value? Connecting these 5 pillars to create coherent strategies, where marketing, technology and AI come together for maximum impact.</p>
+          <div class="expertise-tags">
+            <span class="skill-tag skill-tag-light" data-lang="fr">Stratégie globale</span>
+            <span class="skill-tag skill-tag-light" data-lang="en" hidden>Global strategy</span>
+            <span class="skill-tag skill-tag-light" data-lang="fr">Vision produit</span>
+            <span class="skill-tag skill-tag-light" data-lang="en" hidden>Product vision</span>
+            <span class="skill-tag skill-tag-light" data-lang="fr">Exécution technique</span>
+            <span class="skill-tag skill-tag-light" data-lang="en" hidden>Technical execution</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJETS ===== -->
+<section id="projets" class="section-pad bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label">
+        <span data-lang="fr">Projets</span>
+        <span data-lang="en" hidden>Projects</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="fr">Des projets concrets, des résultats réels</span>
+        <span data-lang="en" hidden>Concrete projects, real results</span>
+      </h2>
+      <p class="section-subtitle">
+        <span data-lang="fr">Un aperçu de projets représentatifs couvrant mes différentes expertises.</span>
+        <span data-lang="en" hidden>A selection of representative projects covering my different areas of expertise.</span>
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="project-card" role="button" data-bs-toggle="modal" data-bs-target="#modal-projet1" tabindex="0">
+          <div class="project-card-header">
+            <span class="project-category">CRM / Automatisation</span>
+            <i class="fa-solid fa-arrow-up-right-from-square project-arrow"></i>
+          </div>
+          <h3 class="project-title" data-lang="fr">Pipeline CRM & Automatisation B2B</h3>
+          <h3 class="project-title" data-lang="en" hidden>B2B CRM Pipeline & Automation</h3>
+          <p class="project-desc" data-lang="fr">Mise en place complète d'un CRM HubSpot avec workflows automatisés, segmentation et séquences email pour une société B2B.</p>
+          <p class="project-desc" data-lang="en" hidden>Complete HubSpot CRM setup with automated workflows, segmentation and email sequences for a B2B company.</p>
+          <div class="project-tags">
+            <span class="project-tag">HubSpot</span>
+            <span class="project-tag">Make</span>
+            <span class="project-tag">Email Automation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="project-card" role="button" data-bs-toggle="modal" data-bs-target="#modal-projet2" tabindex="0">
+          <div class="project-card-header">
+            <span class="project-category">SEO / Contenu</span>
+            <i class="fa-solid fa-arrow-up-right-from-square project-arrow"></i>
+          </div>
+          <h3 class="project-title" data-lang="fr">Stratégie SEO & Architecture de contenu</h3>
+          <h3 class="project-title" data-lang="en" hidden>SEO Strategy & Content Architecture</h3>
+          <p class="project-desc" data-lang="fr">Refonte complète de la stratégie SEO d'un site e-commerce : audit technique, architecture sémantique et optimisation on-page.</p>
+          <p class="project-desc" data-lang="en" hidden>Complete SEO strategy overhaul for an e-commerce site: technical audit, semantic architecture and on-page optimization.</p>
+          <div class="project-tags">
+            <span class="project-tag">SEMrush</span>
+            <span class="project-tag">GSC</span>
+            <span class="project-tag">Content Strategy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="project-card" role="button" data-bs-toggle="modal" data-bs-target="#modal-projet3" tabindex="0">
+          <div class="project-card-header">
+            <span class="project-category" data-lang="fr">Développement Web</span>
+            <span class="project-category" data-lang="en" hidden>Web Development</span>
+            <i class="fa-solid fa-arrow-up-right-from-square project-arrow"></i>
+          </div>
+          <h3 class="project-title" data-lang="fr">Landing Page Haute Performance</h3>
+          <h3 class="project-title" data-lang="en" hidden>High-Performance Landing Page</h3>
+          <p class="project-desc" data-lang="fr">Conception et développement d'une landing page optimisée pour la conversion lors d'un lancement produit — UX, copywriting et CRO.</p>
+          <p class="project-desc" data-lang="en" hidden>Design and development of a conversion-optimized landing page for a product launch — UX, copywriting and CRO.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML/CSS/JS</span>
+            <span class="project-tag">CRO</span>
+            <span class="project-tag">GA4</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="project-card project-card-dark" role="button" data-bs-toggle="modal" data-bs-target="#modal-projet4" tabindex="0">
+          <div class="project-card-header">
+            <span class="project-category project-category-light">IA / Automatisation</span>
+            <i class="fa-solid fa-arrow-up-right-from-square project-arrow text-white"></i>
+          </div>
+          <h3 class="project-title text-white" data-lang="fr">Assistant Marketing IA</h3>
+          <h3 class="project-title text-white" data-lang="en" hidden>AI Marketing Assistant</h3>
+          <p class="project-desc text-white opacity-80" data-lang="fr">Création d'un assistant IA intégré aux outils marketing pour automatiser la production de contenus et optimiser les workflows d'équipe.</p>
+          <p class="project-desc text-white opacity-80" data-lang="en" hidden>Creation of an AI assistant integrated into marketing tools to automate content production and optimize team workflows.</p>
+          <div class="project-tags">
+            <span class="project-tag project-tag-light">OpenAI API</span>
+            <span class="project-tag project-tag-light">Make</span>
+            <span class="project-tag project-tag-light">Airtable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== APPROCHE ===== -->
+<section id="approche" class="section-pad bg-dark-custom">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label section-label-light">
+        <span data-lang="fr">Méthode de travail</span>
+        <span data-lang="en" hidden>Working method</span>
+      </div>
+      <h2 class="section-title text-white">
+        <span data-lang="fr">Comment je travaille</span>
+        <span data-lang="en" hidden>How I work</span>
+      </h2>
+      <p class="section-subtitle text-white opacity-70">
+        <span data-lang="fr">Un processus structuré, de l'analyse initiale à la mesure des résultats.</span>
+        <span data-lang="en" hidden>A structured process, from initial analysis to measuring results.</span>
+      </p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-sm-6 col-lg-3">
+        <div class="approach-card">
+          <div class="approach-number">01</div>
+          <h4 class="approach-title" data-lang="fr">Analyse & Compréhension</h4>
+          <h4 class="approach-title" data-lang="en" hidden>Analysis & Understanding</h4>
+          <p class="approach-desc" data-lang="fr">Je commence par comprendre votre contexte, vos objectifs et vos contraintes avant de proposer quoi que ce soit.</p>
+          <p class="approach-desc" data-lang="en" hidden>I start by understanding your context, goals and constraints before proposing anything.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="approach-card">
+          <div class="approach-number">02</div>
+          <h4 class="approach-title" data-lang="fr">Stratégie & Cadrage</h4>
+          <h4 class="approach-title" data-lang="en" hidden>Strategy & Scoping</h4>
+          <p class="approach-desc" data-lang="fr">Construction d'une feuille de route claire, priorisée et alignée sur vos ressources et vos ambitions.</p>
+          <p class="approach-desc" data-lang="en" hidden>Building a clear roadmap, prioritized and aligned with your resources and ambitions.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="approach-card">
+          <div class="approach-number">03</div>
+          <h4 class="approach-title" data-lang="fr">Production & Implémentation</h4>
+          <h4 class="approach-title" data-lang="en" hidden>Production & Implementation</h4>
+          <p class="approach-desc" data-lang="fr">Exécution concrète avec rigueur et transparence, en gardant toujours l'objectif final en vue.</p>
+          <p class="approach-desc" data-lang="en" hidden>Concrete execution with rigor and transparency, always keeping the final goal in sight.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="approach-card">
+          <div class="approach-number">04</div>
+          <h4 class="approach-title" data-lang="fr">Mesure & Optimisation</h4>
+          <h4 class="approach-title" data-lang="en" hidden>Measurement & Optimization</h4>
+          <p class="approach-desc" data-lang="fr">Analyse des résultats, identification des leviers d'amélioration et itération pour maximiser la performance.</p>
+          <p class="approach-desc" data-lang="en" hidden>Results analysis, identifying improvement levers and iterating to maximize performance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== IA SECTION ===== -->
+<section id="ia" class="section-pad bg-white">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5">
+        <div class="section-label">IA & Innovation</div>
+        <h2 class="section-title mb-4">
+          <span data-lang="fr">L'IA comme levier, pas comme buzzword</span>
+          <span data-lang="en" hidden>AI as a lever, not a buzzword</span>
+        </h2>
+        <p class="body-text mb-3" data-lang="fr">
+          L'intelligence artificielle transforme les métiers du marketing et du digital. Mais entre les promesses exagérées et la réalité des usages, il faut savoir faire la part des choses.
+        </p>
+        <p class="body-text mb-3" data-lang="en" hidden>
+          Artificial intelligence is transforming marketing and digital professions. But between exaggerated promises and actual use cases, you need to know how to separate the two.
+        </p>
+        <p class="body-text mb-4" data-lang="fr">
+          Mon approche : identifier les cas d'usage concrets où l'IA apporte une vraie valeur, et l'intégrer intelligemment dans des workflows existants. Pas de gadgets. Pas de survente. Des solutions qui fonctionnent.
+        </p>
+        <p class="body-text mb-4" data-lang="en" hidden>
+          My approach: identify concrete use cases where AI brings real value, and integrate it intelligently into existing workflows. No gimmicks. No overselling. Solutions that work.
+        </p>
+        <div class="ai-tools-row">
+          <span class="ai-tool-badge">ChatGPT / GPT-4o</span>
+          <span class="ai-tool-badge">Claude</span>
+          <span class="ai-tool-badge">Perplexity</span>
+          <span class="ai-tool-badge">Make AI</span>
+          <span class="ai-tool-badge">Midjourney</span>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <div class="ai-feature-card">
+              <div class="ai-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+              <h5 class="ai-feature-title" data-lang="fr">Production de contenu</h5>
+              <h5 class="ai-feature-title" data-lang="en" hidden>Content production</h5>
+              <p class="ai-feature-desc" data-lang="fr">Accélérer la création sans perdre en qualité ni en authenticité.</p>
+              <p class="ai-feature-desc" data-lang="en" hidden>Accelerating creation without losing quality or authenticity.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="ai-feature-card">
+              <div class="ai-icon"><i class="fa-solid fa-robot"></i></div>
+              <h5 class="ai-feature-title" data-lang="fr">Automatisation intelligente</h5>
+              <h5 class="ai-feature-title" data-lang="en" hidden>Smart automation</h5>
+              <p class="ai-feature-desc" data-lang="fr">Workflows IA pour automatiser les tâches à haute valeur ajoutée.</p>
+              <p class="ai-feature-desc" data-lang="en" hidden>AI workflows to automate high-value repetitive tasks.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="ai-feature-card">
+              <div class="ai-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+              <h5 class="ai-feature-title" data-lang="fr">Analyse & insights</h5>
+              <h5 class="ai-feature-title" data-lang="en" hidden>Analysis & insights</h5>
+              <p class="ai-feature-desc" data-lang="fr">Extraire des insights pertinents de grandes quantités de données.</p>
+              <p class="ai-feature-desc" data-lang="en" hidden>Extracting relevant insights from large amounts of data.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="ai-feature-card">
+              <div class="ai-icon"><i class="fa-solid fa-comments"></i></div>
+              <h5 class="ai-feature-title" data-lang="fr">CRM & personnalisation</h5>
+              <h5 class="ai-feature-title" data-lang="en" hidden>CRM & personalization</h5>
+              <p class="ai-feature-desc" data-lang="fr">Personnaliser les communications à grande échelle via l'IA.</p>
+              <p class="ai-feature-desc" data-lang="en" hidden>Personalizing communications at scale through AI.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="ai-feature-card">
+              <div class="ai-icon"><i class="fa-solid fa-globe"></i></div>
+              <h5 class="ai-feature-title" data-lang="fr">GEO & visibilité IA</h5>
+              <h5 class="ai-feature-title" data-lang="en" hidden>GEO & AI visibility</h5>
+              <p class="ai-feature-desc" data-lang="fr">Optimiser le contenu pour les nouvelles interfaces de recherche IA.</p>
+              <p class="ai-feature-desc" data-lang="en" hidden>Optimizing content for new AI search interfaces.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="ai-feature-card">
+              <div class="ai-icon"><i class="fa-solid fa-toolbox"></i></div>
+              <h5 class="ai-feature-title" data-lang="fr">Outils internes IA</h5>
+              <h5 class="ai-feature-title" data-lang="en" hidden>Internal AI tools</h5>
+              <p class="ai-feature-desc" data-lang="fr">Créer des outils sur mesure pour booster la productivité des équipes.</p>
+              <p class="ai-feature-desc" data-lang="en" hidden>Creating custom tools to boost team productivity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARCOURS ===== -->
+<section id="parcours" class="section-pad bg-light-custom">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label">
+        <span data-lang="fr">Parcours</span>
+        <span data-lang="en" hidden>Journey</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="fr">Expérience & formations</span>
+        <span data-lang="en" hidden>Experience & training</span>
+      </h2>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-lg-7">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2024 — <span data-lang="fr">présent</span><span data-lang="en" hidden>present</span></span>
+              <h4 class="timeline-title" data-lang="fr">IA, Automatisation & Culture Produit</h4>
+              <h4 class="timeline-title" data-lang="en" hidden>AI, Automation & Product Culture</h4>
+              <p class="timeline-desc" data-lang="fr">Exploration et intégration concrète de l'IA dans des contextes marketing et business. Développement de workflows intelligents et d'outils sur mesure combinant LLMs et automatisation.</p>
+              <p class="timeline-desc" data-lang="en" hidden>Concrete exploration and integration of AI in marketing and business contexts. Development of intelligent workflows and custom tools combining LLMs and automation.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2023 — 2024</span>
+              <h4 class="timeline-title" data-lang="fr">Développement Web & CRO</h4>
+              <h4 class="timeline-title" data-lang="en" hidden>Web Development & CRO</h4>
+              <p class="timeline-desc" data-lang="fr">Montée en compétences sur le développement front-end. Conception et optimisation de sites et landing pages orientés conversion et performance.</p>
+              <p class="timeline-desc" data-lang="en" hidden>Skills development in front-end development. Design and optimization of conversion-oriented sites and landing pages.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2022 — 2023</span>
+              <h4 class="timeline-title" data-lang="fr">Data Marketing & Performance</h4>
+              <h4 class="timeline-title" data-lang="en" hidden>Data Marketing & Performance</h4>
+              <p class="timeline-desc" data-lang="fr">Approfondissement des sujets analytics et tracking. Mise en place de dashboards et rapports de performance avancés pour piloter la stratégie.</p>
+              <p class="timeline-desc" data-lang="en" hidden>Deepening analytics and tracking topics. Setting up dashboards and advanced performance reports to steer strategy.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2021 — 2022</span>
+              <h4 class="timeline-title" data-lang="fr">CRM & Marketing Automation</h4>
+              <h4 class="timeline-title" data-lang="en" hidden>CRM & Marketing Automation</h4>
+              <p class="timeline-desc" data-lang="fr">Spécialisation sur les outils CRM (HubSpot), les séquences email et l'automatisation des processus marketing et commerciaux.</p>
+              <p class="timeline-desc" data-lang="en" hidden>Specialization in CRM tools (HubSpot), email sequences and automation of marketing and sales processes.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2020 — 2021</span>
+              <h4 class="timeline-title" data-lang="fr">Marketing Digital — Les débuts</h4>
+              <h4 class="timeline-title" data-lang="en" hidden>Digital Marketing — The beginning</h4>
+              <p class="timeline-desc" data-lang="fr">Premiers pas en SEO, création de contenu, réseaux sociaux et stratégie digitale. Construction des fondamentaux marketing qui structurent encore ma façon de travailler.</p>
+              <p class="timeline-desc" data-lang="en" hidden>First steps in SEO, content creation, social media and digital strategy. Building marketing fundamentals that still structure my way of working.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <h3 class="certif-section-title mb-4">
+          <span data-lang="fr">Certifications</span>
+          <span data-lang="en" hidden>Certifications</span>
+        </h3>
+        <div class="certif-list">
+          <div class="certif-item">
+            <div class="certif-icon certif-icon-google"><i class="fa-brands fa-google"></i></div>
+            <div class="certif-info">
+              <div class="certif-name">Google Analytics 4</div>
+              <div class="certif-issuer">Google</div>
+            </div>
+            <span class="certif-badge" data-lang="fr">Certifié</span>
+            <span class="certif-badge" data-lang="en" hidden>Certified</span>
+          </div>
+          <div class="certif-item">
+            <div class="certif-icon certif-icon-hubspot"><i class="fa-solid fa-h"></i></div>
+            <div class="certif-info">
+              <div class="certif-name">HubSpot Marketing</div>
+              <div class="certif-issuer">HubSpot Academy</div>
+            </div>
+            <span class="certif-badge" data-lang="fr">Certifié</span>
+            <span class="certif-badge" data-lang="en" hidden>Certified</span>
+          </div>
+          <div class="certif-item">
+            <div class="certif-icon certif-icon-hubspot"><i class="fa-solid fa-h"></i></div>
+            <div class="certif-info">
+              <div class="certif-name">HubSpot CRM</div>
+              <div class="certif-issuer">HubSpot Academy</div>
+            </div>
+            <span class="certif-badge" data-lang="fr">Certifié</span>
+            <span class="certif-badge" data-lang="en" hidden>Certified</span>
+          </div>
+          <div class="certif-item">
+            <div class="certif-icon certif-icon-google"><i class="fa-brands fa-google"></i></div>
+            <div class="certif-info">
+              <div class="certif-name">Google Ads Search</div>
+              <div class="certif-issuer">Google</div>
+            </div>
+            <span class="certif-badge" data-lang="fr">Certifié</span>
+            <span class="certif-badge" data-lang="en" hidden>Certified</span>
+          </div>
+          <div class="certif-item">
+            <div class="certif-icon certif-icon-meta"><i class="fa-brands fa-meta"></i></div>
+            <div class="certif-info">
+              <div class="certif-name">Meta Blueprint</div>
+              <div class="certif-issuer">Meta</div>
+            </div>
+            <span class="certif-badge" data-lang="fr">Certifié</span>
+            <span class="certif-badge" data-lang="en" hidden>Certified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG ===== -->
+<section id="blog" class="section-pad bg-white">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-5">
+      <div>
+        <div class="section-label">Blog</div>
+        <h2 class="section-title mb-0">
+          <span data-lang="fr">Réflexions & insights</span>
+          <span data-lang="en" hidden>Thoughts & insights</span>
+        </h2>
+      </div>
+      <a href="blog.html" class="btn-link-arrow">
+        <span data-lang="fr">Tous les articles</span>
+        <span data-lang="en" hidden>All articles</span>
+        <i class="fa-solid fa-arrow-right ms-2"></i>
+      </a>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <a href="blog.html" class="blog-card">
+          <div class="blog-cat" data-lang="fr">IA & Marketing</div>
+          <div class="blog-cat" data-lang="en" hidden>AI & Marketing</div>
+          <h4 class="blog-title" data-lang="fr">Comment l'IA transforme le marketing automation en 2025</h4>
+          <h4 class="blog-title" data-lang="en" hidden>How AI is transforming marketing automation in 2025</h4>
+          <p class="blog-excerpt" data-lang="fr">Les modèles de langage changent profondément la façon dont on automatise les communications marketing. Voici ce que j'observe concrètement.</p>
+          <p class="blog-excerpt" data-lang="en" hidden>Language models are profoundly changing how we automate marketing communications. Here's what I concretely observe.</p>
+          <div class="blog-meta">
+            <span data-lang="fr">Mars 2025 · 5 min</span>
+            <span data-lang="en" hidden>March 2025 · 5 min</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="blog.html" class="blog-card">
+          <div class="blog-cat">SEO / GEO</div>
+          <h4 class="blog-title" data-lang="fr">SEO vs GEO : s'adapter aux nouveaux comportements de recherche</h4>
+          <h4 class="blog-title" data-lang="en" hidden>SEO vs GEO: adapting to new search behaviors</h4>
+          <p class="blog-excerpt" data-lang="fr">Avec l'émergence de moteurs IA comme Perplexity, les règles du référencement évoluent. Comment adapter sa stratégie en 2025 ?</p>
+          <p class="blog-excerpt" data-lang="en" hidden>With the emergence of AI engines like Perplexity, SEO rules are evolving. How to adapt your strategy in 2025?</p>
+          <div class="blog-meta">
+            <span data-lang="fr">Février 2025 · 7 min</span>
+            <span data-lang="en" hidden>February 2025 · 7 min</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="blog.html" class="blog-card">
+          <div class="blog-cat">CRM</div>
+          <h4 class="blog-title" data-lang="fr">CRM : structurer un pipeline de vente qui convertit vraiment</h4>
+          <h4 class="blog-title" data-lang="en" hidden>CRM: structuring a sales pipeline that actually converts</h4>
+          <p class="blog-excerpt" data-lang="fr">Un CRM mal configuré est pire qu'un CRM absent. Voici les principes que j'applique pour construire des pipelines efficaces.</p>
+          <p class="blog-excerpt" data-lang="en" hidden>A poorly configured CRM is worse than no CRM. Here are the principles I apply to build effective pipelines.</p>
+          <div class="blog-meta">
+            <span data-lang="fr">Janvier 2025 · 6 min</span>
+            <span data-lang="en" hidden>January 2025 · 6 min</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section-pad bg-dark-custom">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="text-center mb-5">
+          <div class="section-label section-label-light">Contact</div>
+          <h2 class="section-title text-white">
+            <span data-lang="fr">Parlons de votre projet</span>
+            <span data-lang="en" hidden>Let's talk about your project</span>
+          </h2>
+          <p class="section-subtitle text-white opacity-70">
+            <span data-lang="fr">Un projet, une mission, une collaboration ? Je suis disponible pour en discuter.</span>
+            <span data-lang="en" hidden>A project, a mission, a collaboration? I'm available to discuss it.</span>
+          </p>
+        </div>
+
+        <div class="row g-5">
+          <div class="col-lg-7">
+            <form class="contact-form" id="contactForm" novalidate>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label class="form-label-custom" data-lang="fr">Nom *</label>
+                  <label class="form-label-custom" data-lang="en" hidden>Name *</label>
+                  <input type="text" class="form-control-custom" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label-custom">Email *</label>
+                  <input type="email" class="form-control-custom" name="email" placeholder="john@company.com" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label-custom" data-lang="fr">Sujet</label>
+                  <label class="form-label-custom" data-lang="en" hidden>Subject</label>
+                  <select class="form-control-custom" name="subject" data-lang="fr">
+                    <option value="">Choisir un sujet...</option>
+                    <option>Projet Marketing</option>
+                    <option>Développement Web</option>
+                    <option>CRM & Automatisation</option>
+                    <option>Intégration IA</option>
+                    <option>Autre</option>
+                  </select>
+                  <select class="form-control-custom" name="subject_en" data-lang="en" hidden>
+                    <option value="">Choose a subject...</option>
+                    <option>Marketing Project</option>
+                    <option>Web Development</option>
+                    <option>CRM & Automation</option>
+                    <option>AI Integration</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label-custom">Message *</label>
+                  <textarea class="form-control-custom" name="message" rows="5" placeholder="Décrivez votre projet ou votre besoin..." required></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn-hero-primary w-100 justify-content-center">
+                    <span data-lang="fr">Envoyer le message</span>
+                    <span data-lang="en" hidden>Send message</span>
+                    <i class="fa-solid fa-paper-plane ms-2"></i>
+                  </button>
+                </div>
+                <div class="col-12" id="formMsg" style="display:none;"></div>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="contact-info">
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <div class="contact-info-label">Email</div>
+                  <a href="mailto:contact@maximilien-moreau.fr" class="contact-info-value">contact@maximilien-moreau.fr</a>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <div class="contact-info-label" data-lang="fr">Localisation</div>
+                  <div class="contact-info-label" data-lang="en" hidden>Location</div>
+                  <div class="contact-info-value">France</div>
+                </div>
+              </div>
+              <div class="contact-info-item">
+                <div class="contact-info-icon"><i class="fa-solid fa-circle-check"></i></div>
+                <div>
+                  <div class="contact-info-label" data-lang="fr">Disponibilité</div>
+                  <div class="contact-info-label" data-lang="en" hidden>Availability</div>
+                  <div class="contact-info-value" data-lang="fr">Disponible pour de nouvelles missions</div>
+                  <div class="contact-info-value" data-lang="en" hidden>Available for new projects</div>
+                </div>
+              </div>
+
+              <div class="calendly-cta mt-4">
+                <p class="text-white opacity-70 mb-3 small" data-lang="fr">Vous préférez planifier directement un appel ?</p>
+                <p class="text-white opacity-70 mb-3 small" data-lang="en" hidden>Prefer to schedule a call directly?</p>
+                <a href="#" class="btn-hero-outline d-flex justify-content-center align-items-center">
+                  <i class="fa-regular fa-calendar me-2"></i>
+                  <span data-lang="fr">Réserver un créneau</span>
+                  <span data-lang="en" hidden>Book a slot</span>
+                </a>
+              </div>
+
+              <div class="social-links-contact mt-4">
+                <a href="#" class="social-link-icon" aria-label="LinkedIn" title="LinkedIn">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-link-icon" aria-label="Twitter/X" title="Twitter/X">
+                  <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" class="social-link-icon" aria-label="GitHub" title="GitHub">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-section">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="brand-mm">MM</span>
+        </div>
+        <p class="footer-name">Maximilien Moreau</p>
+        <p class="footer-tagline" data-lang="fr">Marketing · Web · IA</p>
+        <p class="footer-tagline" data-lang="en" hidden>Marketing · Web · AI</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#accueil" data-lang="fr">Accueil</a>
+        <a href="#accueil" data-lang="en" hidden>Home</a>
+        <a href="#apropos" data-lang="fr">À propos</a>
+        <a href="#apropos" data-lang="en" hidden>About</a>
+        <a href="#expertises" data-lang="fr">Expertises</a>
+        <a href="#expertises" data-lang="en" hidden>Expertise</a>
+        <a href="#projets" data-lang="fr">Projets</a>
+        <a href="#projets" data-lang="en" hidden>Projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="footer-copy">
+        <p>© 2026 Maximilien Moreau. <span data-lang="fr">Tous droits réservés.</span><span data-lang="en" hidden>All rights reserved.</span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MODALS PROJETS ===== -->
+
+<!-- Modal 1 -->
+<div class="modal fade" id="modal-projet1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-custom">
+      <div class="modal-header-custom">
+        <span class="project-category">CRM / Automatisation</span>
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body-custom">
+        <h3 class="modal-project-title" data-lang="fr">Pipeline CRM & Automatisation B2B</h3>
+        <h3 class="modal-project-title" data-lang="en" hidden>B2B CRM Pipeline & Automation</h3>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Contexte & Besoin</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>Context & Need</h6>
+          <p data-lang="fr">Une société B2B disposait d'une base de contacts importante mais sans outil structuré pour suivre ses prospects et automatiser ses communications. L'équipe commerciale perdait du temps sur des tâches manuelles et le suivi des leads était inconsistant.</p>
+          <p data-lang="en" hidden>A B2B company had a large contact database but no structured tool to track prospects and automate communications. The sales team was losing time on manual tasks and lead follow-up was inconsistent.</p>
+        </div>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Ma contribution</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>My contribution</h6>
+          <ul data-lang="fr">
+            <li>Audit des processus commerciaux existants et mapping du parcours prospect</li>
+            <li>Configuration complète de HubSpot CRM (pipeline, propriétés personnalisées, vues)</li>
+            <li>Création de séquences email automatisées selon le stade dans le funnel</li>
+            <li>Mise en place de workflows Make pour synchroniser les données entre outils</li>
+            <li>Formation de l'équipe et documentation des processus</li>
+          </ul>
+          <ul data-lang="en" hidden>
+            <li>Audit of existing sales processes and prospect journey mapping</li>
+            <li>Complete HubSpot CRM configuration (pipeline, custom properties, views)</li>
+            <li>Automated email sequence creation based on funnel stage</li>
+            <li>Make workflow setup to synchronize data between tools</li>
+            <li>Team training and process documentation</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="project-tag">HubSpot CRM</span>
+          <span class="project-tag">Make (Integromat)</span>
+          <span class="project-tag">Email Sequences</span>
+          <span class="project-tag">Lead Scoring</span>
+          <span class="project-tag">Process Automation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="modal fade" id="modal-projet2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-custom">
+      <div class="modal-header-custom">
+        <span class="project-category">SEO / Contenu</span>
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body-custom">
+        <h3 class="modal-project-title" data-lang="fr">Stratégie SEO & Architecture de contenu</h3>
+        <h3 class="modal-project-title" data-lang="en" hidden>SEO Strategy & Content Architecture</h3>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Contexte & Besoin</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>Context & Need</h6>
+          <p data-lang="fr">Un site e-commerce avec une visibilité organique très faible et une architecture de contenu peu structurée. Malgré un bon produit, le trafic issu des moteurs de recherche stagnait depuis plusieurs mois.</p>
+          <p data-lang="en" hidden>An e-commerce site with very low organic visibility and a poorly structured content architecture. Despite a good product, search engine traffic had been stagnating for several months.</p>
+        </div>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Ma contribution</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>My contribution</h6>
+          <ul data-lang="fr">
+            <li>Audit SEO technique complet (Core Web Vitals, indexation, maillage interne)</li>
+            <li>Recherche sémantique et identification des opportunités de mots-clés</li>
+            <li>Refonte de l'architecture des pages et création d'un silo de contenu cohérent</li>
+            <li>Rédaction et optimisation des pages stratégiques</li>
+            <li>Suivi des performances et ajustements continus sur 3 mois</li>
+          </ul>
+          <ul data-lang="en" hidden>
+            <li>Complete technical SEO audit (Core Web Vitals, indexing, internal linking)</li>
+            <li>Semantic research and keyword opportunity identification</li>
+            <li>Page architecture redesign and coherent content silo creation</li>
+            <li>Writing and optimization of strategic pages</li>
+            <li>Performance monitoring and continuous adjustments over 3 months</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="project-tag">SEMrush</span>
+          <span class="project-tag">Google Search Console</span>
+          <span class="project-tag">Screaming Frog</span>
+          <span class="project-tag">Content Strategy</span>
+          <span class="project-tag">On-Page SEO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="modal-projet3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-custom">
+      <div class="modal-header-custom">
+        <span class="project-category" data-lang="fr">Développement Web</span>
+        <span class="project-category" data-lang="en" hidden>Web Development</span>
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body-custom">
+        <h3 class="modal-project-title" data-lang="fr">Landing Page Haute Performance</h3>
+        <h3 class="modal-project-title" data-lang="en" hidden>High-Performance Landing Page</h3>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Contexte & Besoin</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>Context & Need</h6>
+          <p data-lang="fr">Lancement d'un nouveau produit nécessitant une page de vente efficace et convaincante. La page précédente affichait un taux de conversion insuffisant et manquait de clarté dans son message principal.</p>
+          <p data-lang="en" hidden>Launch of a new product requiring an effective and convincing sales page. The previous page showed insufficient conversion rates and lacked clarity in its main message.</p>
+        </div>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Ma contribution</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>My contribution</h6>
+          <ul data-lang="fr">
+            <li>Analyse des comportements utilisateurs sur l'ancienne page (heatmaps, enregistrements)</li>
+            <li>Rédaction d'un copywriting orienté conversion, structuré par blocs</li>
+            <li>Design et développement front-end complet en HTML/CSS/JS vanilla</li>
+            <li>Optimisation des performances (Core Web Vitals, temps de chargement)</li>
+            <li>Mise en place du tracking GA4 événementiel et tests A/B</li>
+          </ul>
+          <ul data-lang="en" hidden>
+            <li>User behavior analysis on the old page (heatmaps, recordings)</li>
+            <li>Conversion-oriented copywriting, structured in blocks</li>
+            <li>Complete front-end design and development in vanilla HTML/CSS/JS</li>
+            <li>Performance optimization (Core Web Vitals, loading speed)</li>
+            <li>GA4 event tracking setup and A/B tests</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="project-tag">HTML / CSS / JS</span>
+          <span class="project-tag">CRO</span>
+          <span class="project-tag">Google Analytics 4</span>
+          <span class="project-tag">HotJar</span>
+          <span class="project-tag">A/B Testing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div class="modal fade" id="modal-projet4" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-custom">
+      <div class="modal-header-custom">
+        <span class="project-category">IA / Automatisation</span>
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="modal-body-custom">
+        <h3 class="modal-project-title" data-lang="fr">Assistant Marketing IA</h3>
+        <h3 class="modal-project-title" data-lang="en" hidden>AI Marketing Assistant</h3>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Contexte & Besoin</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>Context & Need</h6>
+          <p data-lang="fr">Une équipe marketing passait une part importante de son temps sur la production de contenus répétitifs. Le besoin : automatiser ces tâches sans perdre en qualité ni en cohérence éditoriale.</p>
+          <p data-lang="en" hidden>A marketing team was spending a significant portion of its time on repetitive content production. The need: automate these tasks without losing quality or editorial consistency.</p>
+        </div>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Ma contribution</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>My contribution</h6>
+          <ul data-lang="fr">
+            <li>Mapping des processus de production de contenu existants</li>
+            <li>Conception des prompts et templates IA alignés sur la charte éditoriale</li>
+            <li>Développement des workflows Make connectant GPT-4 aux outils existants</li>
+            <li>Création d'une base de connaissances dans Airtable comme source de vérité</li>
+            <li>Formation de l'équipe sur les bonnes pratiques et limites de l'IA</li>
+          </ul>
+          <ul data-lang="en" hidden>
+            <li>Mapping of existing content production processes</li>
+            <li>Design of AI prompts and templates aligned with editorial guidelines</li>
+            <li>Make workflow development connecting GPT-4 to existing tools</li>
+            <li>Knowledge base creation in Airtable as source of truth</li>
+            <li>Team training on AI best practices and limitations</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="project-tag">OpenAI API</span>
+          <span class="project-tag">Make (Integromat)</span>
+          <span class="project-tag">Airtable</span>
+          <span class="project-tag">Prompt Engineering</span>
+          <span class="project-tag">Workflow Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="script.js"></script>
 </body>
 </html>
