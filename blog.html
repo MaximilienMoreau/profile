@@ -235,6 +235,20 @@
       transform: translateY(-1px);
     }
 
+    /* Dark mode overrides for blog-specific elements */
+    [data-theme="dark"] .filter-btn {
+      background: #1e293b;
+      border-color: #334155;
+    }
+
+    [data-theme="dark"] .blog-card-featured {
+      background: #1e293b;
+    }
+
+    [data-theme="dark"] .blog-grid-section {
+      background: #0f172a;
+    }
+
     @media (max-width: 767.98px) {
       .blog-card-featured {
         grid-template-columns: 1fr;

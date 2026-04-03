@@ -122,6 +122,32 @@
   color: var(--dark);
 }
 
+/* Sections light → dark */
+[data-theme="dark"] .bg-white {
+  background-color: #0f172a;
+}
+
+/* Blog : filter tabs */
+[data-theme="dark"] .filter-btn {
+  background: #1e293b;
+  color: var(--body);
+  border-color: var(--border);
+}
+
+/* Blog : carte article vedette */
+[data-theme="dark"] .blog-card-featured {
+  background: #1e293b;
+}
+
+/* About image border */
+[data-theme="dark"] .about-img {
+  border-color: #334155;
+}
+
+[data-theme="dark"] .about-img-badge {
+  border-color: #334155;
+}
+
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -1689,6 +1715,16 @@ textarea.form-control-custom {
 
   .about-img-wrapper {
     margin-bottom: 20px;
+  }
+}
+
+/* ============================================================
+   DARK MODE — overrides post-responsive (specificity fix)
+   ============================================================ */
+@media (max-width: 991.98px) {
+  [data-theme="dark"] .navbar-collapse {
+    background: #1e293b;
+    border-color: #334155;
   }
 }
 
