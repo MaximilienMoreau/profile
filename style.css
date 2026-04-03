@@ -46,19 +46,46 @@
    DARK MODE
    ============================================================ */
 [data-theme="dark"] {
+  --white:         #1e293b;
   --bg:            #0f172a;
   --bg-alt:        #1e293b;
   --border:        #334155;
   --border-light:  #243148;
-  --dark:          #f1f5f9;
-  --dark-soft:     #e2e8f0;
-  --dark-medium:   #94a3b8;
   --body:          #94a3b8;
   --body-light:    #64748b;
   --primary-ultra: rgba(109, 40, 217, 0.15);
   --shadow-sm:     0 2px 8px rgba(0, 0, 0, 0.4);
   --shadow:        0 4px 24px rgba(0, 0, 0, 0.5);
   --shadow-lg:     0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Titres et textes foncés → clairs en mode sombre */
+[data-theme="dark"] .section-title,
+[data-theme="dark"] .expertise-title,
+[data-theme="dark"] .project-title,
+[data-theme="dark"] .blog-title,
+[data-theme="dark"] .timeline-title,
+[data-theme="dark"] .certif-section-title,
+[data-theme="dark"] .certif-name,
+[data-theme="dark"] .ai-feature-title,
+[data-theme="dark"] .modal-project-title,
+[data-theme="dark"] .highlight-item strong {
+  color: #f1f5f9;
+}
+
+/* Navbar : marque et liens */
+[data-theme="dark"] .navbar-brand,
+[data-theme="dark"] .brand-name,
+[data-theme="dark"] .navbar-toggler {
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .navbar-nav .nav-link {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .project-tag {
+  color: #94a3b8;
 }
 
 [data-theme="dark"] body {
@@ -119,12 +146,17 @@
 
 [data-theme="dark"] .modal-close-btn:hover {
   background: var(--border);
-  color: var(--dark);
+  color: #f1f5f9;
 }
 
-/* Sections light → dark */
+/* Sections light → dark (!important pour surcharger Bootstrap) */
 [data-theme="dark"] .bg-white {
-  background-color: #0f172a;
+  background-color: #0f172a !important;
+}
+
+/* Suppression du dégradé sur les sections déjà sombres en dark mode */
+[data-theme="dark"] .bg-dark-custom {
+  background: #131d30;
 }
 
 /* Blog : filter tabs */
