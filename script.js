@@ -9,6 +9,40 @@
    ============================================================ */
 
 /* ============================================================
+   DARK MODE
+   ============================================================ */
+const THEME_KEY = 'mm_theme';
+
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  const icon = document.getElementById('themeIcon');
+  if (icon) {
+    icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+  }
+  try {
+    localStorage.setItem(THEME_KEY, theme);
+  } catch (e) { /* ignore */ }
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  setTheme(current === 'dark' ? 'light' : 'dark');
+}
+
+function initTheme() {
+  let theme = 'light';
+  try {
+    const stored = localStorage.getItem(THEME_KEY);
+    if (stored === 'light' || stored === 'dark') {
+      theme = stored;
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      theme = 'dark';
+    }
+  } catch (e) { /* ignore */ }
+  setTheme(theme);
+}
+
+/* ============================================================
    LANGUAGE SWITCHER
    ============================================================ */
 const LANG_KEY = 'mm_lang';
@@ -268,6 +302,7 @@ function initContactForm() {
    INIT
    ============================================================ */
 document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
   initLang();
   initNavbarScroll();
   initActiveNav();

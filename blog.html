@@ -15,6 +15,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+  <!-- Dark mode init (prevents flash) -->
+  <script>(function(){var t=localStorage.getItem('mm_theme');if(t==='dark'||(t==null&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}})();</script>
   <style>
     /* ===== Blog-specific styles ===== */
     .blog-hero {
@@ -276,6 +278,9 @@
         <span class="lang-sep">|</span>
         <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
       </div>
+      <button class="theme-toggle-btn" id="btnTheme" onclick="toggleTheme()" aria-label="Basculer mode sombre">
+        <i class="fa-solid fa-moon" id="themeIcon"></i>
+      </button>
       <a href="index.html#contact" class="btn-nav-cta d-none d-lg-inline-flex">
         <span data-lang="fr">Réserver un appel</span>
         <span data-lang="en" hidden>Book a call</span>
