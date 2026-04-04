@@ -498,6 +498,8 @@ a {
   padding: 130px 0 80px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .hero-ed-name {
@@ -552,18 +554,11 @@ a {
   color: rgba(255, 255, 255, 0.45);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  line-height: 2.4;
-  padding-top: 6px;
-}
-
-.hero-ed-right {
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 24px;
 }
 
 .hero-badge {
   display: inline-flex;
-  align-self: flex-start;
   align-items: center;
   gap: 8px;
   background: rgba(255,255,255,0.05);
@@ -573,7 +568,8 @@ a {
   font-size: 12px;
   font-weight: 400;
   color: rgba(255,255,255,0.5);
-  margin-bottom: 32px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   backdrop-filter: blur(4px);
 }
 
@@ -618,16 +614,18 @@ a {
   font-size: clamp(15px, 2vw, 17px);
   color: rgba(255,255,255,0.75);
   line-height: 1.75;
-  max-width: 620px;
+  max-width: 600px;
   margin-bottom: 0;
+  text-align: center;
 }
 
 /* Hero buttons */
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 14px;
-  margin-top: 36px;
+  margin-top: 0;
   margin-bottom: 40px;
 }
 
@@ -682,6 +680,7 @@ a {
 .hero-tags {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
 }
 
