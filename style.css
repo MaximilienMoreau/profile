@@ -503,6 +503,7 @@ a {
 .hero-ed-name {
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-bottom: 48px;
 }
 
@@ -562,16 +563,17 @@ a {
 
 .hero-badge {
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
-  gap: 10px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
+  gap: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.10);
   border-radius: 50px;
-  padding: 8px 18px;
-  font-size: 13px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 28px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 32px;
   backdrop-filter: blur(4px);
 }
 
