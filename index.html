@@ -15,7 +15,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
   <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
   <!-- Dark mode init (prevents flash) -->
@@ -38,7 +38,7 @@
         <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
       </div>
       <button class="theme-toggle-btn" id="btnTheme" onclick="toggleTheme()" aria-label="Basculer mode sombre">
-        <i class="fa-solid fa-moon" id="themeIcon"></i>
+        <i class="fa-solid fa-lightbulb" id="themeIcon"></i>
       </button>
       <a href="#contact" class="btn-nav-cta d-none d-lg-inline-flex">
         <span data-lang="fr">Réserver un appel</span>
@@ -70,9 +70,9 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#projets">
-            <span data-lang="fr">Projets</span>
-            <span data-lang="en" hidden>Projects</span>
+          <a class="nav-link" href="projets.html">
+            <span data-lang="fr">Mes projets</span>
+            <span data-lang="en" hidden>My projects</span>
           </a>
         </li>
         <li class="nav-item">
@@ -171,7 +171,7 @@
           <span data-lang="en" hidden>A hybrid profile at the service of your growth</span>
         </h2>
         <p class="body-text mb-3" data-lang="fr">
-          Depuis 2020, j'évolue à l'intersection du marketing digital, du développement web et de l'intelligence artificielle. Mon parcours n'est pas celui d'un spécialiste enfermé dans une case — c'est celui d'un professionnel transversal qui comprend aussi bien les enjeux business que les contraintes techniques.
+          Depuis 2020, j'évolue à l'intersection du marketing digital, du développement web et de l'intelligence artificielle. Mes projets n'est pas celui d'un spécialiste enfermé dans une case — c'est celui d'un professionnel transversal qui comprend aussi bien les enjeux business que les contraintes techniques.
         </p>
         <p class="body-text mb-3" data-lang="en" hidden>
           Since 2020, I've been working at the intersection of digital marketing, web development, and artificial intelligence. My path isn't that of a narrow specialist — it's that of a cross-functional professional who understands both business challenges and technical constraints.
@@ -230,6 +230,81 @@
         </div>
       </div>
     </div>
+
+    <!-- Ce qui me distingue -->
+    <div class="distingue-section mt-5 pt-4">
+      <div class="text-center mb-5">
+        <div class="section-label">
+          <span data-lang="fr">Valeur ajoutée</span>
+          <span data-lang="en" hidden>Added value</span>
+        </div>
+        <h2 class="section-title">
+          <span data-lang="fr">Ce qui me distingue</span>
+          <span data-lang="en" hidden>What sets me apart</span>
+        </h2>
+        <p class="section-subtitle">
+          <span data-lang="fr">Des compétences techniques alliées à une vision business pour des projets réussis.</span>
+          <span data-lang="en" hidden>Technical skills combined with business vision for successful projects.</span>
+        </p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="distingue-card">
+            <div class="distingue-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h4 class="distingue-title" data-lang="fr">Vulgarisation IA</h4>
+            <h4 class="distingue-title" data-lang="en" hidden>AI popularization</h4>
+            <p class="distingue-desc" data-lang="fr">Capacité à traduire des concepts techniques complexes en solutions compréhensibles pour tous les métiers.</p>
+            <p class="distingue-desc" data-lang="en" hidden>Ability to translate complex technical concepts into understandable solutions for all business roles.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="distingue-card">
+            <div class="distingue-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h4 class="distingue-title" data-lang="fr">Conduite du changement</h4>
+            <h4 class="distingue-title" data-lang="en" hidden>Change management</h4>
+            <p class="distingue-desc" data-lang="fr">Accompagnement des équipes dans l'adoption de nouveaux outils et processus, formation et documentation.</p>
+            <p class="distingue-desc" data-lang="en" hidden>Supporting teams in adopting new tools and processes, with training and documentation.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="distingue-card">
+            <div class="distingue-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+            <h4 class="distingue-title" data-lang="fr">Sens du ROI</h4>
+            <h4 class="distingue-title" data-lang="en" hidden>ROI mindset</h4>
+            <p class="distingue-desc" data-lang="fr">Focus sur la valeur business, mesure des résultats et optimisation continue des investissements.</p>
+            <p class="distingue-desc" data-lang="en" hidden>Focus on business value, results measurement and continuous investment optimization.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="distingue-card">
+            <div class="distingue-icon"><i class="fa-solid fa-bolt"></i></div>
+            <h4 class="distingue-title" data-lang="fr">Culture performance</h4>
+            <h4 class="distingue-title" data-lang="en" hidden>Performance culture</h4>
+            <p class="distingue-desc" data-lang="fr">Orientation data-driven, KPIs clairs et amélioration itérative basée sur les métriques.</p>
+            <p class="distingue-desc" data-lang="en" hidden>Data-driven orientation, clear KPIs and iterative improvement based on metrics.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="distingue-card">
+            <div class="distingue-icon"><i class="fa-solid fa-code"></i></div>
+            <h4 class="distingue-title" data-lang="fr">Développement orienté produit</h4>
+            <h4 class="distingue-title" data-lang="en" hidden>Product-oriented development</h4>
+            <p class="distingue-desc" data-lang="fr">Conception et livraison d'interfaces web et d'outils internes avec une approche UX, performance et maintenabilité.</p>
+            <p class="distingue-desc" data-lang="en" hidden>Design and delivery of web interfaces and internal tools with a UX, performance and maintainability approach.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="distingue-card">
+            <div class="distingue-icon"><i class="fa-solid fa-layer-group"></i></div>
+            <h4 class="distingue-title" data-lang="fr">Vision full-stack marketing</h4>
+            <h4 class="distingue-title" data-lang="en" hidden>Full-stack marketing vision</h4>
+            <p class="distingue-desc" data-lang="fr">Du front-end au CRM en passant par le tracking — capacité à piloter l'ensemble de la chaîne digitale sans dépendre d'une agence.</p>
+            <p class="distingue-desc" data-lang="en" hidden>From front-end to CRM through tracking — ability to manage the entire digital chain without relying on an agency.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -366,100 +441,6 @@
   </div>
 </section>
 
-<!-- ===== PROJETS ===== -->
-<section id="projets" class="section-pad bg-white">
-  <div class="container">
-    <div class="text-center mb-5">
-      <div class="section-label">
-        <span data-lang="fr">Projets</span>
-        <span data-lang="en" hidden>Projects</span>
-      </div>
-      <h2 class="section-title">
-        <span data-lang="fr">Des projets concrets, des résultats réels</span>
-        <span data-lang="en" hidden>Concrete projects, real results</span>
-      </h2>
-      <p class="section-subtitle">
-        <span data-lang="fr">Un aperçu de projets représentatifs couvrant mes différentes expertises.</span>
-        <span data-lang="en" hidden>A selection of representative projects covering my different areas of expertise.</span>
-      </p>
-    </div>
-
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="project-card" role="button" data-bs-toggle="modal" data-bs-target="#modal-projet1" tabindex="0">
-          <div class="project-card-header">
-            <span class="project-category">CRM / Automatisation</span>
-            <i class="fa-solid fa-arrow-up-right-from-square project-arrow"></i>
-          </div>
-          <h3 class="project-title" data-lang="fr">Pipeline CRM & Automatisation B2B</h3>
-          <h3 class="project-title" data-lang="en" hidden>B2B CRM Pipeline & Automation</h3>
-          <p class="project-desc" data-lang="fr">Mise en place complète d'un CRM HubSpot avec workflows automatisés, segmentation et séquences email pour une société B2B.</p>
-          <p class="project-desc" data-lang="en" hidden>Complete HubSpot CRM setup with automated workflows, segmentation and email sequences for a B2B company.</p>
-          <div class="project-tags">
-            <span class="project-tag">HubSpot</span>
-            <span class="project-tag">Make</span>
-            <span class="project-tag">Email Automation</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="project-card" role="button" data-bs-toggle="modal" data-bs-target="#modal-projet2" tabindex="0">
-          <div class="project-card-header">
-            <span class="project-category">SEO / Contenu</span>
-            <i class="fa-solid fa-arrow-up-right-from-square project-arrow"></i>
-          </div>
-          <h3 class="project-title" data-lang="fr">Stratégie SEO & Architecture de contenu</h3>
-          <h3 class="project-title" data-lang="en" hidden>SEO Strategy & Content Architecture</h3>
-          <p class="project-desc" data-lang="fr">Refonte complète de la stratégie SEO d'un site e-commerce : audit technique, architecture sémantique et optimisation on-page.</p>
-          <p class="project-desc" data-lang="en" hidden>Complete SEO strategy overhaul for an e-commerce site: technical audit, semantic architecture and on-page optimization.</p>
-          <div class="project-tags">
-            <span class="project-tag">SEMrush</span>
-            <span class="project-tag">GSC</span>
-            <span class="project-tag">Content Strategy</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="project-card" role="button" data-bs-toggle="modal" data-bs-target="#modal-projet3" tabindex="0">
-          <div class="project-card-header">
-            <span class="project-category" data-lang="fr">Développement Web</span>
-            <span class="project-category" data-lang="en" hidden>Web Development</span>
-            <i class="fa-solid fa-arrow-up-right-from-square project-arrow"></i>
-          </div>
-          <h3 class="project-title" data-lang="fr">Landing Page Haute Performance</h3>
-          <h3 class="project-title" data-lang="en" hidden>High-Performance Landing Page</h3>
-          <p class="project-desc" data-lang="fr">Conception et développement d'une landing page optimisée pour la conversion lors d'un lancement produit — UX, copywriting et CRO.</p>
-          <p class="project-desc" data-lang="en" hidden>Design and development of a conversion-optimized landing page for a product launch — UX, copywriting and CRO.</p>
-          <div class="project-tags">
-            <span class="project-tag">HTML/CSS/JS</span>
-            <span class="project-tag">CRO</span>
-            <span class="project-tag">GA4</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="project-card project-card-dark" role="button" data-bs-toggle="modal" data-bs-target="#modal-projet4" tabindex="0">
-          <div class="project-card-header">
-            <span class="project-category project-category-light">IA / Automatisation</span>
-            <i class="fa-solid fa-arrow-up-right-from-square project-arrow text-white"></i>
-          </div>
-          <h3 class="project-title text-white" data-lang="fr">Assistant Marketing IA</h3>
-          <h3 class="project-title text-white" data-lang="en" hidden>AI Marketing Assistant</h3>
-          <p class="project-desc text-white opacity-80" data-lang="fr">Création d'un assistant IA intégré aux outils marketing pour automatiser la production de contenus et optimiser les workflows d'équipe.</p>
-          <p class="project-desc text-white opacity-80" data-lang="en" hidden>Creation of an AI assistant integrated into marketing tools to automate content production and optimize team workflows.</p>
-          <div class="project-tags">
-            <span class="project-tag project-tag-light">OpenAI API</span>
-            <span class="project-tag project-tag-light">Make</span>
-            <span class="project-tag project-tag-light">Airtable</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ===== APPROCHE ===== -->
 <section id="approche" class="section-pad bg-dark-custom">
@@ -612,133 +593,6 @@
   </div>
 </section>
 
-<!-- ===== PARCOURS ===== -->
-<section id="parcours" class="section-pad bg-light-custom">
-  <div class="container">
-    <div class="text-center mb-5">
-      <div class="section-label">
-        <span data-lang="fr">Parcours</span>
-        <span data-lang="en" hidden>Journey</span>
-      </div>
-      <h2 class="section-title">
-        <span data-lang="fr">Expérience & formations</span>
-        <span data-lang="en" hidden>Experience & training</span>
-      </h2>
-    </div>
-
-    <div class="row g-5">
-      <div class="col-lg-7">
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">2024 — <span data-lang="fr">présent</span><span data-lang="en" hidden>present</span></span>
-              <h4 class="timeline-title" data-lang="fr">IA, Automatisation & Culture Produit</h4>
-              <h4 class="timeline-title" data-lang="en" hidden>AI, Automation & Product Culture</h4>
-              <p class="timeline-desc" data-lang="fr">Exploration et intégration concrète de l'IA dans des contextes marketing et business. Développement de workflows intelligents et d'outils sur mesure combinant LLMs et automatisation.</p>
-              <p class="timeline-desc" data-lang="en" hidden>Concrete exploration and integration of AI in marketing and business contexts. Development of intelligent workflows and custom tools combining LLMs and automation.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">2023 — 2024</span>
-              <h4 class="timeline-title" data-lang="fr">Développement Web & CRO</h4>
-              <h4 class="timeline-title" data-lang="en" hidden>Web Development & CRO</h4>
-              <p class="timeline-desc" data-lang="fr">Montée en compétences sur le développement front-end. Conception et optimisation de sites et landing pages orientés conversion et performance.</p>
-              <p class="timeline-desc" data-lang="en" hidden>Skills development in front-end development. Design and optimization of conversion-oriented sites and landing pages.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">2022 — 2023</span>
-              <h4 class="timeline-title" data-lang="fr">Data Marketing & Performance</h4>
-              <h4 class="timeline-title" data-lang="en" hidden>Data Marketing & Performance</h4>
-              <p class="timeline-desc" data-lang="fr">Approfondissement des sujets analytics et tracking. Mise en place de dashboards et rapports de performance avancés pour piloter la stratégie.</p>
-              <p class="timeline-desc" data-lang="en" hidden>Deepening analytics and tracking topics. Setting up dashboards and advanced performance reports to steer strategy.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">2021 — 2022</span>
-              <h4 class="timeline-title" data-lang="fr">CRM & Marketing Automation</h4>
-              <h4 class="timeline-title" data-lang="en" hidden>CRM & Marketing Automation</h4>
-              <p class="timeline-desc" data-lang="fr">Spécialisation sur les outils CRM (HubSpot), les séquences email et l'automatisation des processus marketing et commerciaux.</p>
-              <p class="timeline-desc" data-lang="en" hidden>Specialization in CRM tools (HubSpot), email sequences and automation of marketing and sales processes.</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">2020 — 2021</span>
-              <h4 class="timeline-title" data-lang="fr">Marketing Digital — Les débuts</h4>
-              <h4 class="timeline-title" data-lang="en" hidden>Digital Marketing — The beginning</h4>
-              <p class="timeline-desc" data-lang="fr">Premiers pas en SEO, création de contenu, réseaux sociaux et stratégie digitale. Construction des fondamentaux marketing qui structurent encore ma façon de travailler.</p>
-              <p class="timeline-desc" data-lang="en" hidden>First steps in SEO, content creation, social media and digital strategy. Building marketing fundamentals that still structure my way of working.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-5">
-        <h3 class="certif-section-title mb-4">
-          <span data-lang="fr">Certifications</span>
-          <span data-lang="en" hidden>Certifications</span>
-        </h3>
-        <div class="certif-list">
-          <div class="certif-item">
-            <div class="certif-icon certif-icon-google"><i class="fa-brands fa-google"></i></div>
-            <div class="certif-info">
-              <div class="certif-name">Google Analytics 4</div>
-              <div class="certif-issuer">Google</div>
-            </div>
-            <span class="certif-badge" data-lang="fr">Certifié</span>
-            <span class="certif-badge" data-lang="en" hidden>Certified</span>
-          </div>
-          <div class="certif-item">
-            <div class="certif-icon certif-icon-hubspot"><i class="fa-solid fa-h"></i></div>
-            <div class="certif-info">
-              <div class="certif-name">HubSpot Marketing</div>
-              <div class="certif-issuer">HubSpot Academy</div>
-            </div>
-            <span class="certif-badge" data-lang="fr">Certifié</span>
-            <span class="certif-badge" data-lang="en" hidden>Certified</span>
-          </div>
-          <div class="certif-item">
-            <div class="certif-icon certif-icon-hubspot"><i class="fa-solid fa-h"></i></div>
-            <div class="certif-info">
-              <div class="certif-name">HubSpot CRM</div>
-              <div class="certif-issuer">HubSpot Academy</div>
-            </div>
-            <span class="certif-badge" data-lang="fr">Certifié</span>
-            <span class="certif-badge" data-lang="en" hidden>Certified</span>
-          </div>
-          <div class="certif-item">
-            <div class="certif-icon certif-icon-google"><i class="fa-brands fa-google"></i></div>
-            <div class="certif-info">
-              <div class="certif-name">Google Ads Search</div>
-              <div class="certif-issuer">Google</div>
-            </div>
-            <span class="certif-badge" data-lang="fr">Certifié</span>
-            <span class="certif-badge" data-lang="en" hidden>Certified</span>
-          </div>
-          <div class="certif-item">
-            <div class="certif-icon certif-icon-meta"><i class="fa-brands fa-meta"></i></div>
-            <div class="certif-info">
-              <div class="certif-name">Meta Blueprint</div>
-              <div class="certif-issuer">Meta</div>
-            </div>
-            <span class="certif-badge" data-lang="fr">Certifié</span>
-            <span class="certif-badge" data-lang="en" hidden>Certified</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ===== BLOG ===== -->
 <section id="blog" class="section-pad bg-white">
   <div class="container">
@@ -856,7 +710,7 @@
                   <label class="form-label-custom">Message *</label>
                   <textarea class="form-control-custom" name="message" rows="5" placeholder="Décrivez votre projet ou votre besoin..." required></textarea>
                 </div>
-                <div class="col-12">
+                <div class="col-12 mt-2">
                   <button type="submit" class="btn-hero-primary w-100 justify-content-center">
                     <span data-lang="fr">Envoyer le message</span>
                     <span data-lang="en" hidden>Send message</span>
@@ -905,7 +759,7 @@
                 </a>
               </div>
 
-              <div class="social-links-contact mt-4">
+              <div class="social-links-contact mt-5">
                 <a href="https://www.linkedin.com/in/maximilienmoreau" class="social-link-icon" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
                   <i class="fa-brands fa-linkedin-in"></i>
                 </a>
@@ -915,17 +769,23 @@
                 <a href="https://bsky.app/profile/maximilien.bsky.social" class="social-link-icon" aria-label="Bluesky" title="Bluesky" target="_blank" rel="noopener noreferrer">
                   <i class="fa-brands fa-bluesky"></i>
                 </a>
+                <a href="https://mastodon.social/@MaximilienMoreau" class="social-link-icon" aria-label="Mastodon" title="Mastodon" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-brands fa-mastodon"></i>
+                </a>
+                <a href="https://pixelfed.social/Maximilien" class="social-link-icon" aria-label="Pixelfed" title="Pixelfed" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 2a8 8 0 1 1 0 16A8 8 0 0 1 12 4zm0 2a6 6 0 1 0 0 12A6 6 0 0 0 12 6zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+                </a>
                 <a href="https://github.com/MaximilienMoreau" class="social-link-icon" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer">
                   <i class="fa-brands fa-github"></i>
                 </a>
                 <a href="https://lovable.dev/@maximilien" class="social-link-icon" aria-label="Lovable" title="Lovable" target="_blank" rel="noopener noreferrer">
                   <i class="fa-solid fa-heart"></i>
                 </a>
-                <a href="https://www.patreon.com/MaximilienMoreau" class="social-link-icon" aria-label="Patreon" title="Patreon" target="_blank" rel="noopener noreferrer">
-                  <i class="fa-brands fa-patreon"></i>
+                <a href="https://buymeacoffee.com/maximilien0" class="social-link-icon" aria-label="Buy Me a Coffee" title="Buy Me a Coffee" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true"><path d="M20.216 6.415l-.132-.666c-.119-.598-.388-1.163-1.001-1.379-.197-.069-.42-.098-.57-.241-.152-.143-.196-.366-.231-.572-.065-.378-.125-.756-.192-1.133-.057-.325-.102-.69-.25-.987-.195-.4-.597-.634-.996-.788a5.723 5.723 0 00-.626-.194c-1-.263-2.05-.36-3.077-.416a25.834 25.834 0 00-3.7.062c-.915.083-1.88.184-2.75.5-.318.116-.646.256-.888.501-.297.302-.393.77-.177 1.146.154.267.415.456.692.58.36.162.737.284 1.123.366 1.075.238 2.189.331 3.287.37 1.cola.088 2.186.027 3.272-.162.207-.036.41-.08.61-.134L12 6.494l-1.24-.582c-.48-.226-1.055-.139-1.418.217-.37.362-.476.91-.244 1.376l.341.685c.195.39.498.714.87.927.255.146.535.243.82.286.258.04.52.04.778 0 .723-.116 1.364-.517 1.778-1.108z"/><path d="M18.224 15.623c-.42 1.165-1.278 2.073-2.354 2.58-.47.224-.977.356-1.49.395a7.297 7.297 0 01-1.73-.127 7.69 7.69 0 01-1.591-.534 7.574 7.574 0 01-1.348-.877 7.44 7.44 0 01-1.066-1.177 7.288 7.288 0 01-.73-1.427 7.162 7.162 0 01-.343-1.612 7.127 7.127 0 01.053-1.657c.1-.546.27-1.077.51-1.578l.048-.1.977.456-.048.1a6.118 6.118 0 00-.44 1.354 6.092 6.092 0 00-.044 1.418c.065.469.193.928.38 1.365.187.436.433.846.731 1.215.298.368.644.694 1.028.965.384.271.8.484 1.24.632.438.148.895.233 1.357.252.461.019.923-.028 1.37-.14.894-.228 1.687-.747 2.236-1.47l.079-.105.856.641-.079.105z"/><path d="M7.004 9.736c.112-.372.29-.724.528-1.036l.08-.104.847.652-.08.104a4.1 4.1 0 00-.45.882l-.038.11-1.026-.353.039-.111zM5.699 12.048a6.14 6.14 0 01.045-1.455l.019-.113 1.066.19-.019.112a5.09 5.09 0 00-.037 1.207l.012.115-1.073.112-.013-.168zM6.06 14.085a6.111 6.111 0 01-.38-1.37l-.025-.112 1.056-.24.025.112c.087.39.222.77.4 1.127l.05.103-.998.49-.128-.11z"/></svg>
                 </a>
-                <a href="https://invitation.olvid.io/#AwAAAHUAAAAAWmh0dHBzOi8vc2VydmVyLm9sdmlkLmlvAABOMZARoIJtv5ve-ya8Y6llX3LjA6WPkiQNz7GKsdZ8oAF11BgUpf8gw7c6cYkkD_C1AxNUfp-J_XFha7vXIOdVQwAAAAARTWF4aW1pbGllbiBOb3JlYXU" class="social-link-icon" aria-label="Olvid" title="Olvid" target="_blank" rel="noopener noreferrer">
-                  <i class="fa-brands fa-olvid"></i>
+                <a href="https://invitation.olvid.io/#AwAAAHUAAAAAWmh0dHBzOi8vc2VydmVyLm9sdmlkLmlvAABOMZARoIJtv5ve-ya8Y6llX3LjA6WPkiQNz7GKsdZ8oAF11BgUpf8gw7c6cYkkD_C1AxNUfp-J_XFha7vXIOdVQwAAAAARTWF4aW1pbGllbiBOb3JlYXU" class="social-link-icon social-link-icon--olvid" aria-label="Olvid" title="Olvid" target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3.5C7.306 3.5 3.5 7.306 3.5 12c0 4.694 3.806 8.5 8.5 8.5 1.243 0 2.426-.267 3.493-.747l2.86.9a.5.5 0 0 0 .632-.633l-.9-2.858A8.46 8.46 0 0 0 20.5 12c0-4.694-3.806-8.5-8.5-8.5ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10a9.96 9.96 0 0 1-1.2 4.76l1.05 3.337a1.5 1.5 0 0 1-1.895 1.896l-3.338-1.05A9.96 9.96 0 0 1 12 22C6.477 22 2 17.523 2 12Zm10-4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-5.5 4a5.5 5.5 0 1 1 11 0 5.5 5.5 0 0 1-11 0Z"/></svg>
                 </a>
                 <a href="https://wa.link/wswhie" class="social-link-icon" aria-label="WhatsApp" title="WhatsApp" target="_blank" rel="noopener noreferrer">
                   <i class="fa-brands fa-whatsapp"></i>
@@ -958,8 +818,8 @@
         <a href="#apropos" data-lang="en" hidden>About</a>
         <a href="#expertises" data-lang="fr">Expertises</a>
         <a href="#expertises" data-lang="en" hidden>Expertise</a>
-        <a href="#projets" data-lang="fr">Projets</a>
-        <a href="#projets" data-lang="en" hidden>Projects</a>
+        <a href="projets.html" data-lang="fr">Mes projets</a>
+        <a href="projets.html" data-lang="en" hidden>My projects</a>
         <a href="blog.html">Blog</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -969,205 +829,6 @@
     </div>
   </div>
 </footer>
-
-<!-- ===== MODALS PROJETS ===== -->
-
-<!-- Modal 1 -->
-<div class="modal fade" id="modal-projet1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content modal-custom">
-      <div class="modal-header-custom">
-        <span class="project-category">CRM / Automatisation</span>
-        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body-custom">
-        <h3 class="modal-project-title" data-lang="fr">Pipeline CRM & Automatisation B2B</h3>
-        <h3 class="modal-project-title" data-lang="en" hidden>B2B CRM Pipeline & Automation</h3>
-        <div class="modal-section">
-          <h6 class="modal-section-label" data-lang="fr">Contexte & Besoin</h6>
-          <h6 class="modal-section-label" data-lang="en" hidden>Context & Need</h6>
-          <p data-lang="fr">Une société B2B disposait d'une base de contacts importante mais sans outil structuré pour suivre ses prospects et automatiser ses communications. L'équipe commerciale perdait du temps sur des tâches manuelles et le suivi des leads était inconsistant.</p>
-          <p data-lang="en" hidden>A B2B company had a large contact database but no structured tool to track prospects and automate communications. The sales team was losing time on manual tasks and lead follow-up was inconsistent.</p>
-        </div>
-        <div class="modal-section">
-          <h6 class="modal-section-label" data-lang="fr">Ma contribution</h6>
-          <h6 class="modal-section-label" data-lang="en" hidden>My contribution</h6>
-          <ul data-lang="fr">
-            <li>Audit des processus commerciaux existants et mapping du parcours prospect</li>
-            <li>Configuration complète de HubSpot CRM (pipeline, propriétés personnalisées, vues)</li>
-            <li>Création de séquences email automatisées selon le stade dans le funnel</li>
-            <li>Mise en place de workflows Make pour synchroniser les données entre outils</li>
-            <li>Formation de l'équipe et documentation des processus</li>
-          </ul>
-          <ul data-lang="en" hidden>
-            <li>Audit of existing sales processes and prospect journey mapping</li>
-            <li>Complete HubSpot CRM configuration (pipeline, custom properties, views)</li>
-            <li>Automated email sequence creation based on funnel stage</li>
-            <li>Make workflow setup to synchronize data between tools</li>
-            <li>Team training and process documentation</li>
-          </ul>
-        </div>
-        <div class="modal-tags">
-          <span class="project-tag">HubSpot CRM</span>
-          <span class="project-tag">Make (Integromat)</span>
-          <span class="project-tag">Email Sequences</span>
-          <span class="project-tag">Lead Scoring</span>
-          <span class="project-tag">Process Automation</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 2 -->
-<div class="modal fade" id="modal-projet2" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content modal-custom">
-      <div class="modal-header-custom">
-        <span class="project-category">SEO / Contenu</span>
-        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body-custom">
-        <h3 class="modal-project-title" data-lang="fr">Stratégie SEO & Architecture de contenu</h3>
-        <h3 class="modal-project-title" data-lang="en" hidden>SEO Strategy & Content Architecture</h3>
-        <div class="modal-section">
-          <h6 class="modal-section-label" data-lang="fr">Contexte & Besoin</h6>
-          <h6 class="modal-section-label" data-lang="en" hidden>Context & Need</h6>
-          <p data-lang="fr">Un site e-commerce avec une visibilité organique très faible et une architecture de contenu peu structurée. Malgré un bon produit, le trafic issu des moteurs de recherche stagnait depuis plusieurs mois.</p>
-          <p data-lang="en" hidden>An e-commerce site with very low organic visibility and a poorly structured content architecture. Despite a good product, search engine traffic had been stagnating for several months.</p>
-        </div>
-        <div class="modal-section">
-          <h6 class="modal-section-label" data-lang="fr">Ma contribution</h6>
-          <h6 class="modal-section-label" data-lang="en" hidden>My contribution</h6>
-          <ul data-lang="fr">
-            <li>Audit SEO technique complet (Core Web Vitals, indexation, maillage interne)</li>
-            <li>Recherche sémantique et identification des opportunités de mots-clés</li>
-            <li>Refonte de l'architecture des pages et création d'un silo de contenu cohérent</li>
-            <li>Rédaction et optimisation des pages stratégiques</li>
-            <li>Suivi des performances et ajustements continus sur 3 mois</li>
-          </ul>
-          <ul data-lang="en" hidden>
-            <li>Complete technical SEO audit (Core Web Vitals, indexing, internal linking)</li>
-            <li>Semantic research and keyword opportunity identification</li>
-            <li>Page architecture redesign and coherent content silo creation</li>
-            <li>Writing and optimization of strategic pages</li>
-            <li>Performance monitoring and continuous adjustments over 3 months</li>
-          </ul>
-        </div>
-        <div class="modal-tags">
-          <span class="project-tag">SEMrush</span>
-          <span class="project-tag">Google Search Console</span>
-          <span class="project-tag">Screaming Frog</span>
-          <span class="project-tag">Content Strategy</span>
-          <span class="project-tag">On-Page SEO</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 3 -->
-<div class="modal fade" id="modal-projet3" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content modal-custom">
-      <div class="modal-header-custom">
-        <span class="project-category" data-lang="fr">Développement Web</span>
-        <span class="project-category" data-lang="en" hidden>Web Development</span>
-        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body-custom">
-        <h3 class="modal-project-title" data-lang="fr">Landing Page Haute Performance</h3>
-        <h3 class="modal-project-title" data-lang="en" hidden>High-Performance Landing Page</h3>
-        <div class="modal-section">
-          <h6 class="modal-section-label" data-lang="fr">Contexte & Besoin</h6>
-          <h6 class="modal-section-label" data-lang="en" hidden>Context & Need</h6>
-          <p data-lang="fr">Lancement d'un nouveau produit nécessitant une page de vente efficace et convaincante. La page précédente affichait un taux de conversion insuffisant et manquait de clarté dans son message principal.</p>
-          <p data-lang="en" hidden>Launch of a new product requiring an effective and convincing sales page. The previous page showed insufficient conversion rates and lacked clarity in its main message.</p>
-        </div>
-        <div class="modal-section">
-          <h6 class="modal-section-label" data-lang="fr">Ma contribution</h6>
-          <h6 class="modal-section-label" data-lang="en" hidden>My contribution</h6>
-          <ul data-lang="fr">
-            <li>Analyse des comportements utilisateurs sur l'ancienne page (heatmaps, enregistrements)</li>
-            <li>Rédaction d'un copywriting orienté conversion, structuré par blocs</li>
-            <li>Design et développement front-end complet en HTML/CSS/JS vanilla</li>
-            <li>Optimisation des performances (Core Web Vitals, temps de chargement)</li>
-            <li>Mise en place du tracking GA4 événementiel et tests A/B</li>
-          </ul>
-          <ul data-lang="en" hidden>
-            <li>User behavior analysis on the old page (heatmaps, recordings)</li>
-            <li>Conversion-oriented copywriting, structured in blocks</li>
-            <li>Complete front-end design and development in vanilla HTML/CSS/JS</li>
-            <li>Performance optimization (Core Web Vitals, loading speed)</li>
-            <li>GA4 event tracking setup and A/B tests</li>
-          </ul>
-        </div>
-        <div class="modal-tags">
-          <span class="project-tag">HTML / CSS / JS</span>
-          <span class="project-tag">CRO</span>
-          <span class="project-tag">Google Analytics 4</span>
-          <span class="project-tag">Contensquare</span>
-          <span class="project-tag">A/B Testing</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Modal 4 -->
-<div class="modal fade" id="modal-projet4" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content modal-custom">
-      <div class="modal-header-custom">
-        <span class="project-category">IA / Automatisation</span>
-        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="modal-body-custom">
-        <h3 class="modal-project-title" data-lang="fr">Assistant Marketing IA</h3>
-        <h3 class="modal-project-title" data-lang="en" hidden>AI Marketing Assistant</h3>
-        <div class="modal-section">
-          <h6 class="modal-section-label" data-lang="fr">Contexte & Besoin</h6>
-          <h6 class="modal-section-label" data-lang="en" hidden>Context & Need</h6>
-          <p data-lang="fr">Une équipe marketing passait une part importante de son temps sur la production de contenus répétitifs. Le besoin : automatiser ces tâches sans perdre en qualité ni en cohérence éditoriale.</p>
-          <p data-lang="en" hidden>A marketing team was spending a significant portion of its time on repetitive content production. The need: automate these tasks without losing quality or editorial consistency.</p>
-        </div>
-        <div class="modal-section">
-          <h6 class="modal-section-label" data-lang="fr">Ma contribution</h6>
-          <h6 class="modal-section-label" data-lang="en" hidden>My contribution</h6>
-          <ul data-lang="fr">
-            <li>Mapping des processus de production de contenu existants</li>
-            <li>Conception des prompts et templates IA alignés sur la charte éditoriale</li>
-            <li>Développement des workflows Make connectant GPT-4 aux outils existants</li>
-            <li>Création d'une base de connaissances dans Airtable comme source de vérité</li>
-            <li>Formation de l'équipe sur les bonnes pratiques et limites de l'IA</li>
-          </ul>
-          <ul data-lang="en" hidden>
-            <li>Mapping of existing content production processes</li>
-            <li>Design of AI prompts and templates aligned with editorial guidelines</li>
-            <li>Make workflow development connecting GPT-4 to existing tools</li>
-            <li>Knowledge base creation in Airtable as source of truth</li>
-            <li>Team training on AI best practices and limitations</li>
-          </ul>
-        </div>
-        <div class="modal-tags">
-          <span class="project-tag">OpenAI API</span>
-          <span class="project-tag">Make (Integromat)</span>
-          <span class="project-tag">Airtable</span>
-          <span class="project-tag">Prompt Engineering</span>
-          <span class="project-tag">Workflow Design</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

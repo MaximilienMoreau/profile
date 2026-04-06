@@ -3,3 +3,4 @@ profile/
   styles.css
   script.js
   blog.html
+  projets.html

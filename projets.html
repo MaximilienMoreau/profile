@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes projets — Maximilien Moreau</title>
+  <meta name="description" content="Projets de Maximilien Moreau — GenAI, Automatisation, Data, Web, CRM.">
+  <meta name="author" content="Maximilien Moreau">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script>(function(){var t=localStorage.getItem('mm_theme');if(t==='dark'||(t==null&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+  <style>
+    /* ---- HERO ---- */
+    .projets-hero {
+      background: linear-gradient(140deg, #0f172a 0%, #1a0d3d 60%, #0c1f3d 100%);
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .projets-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 52px 52px;
+    }
+    .projets-hero-inner { position: relative; z-index: 1; text-align: center; }
+    .projets-hero-title {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: white;
+      letter-spacing: -0.04em;
+      margin-bottom: 16px;
+    }
+    .projets-hero-desc {
+      font-size: 17px;
+      color: rgba(255,255,255,0.65);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ---- FILTER TABS ---- */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1.5px solid var(--border-color, #e5e7eb);
+      background: transparent;
+      color: var(--text-secondary, #6b7280);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--primary, #7c3aed); color: var(--primary, #7c3aed); }
+    .filter-btn.active { background: var(--primary, #7c3aed); border-color: var(--primary, #7c3aed); color: #fff; }
+    [data-theme="dark"] .filter-btn { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); }
+    [data-theme="dark"] .filter-btn:hover { border-color: #a78bfa; color: #a78bfa; }
+
+    /* ---- NEW PROJECT CARDS ---- */
+    .proj-card {
+      background: var(--card-bg, #fff);
+      border: 1px solid var(--border-color, #e5e7eb);
+      border-radius: 16px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .proj-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(124,58,237,0.12);
+      border-color: rgba(124,58,237,0.25);
+    }
+    [data-theme="dark"] .proj-card { background: #1e1b2e; border-color: rgba(255,255,255,0.08); }
+    [data-theme="dark"] .proj-card:hover { box-shadow: 0 16px 48px rgba(124,58,237,0.2); border-color: rgba(167,139,250,0.3); }
+
+    .proj-card-img {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, #1a0d3d 0%, #0c1f3d 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      color: rgba(255,255,255,0.3);
+      flex-shrink: 0;
+    }
+    .proj-card-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+    .proj-card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .proj-tag {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 100px;
+      background: rgba(124,58,237,0.1); color: #7c3aed;
+    }
+    [data-theme="dark"] .proj-tag { background: rgba(167,139,250,0.15); color: #a78bfa; }
+    .proj-card-title {
+      font-family: 'Sora', sans-serif; font-size: 18px; font-weight: 700;
+      color: var(--text-dark, #0f172a); margin-bottom: 8px; line-height: 1.3;
+    }
+    [data-theme="dark"] .proj-card-title { color: #f1f5f9; }
+    .proj-card-desc { font-size: 14px; color: var(--text-secondary, #6b7280); line-height: 1.6; margin-bottom: 16px; flex: 1; }
+    [data-theme="dark"] .proj-card-desc { color: rgba(255,255,255,0.55); }
+    .proj-result {
+      background: linear-gradient(135deg, rgba(124,58,237,0.08) 0%, rgba(59,130,246,0.08) 100%);
+      border-left: 3px solid #7c3aed; border-radius: 0 8px 8px 0;
+      padding: 10px 14px; font-size: 13px; font-weight: 600; color: #7c3aed;
+      display: flex; align-items: center; gap: 8px;
+    }
+    [data-theme="dark"] .proj-result { background: rgba(167,139,250,0.1); color: #a78bfa; }
+    .proj-card-footer {
+      padding: 14px 24px; border-top: 1px solid var(--border-color, #e5e7eb);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    [data-theme="dark"] .proj-card-footer { border-color: rgba(255,255,255,0.06); }
+    .proj-card-footer-text { font-size: 13px; color: var(--text-secondary, #6b7280); }
+    [data-theme="dark"] .proj-card-footer-text { color: rgba(255,255,255,0.4); }
+    .proj-arrow-btn {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--primary, #7c3aed); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; border: none; flex-shrink: 0;
+    }
+    .proj-col[data-hidden="true"] { display: none; }
+
+    /* ---- DETAIL OVERLAY ---- */
+    .detail-overlay {
+      position: fixed; inset: 0; z-index: 2000;
+      background: var(--bg-main, #f8f9fc);
+      overflow-y: auto;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    [data-theme="dark"] .detail-overlay { background: #0f0e1a; }
+    .detail-overlay.open { transform: translateY(0); }
+
+    .detail-topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: var(--bg-main, #f8f9fc);
+      border-bottom: 1px solid var(--border-color, #e5e7eb);
+      padding: 16px 0;
+    }
+    [data-theme="dark"] .detail-topbar { background: #0f0e1a; border-color: rgba(255,255,255,0.08); }
+    .detail-back-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; border: 1.5px solid var(--border-color, #e5e7eb);
+      border-radius: 100px; padding: 8px 18px;
+      font-size: 14px; font-weight: 500; color: var(--text-secondary, #6b7280);
+      cursor: pointer; transition: all 0.2s;
+    }
+    .detail-back-btn:hover { border-color: var(--primary, #7c3aed); color: var(--primary, #7c3aed); }
+    [data-theme="dark"] .detail-back-btn { border-color: rgba(255,255,255,0.15); color: rgba(255,255,255,0.6); }
+
+    .detail-hero {
+      background: linear-gradient(140deg, #0f172a 0%, #1a0d3d 60%, #0c1f3d 100%);
+      padding: 64px 0 56px; margin-bottom: 56px;
+      position: relative; overflow: hidden;
+    }
+    .detail-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 52px 52px;
+    }
+    .detail-hero-inner { position: relative; z-index: 1; }
+    .detail-hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .detail-hero-tag { background: rgba(167,139,250,0.2); color: #a78bfa; font-size: 12px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; }
+    .detail-hero-title { font-family: 'Sora', sans-serif; font-size: clamp(1.6rem, 4vw, 2.8rem); font-weight: 800; color: #fff; letter-spacing: -0.03em; margin-bottom: 16px; }
+    .detail-hero-desc { font-size: 16px; color: rgba(255,255,255,0.65); max-width: 600px; line-height: 1.7; margin-bottom: 28px; }
+    .detail-result-banner { display: inline-flex; align-items: center; gap: 10px; background: rgba(167,139,250,0.15); border: 1px solid rgba(167,139,250,0.3); border-radius: 12px; padding: 12px 20px; color: #a78bfa; font-weight: 600; font-size: 15px; }
+
+    .detail-section { margin-bottom: 56px; }
+    .detail-section-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #7c3aed; margin-bottom: 16px; }
+    [data-theme="dark"] .detail-section-label { color: #a78bfa; }
+    .detail-section-title { font-family: 'Sora', sans-serif; font-size: 22px; font-weight: 700; color: var(--text-dark, #0f172a); margin-bottom: 16px; }
+    [data-theme="dark"] .detail-section-title { color: #f1f5f9; }
+    .detail-text { font-size: 15px; line-height: 1.75; color: var(--text-secondary, #4b5563); }
+    [data-theme="dark"] .detail-text { color: rgba(255,255,255,0.6); }
+    .detail-text ul { padding-left: 20px; }
+    .detail-text ul li { margin-bottom: 6px; }
+
+    .approche-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 767px) { .approche-grid { grid-template-columns: 1fr; } }
+    .approche-card { background: var(--card-bg, #fff); border: 1px solid var(--border-color, #e5e7eb); border-radius: 14px; padding: 24px; }
+    [data-theme="dark"] .approche-card { background: #1e1b2e; border-color: rgba(255,255,255,0.08); }
+    .approche-step { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 50%; background: rgba(124,58,237,0.1); color: #7c3aed; font-weight: 700; font-size: 14px; margin-bottom: 14px; }
+    [data-theme="dark"] .approche-step { background: rgba(167,139,250,0.15); color: #a78bfa; }
+    .approche-step-title { font-weight: 700; font-size: 15px; color: var(--text-dark, #0f172a); margin-bottom: 8px; }
+    [data-theme="dark"] .approche-step-title { color: #f1f5f9; }
+    .approche-step-desc { font-size: 14px; color: var(--text-secondary, #6b7280); line-height: 1.6; }
+    [data-theme="dark"] .approche-step-desc { color: rgba(255,255,255,0.5); }
+
+    .livrables-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+    .livrable-item { background: var(--card-bg, #fff); border: 1px solid var(--border-color, #e5e7eb); border-radius: 12px; padding: 16px; display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--text-dark, #1e293b); }
+    [data-theme="dark"] .livrable-item { background: #1e1b2e; border-color: rgba(255,255,255,0.08); color: #e2e8f0; }
+    .livrable-icon { color: #7c3aed; font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+    [data-theme="dark"] .livrable-icon { color: #a78bfa; }
+
+    .stack-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+    .stack-tag { background: var(--card-bg, #fff); border: 1.5px solid var(--border-color, #e5e7eb); border-radius: 100px; padding: 6px 16px; font-size: 13px; font-weight: 500; color: var(--text-dark, #1e293b); }
+    [data-theme="dark"] .stack-tag { background: #1e1b2e; border-color: rgba(255,255,255,0.12); color: #e2e8f0; }
+
+    .resultats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+    .resultat-card { background: linear-gradient(135deg, rgba(124,58,237,0.06) 0%, rgba(59,130,246,0.06) 100%); border: 1px solid rgba(124,58,237,0.15); border-radius: 14px; padding: 24px 20px; text-align: center; }
+    [data-theme="dark"] .resultat-card { background: rgba(167,139,250,0.08); border-color: rgba(167,139,250,0.2); }
+    .resultat-value { font-family: 'Sora', sans-serif; font-size: 28px; font-weight: 800; color: #7c3aed; line-height: 1; margin-bottom: 6px; }
+    [data-theme="dark"] .resultat-value { color: #a78bfa; }
+    .resultat-label { font-size: 13px; color: var(--text-secondary, #6b7280); line-height: 1.4; }
+    [data-theme="dark"] .resultat-label { color: rgba(255,255,255,0.5); }
+
+    .lecons-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+    .lecons-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; color: var(--text-secondary, #4b5563); line-height: 1.6; }
+    [data-theme="dark"] .lecons-list li { color: rgba(255,255,255,0.6); }
+    .lecons-list li::before { content: '→'; color: #7c3aed; font-weight: 700; flex-shrink: 0; }
+    [data-theme="dark"] .lecons-list li::before { color: #a78bfa; }
+
+    .detail-cta-bloc { background: linear-gradient(140deg, #0f172a 0%, #1a0d3d 60%, #0c1f3d 100%); border-radius: 20px; padding: 48px 40px; text-align: center; margin-bottom: 64px; }
+    .detail-cta-bloc h3 { font-family: 'Sora', sans-serif; font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+    .detail-cta-bloc p { color: rgba(255,255,255,0.6); margin-bottom: 28px; max-width: 420px; margin-left: auto; margin-right: auto; }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg fixed-top scrolled" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <span class="brand-mm">MM</span>
+      <span class="brand-name d-none d-sm-inline">Maximilien Moreau</span>
+    </a>
+    <div class="d-flex align-items-center gap-2 ms-auto order-lg-last">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btnFr" onclick="setLang('fr')">FR</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="theme-toggle-btn" id="btnTheme" onclick="toggleTheme()" aria-label="Basculer mode sombre">
+        <i class="fa-solid fa-lightbulb" id="themeIcon"></i>
+      </button>
+      <a href="index.html#contact" class="btn-nav-cta d-none d-lg-inline-flex">
+        <span data-lang="fr">Réserver un appel</span>
+        <span data-lang="en" hidden>Book a call</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html"><span data-lang="fr">Accueil</span><span data-lang="en" hidden>Home</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#apropos"><span data-lang="fr">À propos</span><span data-lang="en" hidden>About</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#expertises"><span data-lang="fr">Expertises</span><span data-lang="en" hidden>Expertise</span></a></li>
+        <li class="nav-item"><a class="nav-link active" href="projets.html"><span data-lang="fr">Mes projets</span><span data-lang="en" hidden>My projects</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="projets-hero">
+  <div class="container">
+    <div class="projets-hero-inner">
+      <div class="section-label section-label-light mb-3">
+        <span data-lang="fr">Réalisations</span>
+        <span data-lang="en" hidden>Case Studies</span>
+      </div>
+      <h1 class="projets-hero-title">
+        <span data-lang="fr">Mes projets</span>
+        <span data-lang="en" hidden>My projects</span>
+      </h1>
+      <p class="projets-hero-desc" data-lang="fr">Des projets concrets mêlant IA générative, automatisation, data et marketing — avec de vrais résultats mesurables.</p>
+      <p class="projets-hero-desc" data-lang="en" hidden>Concrete projects combining generative AI, automation, data and marketing — with real, measurable results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJETS (section existante) ===== -->
+<section class="section-pad bg-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label">
+        <span data-lang="fr">Projets</span>
+        <span data-lang="en" hidden>Projects</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="fr">Des projets concrets, des résultats réels</span>
+        <span data-lang="en" hidden>Concrete projects, real results</span>
+      </h2>
+      <p class="section-subtitle">
+        <span data-lang="fr">Un aperçu de projets représentatifs couvrant mes différentes expertises.</span>
+        <span data-lang="en" hidden>A selection of representative projects covering my different areas of expertise.</span>
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="project-card" role="button" data-bs-toggle="modal" data-bs-target="#modal-projet1" tabindex="0">
+          <div class="project-card-header">
+            <span class="project-category">CRM / Automatisation</span>
+            <i class="fa-solid fa-arrow-up-right-from-square project-arrow"></i>
+          </div>
+          <h3 class="project-title" data-lang="fr">Pipeline CRM & Automatisation B2B</h3>
+          <h3 class="project-title" data-lang="en" hidden>B2B CRM Pipeline & Automation</h3>
+          <p class="project-desc" data-lang="fr">Mise en place complète d'un CRM HubSpot avec workflows automatisés, segmentation et séquences email pour une société B2B.</p>
+          <p class="project-desc" data-lang="en" hidden>Complete HubSpot CRM setup with automated workflows, segmentation and email sequences for a B2B company.</p>
+          <div class="project-tags">
+            <span class="project-tag">HubSpot</span>
+            <span class="project-tag">Make</span>
+            <span class="project-tag">Email Automation</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="project-card" role="button" data-bs-toggle="modal" data-bs-target="#modal-projet2" tabindex="0">
+          <div class="project-card-header">
+            <span class="project-category">SEO / Contenu</span>
+            <i class="fa-solid fa-arrow-up-right-from-square project-arrow"></i>
+          </div>
+          <h3 class="project-title" data-lang="fr">Stratégie SEO & Architecture de contenu</h3>
+          <h3 class="project-title" data-lang="en" hidden>SEO Strategy & Content Architecture</h3>
+          <p class="project-desc" data-lang="fr">Refonte complète de la stratégie SEO d'un site e-commerce : audit technique, architecture sémantique et optimisation on-page.</p>
+          <p class="project-desc" data-lang="en" hidden>Complete SEO strategy overhaul for an e-commerce site: technical audit, semantic architecture and on-page optimization.</p>
+          <div class="project-tags">
+            <span class="project-tag">SEMrush</span>
+            <span class="project-tag">GSC</span>
+            <span class="project-tag">Content Strategy</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="project-card" role="button" data-bs-toggle="modal" data-bs-target="#modal-projet3" tabindex="0">
+          <div class="project-card-header">
+            <span class="project-category" data-lang="fr">Développement Web</span>
+            <span class="project-category" data-lang="en" hidden>Web Development</span>
+            <i class="fa-solid fa-arrow-up-right-from-square project-arrow"></i>
+          </div>
+          <h3 class="project-title" data-lang="fr">Landing Page Haute Performance</h3>
+          <h3 class="project-title" data-lang="en" hidden>High-Performance Landing Page</h3>
+          <p class="project-desc" data-lang="fr">Conception et développement d'une landing page optimisée pour la conversion lors d'un lancement produit — UX, copywriting et CRO.</p>
+          <p class="project-desc" data-lang="en" hidden>Design and development of a conversion-optimized landing page for a product launch — UX, copywriting and CRO.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML/CSS/JS</span>
+            <span class="project-tag">CRO</span>
+            <span class="project-tag">GA4</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="project-card project-card-dark" role="button" data-bs-toggle="modal" data-bs-target="#modal-projet4" tabindex="0">
+          <div class="project-card-header">
+            <span class="project-category project-category-light">IA / Automatisation</span>
+            <i class="fa-solid fa-arrow-up-right-from-square project-arrow text-white"></i>
+          </div>
+          <h3 class="project-title text-white" data-lang="fr">Assistant Marketing IA</h3>
+          <h3 class="project-title text-white" data-lang="en" hidden>AI Marketing Assistant</h3>
+          <p class="project-desc text-white opacity-80" data-lang="fr">Création d'un assistant IA intégré aux outils marketing pour automatiser la production de contenus et optimiser les workflows d'équipe.</p>
+          <p class="project-desc text-white opacity-80" data-lang="en" hidden>Creation of an AI assistant integrated into marketing tools to automate content production and optimize team workflows.</p>
+          <div class="project-tags">
+            <span class="project-tag project-tag-light">OpenAI API</span>
+            <span class="project-tag project-tag-light">Make</span>
+            <span class="project-tag project-tag-light">Airtable</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MODALS ===== -->
+<div class="modal fade" id="modal-projet1" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-custom">
+      <div class="modal-header-custom">
+        <span class="project-category">CRM / Automatisation</span>
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body-custom">
+        <h3 class="modal-project-title" data-lang="fr">Pipeline CRM & Automatisation B2B</h3>
+        <h3 class="modal-project-title" data-lang="en" hidden>B2B CRM Pipeline & Automation</h3>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Contexte & Besoin</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>Context & Need</h6>
+          <p data-lang="fr">Une société B2B disposait d'une base de contacts importante mais sans outil structuré pour suivre ses prospects et automatiser ses communications. L'équipe commerciale perdait du temps sur des tâches manuelles et le suivi des leads était inconsistant.</p>
+          <p data-lang="en" hidden>A B2B company had a large contact database but no structured tool to track prospects and automate communications. The sales team was losing time on manual tasks and lead follow-up was inconsistent.</p>
+        </div>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Ma contribution</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>My contribution</h6>
+          <ul data-lang="fr">
+            <li>Audit des processus commerciaux existants et mapping du parcours prospect</li>
+            <li>Configuration complète de HubSpot CRM (pipeline, propriétés personnalisées, vues)</li>
+            <li>Création de séquences email automatisées selon le stade dans le funnel</li>
+            <li>Mise en place de workflows Make pour synchroniser les données entre outils</li>
+            <li>Formation de l'équipe et documentation des processus</li>
+          </ul>
+          <ul data-lang="en" hidden>
+            <li>Audit of existing sales processes and prospect journey mapping</li>
+            <li>Complete HubSpot CRM configuration (pipeline, custom properties, views)</li>
+            <li>Automated email sequence creation based on funnel stage</li>
+            <li>Make workflow setup to synchronize data between tools</li>
+            <li>Team training and process documentation</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="project-tag">HubSpot CRM</span>
+          <span class="project-tag">Make (Integromat)</span>
+          <span class="project-tag">Email Sequences</span>
+          <span class="project-tag">Lead Scoring</span>
+          <span class="project-tag">Process Automation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-projet2" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-custom">
+      <div class="modal-header-custom">
+        <span class="project-category">SEO / Contenu</span>
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body-custom">
+        <h3 class="modal-project-title" data-lang="fr">Stratégie SEO & Architecture de contenu</h3>
+        <h3 class="modal-project-title" data-lang="en" hidden>SEO Strategy & Content Architecture</h3>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Contexte & Besoin</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>Context & Need</h6>
+          <p data-lang="fr">Un site e-commerce avec une visibilité organique très faible et une architecture de contenu peu structurée. Malgré un bon produit, le trafic issu des moteurs de recherche stagnait depuis plusieurs mois.</p>
+          <p data-lang="en" hidden>An e-commerce site with very low organic visibility and a poorly structured content architecture. Despite a good product, search engine traffic had been stagnating for several months.</p>
+        </div>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Ma contribution</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>My contribution</h6>
+          <ul data-lang="fr">
+            <li>Audit SEO technique complet (Core Web Vitals, indexation, maillage interne)</li>
+            <li>Recherche sémantique et identification des opportunités de mots-clés</li>
+            <li>Refonte de l'architecture des pages et création d'un silo de contenu cohérent</li>
+            <li>Rédaction et optimisation des pages stratégiques</li>
+            <li>Suivi des performances et ajustements continus sur 3 mois</li>
+          </ul>
+          <ul data-lang="en" hidden>
+            <li>Complete technical SEO audit (Core Web Vitals, indexing, internal linking)</li>
+            <li>Semantic research and keyword opportunity identification</li>
+            <li>Page architecture redesign and coherent content silo creation</li>
+            <li>Writing and optimization of strategic pages</li>
+            <li>Performance monitoring and continuous adjustments over 3 months</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="project-tag">SEMrush</span>
+          <span class="project-tag">Google Search Console</span>
+          <span class="project-tag">Screaming Frog</span>
+          <span class="project-tag">Content Strategy</span>
+          <span class="project-tag">On-Page SEO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-projet3" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-custom">
+      <div class="modal-header-custom">
+        <span class="project-category" data-lang="fr">Développement Web</span>
+        <span class="project-category" data-lang="en" hidden>Web Development</span>
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body-custom">
+        <h3 class="modal-project-title" data-lang="fr">Landing Page Haute Performance</h3>
+        <h3 class="modal-project-title" data-lang="en" hidden>High-Performance Landing Page</h3>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Contexte & Besoin</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>Context & Need</h6>
+          <p data-lang="fr">Lancement d'un nouveau produit nécessitant une page de vente efficace et convaincante. La page précédente affichait un taux de conversion insuffisant et manquait de clarté dans son message principal.</p>
+          <p data-lang="en" hidden>Launch of a new product requiring an effective and convincing sales page. The previous page showed insufficient conversion rates and lacked clarity in its main message.</p>
+        </div>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Ma contribution</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>My contribution</h6>
+          <ul data-lang="fr">
+            <li>Analyse des comportements utilisateurs sur l'ancienne page (heatmaps, enregistrements)</li>
+            <li>Rédaction d'un copywriting orienté conversion, structuré par blocs</li>
+            <li>Design et développement front-end complet en HTML/CSS/JS vanilla</li>
+            <li>Optimisation des performances (Core Web Vitals, temps de chargement)</li>
+            <li>Mise en place du tracking GA4 événementiel et tests A/B</li>
+          </ul>
+          <ul data-lang="en" hidden>
+            <li>User behavior analysis on the old page (heatmaps, recordings)</li>
+            <li>Conversion-oriented copywriting, structured in blocks</li>
+            <li>Complete front-end design and development in vanilla HTML/CSS/JS</li>
+            <li>Performance optimization (Core Web Vitals, loading speed)</li>
+            <li>GA4 event tracking setup and A/B tests</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="project-tag">HTML / CSS / JS</span>
+          <span class="project-tag">CRO</span>
+          <span class="project-tag">Google Analytics 4</span>
+          <span class="project-tag">Contensquare</span>
+          <span class="project-tag">A/B Testing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-projet4" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-custom">
+      <div class="modal-header-custom">
+        <span class="project-category">IA / Automatisation</span>
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body-custom">
+        <h3 class="modal-project-title" data-lang="fr">Assistant Marketing IA</h3>
+        <h3 class="modal-project-title" data-lang="en" hidden>AI Marketing Assistant</h3>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Contexte & Besoin</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>Context & Need</h6>
+          <p data-lang="fr">Une équipe marketing passait une part importante de son temps sur la production de contenus répétitifs. Le besoin : automatiser ces tâches sans perdre en qualité ni en cohérence éditoriale.</p>
+          <p data-lang="en" hidden>A marketing team was spending a significant portion of its time on repetitive content production. The need: automate these tasks without losing quality or editorial consistency.</p>
+        </div>
+        <div class="modal-section">
+          <h6 class="modal-section-label" data-lang="fr">Ma contribution</h6>
+          <h6 class="modal-section-label" data-lang="en" hidden>My contribution</h6>
+          <ul data-lang="fr">
+            <li>Mapping des processus de production de contenu existants</li>
+            <li>Conception des prompts et templates IA alignés sur la charte éditoriale</li>
+            <li>Développement des workflows Make connectant GPT-4 aux outils existants</li>
+            <li>Création d'une base de connaissances dans Airtable comme source de vérité</li>
+            <li>Formation de l'équipe sur les bonnes pratiques et limites de l'IA</li>
+          </ul>
+          <ul data-lang="en" hidden>
+            <li>Mapping of existing content production processes</li>
+            <li>Design of AI prompts and templates aligned with editorial guidelines</li>
+            <li>Make workflow development connecting GPT-4 to existing tools</li>
+            <li>Knowledge base creation in Airtable as source of truth</li>
+            <li>Team training on AI best practices and limitations</li>
+          </ul>
+        </div>
+        <div class="modal-tags">
+          <span class="project-tag">OpenAI API</span>
+          <span class="project-tag">Make (Integromat)</span>
+          <span class="project-tag">Airtable</span>
+          <span class="project-tag">Prompt Engineering</span>
+          <span class="project-tag">Workflow Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CAS CLIENTS (grille filtrée) ===== -->
+<section class="section-pad bg-light-custom" id="casClients">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-label">
+        <span data-lang="fr">Cas clients</span>
+        <span data-lang="en" hidden>Case studies</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="fr">Études de cas détaillées</span>
+        <span data-lang="en" hidden>Detailed case studies</span>
+      </h2>
+      <p class="section-subtitle">
+        <span data-lang="fr">Contexte, approche, livrables et résultats — pour chaque projet clé.</span>
+        <span data-lang="en" hidden>Context, approach, deliverables and results — for each key project.</span>
+      </p>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all"><span data-lang="fr">Tous</span><span data-lang="en" hidden>All</span></button>
+      <button class="filter-btn" data-filter="genai">GenAI</button>
+      <button class="filter-btn" data-filter="automatisation"><span data-lang="fr">Automatisation</span><span data-lang="en" hidden>Automation</span></button>
+      <button class="filter-btn" data-filter="data">Data</button>
+      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="crm">CRM</button>
+    </div>
+
+    <!-- Cards grid -->
+    <div class="row g-4" id="projetsRow">
+
+      <div class="col-md-6 col-lg-4 proj-col" data-categories="genai automatisation data">
+        <div class="proj-card" onclick="openDetail('ls-analytics')">
+          <div class="proj-card-img"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="proj-card-body">
+            <div class="proj-card-tags"><span class="proj-tag">GenAI</span><span class="proj-tag">Automatisation</span><span class="proj-tag">Data</span></div>
+            <h3 class="proj-card-title">LS Analytics</h3>
+            <p class="proj-card-desc" data-lang="fr">Webapp d'automatisation des reportings pour un cabinet de conseil — IA générative pour la synthèse et la mise en forme des analyses.</p>
+            <p class="proj-card-desc" data-lang="en" hidden>Reporting automation webapp for a consulting firm — generative AI for analysis synthesis and formatting.</p>
+            <div class="proj-result"><i class="fa-solid fa-bolt"></i><span data-lang="fr">-60% de temps de production des rapports</span><span data-lang="en" hidden>-60% report production time</span></div>
+          </div>
+          <div class="proj-card-footer">
+            <span class="proj-card-footer-text" data-lang="fr">Voir le cas</span><span class="proj-card-footer-text" data-lang="en" hidden>View case</span>
+            <button class="proj-arrow-btn"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-col" data-categories="automatisation crm">
+        <div class="proj-card" onclick="openDetail('newsletters-data')">
+          <div class="proj-card-img"><i class="fa-solid fa-envelopes-bulk"></i></div>
+          <div class="proj-card-body">
+            <div class="proj-card-tags"><span class="proj-tag">Automatisation</span><span class="proj-tag">CRM</span></div>
+            <h3 class="proj-card-title" data-lang="fr">Automatisation IA — Newsletters & Flux Data</h3>
+            <h3 class="proj-card-title" data-lang="en" hidden>AI Automation — Newsletters & Data Feeds</h3>
+            <p class="proj-card-desc" data-lang="fr">Workflows Make connectant 5 sources CRM, newsletters automatisées et synchronisation des données en temps réel.</p>
+            <p class="proj-card-desc" data-lang="en" hidden>Make workflows connecting 5 CRM sources, automated newsletters and real-time data synchronization.</p>
+            <div class="proj-result"><i class="fa-solid fa-bolt"></i><span data-lang="fr">5 sources centralisées en temps réel</span><span data-lang="en" hidden>5 sources centralized in real time</span></div>
+          </div>
+          <div class="proj-card-footer">
+            <span class="proj-card-footer-text" data-lang="fr">Voir le cas</span><span class="proj-card-footer-text" data-lang="en" hidden>View case</span>
+            <button class="proj-arrow-btn"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-col" data-categories="data web">
+        <div class="proj-card" onclick="openDetail('data-performance')">
+          <div class="proj-card-img"><i class="fa-solid fa-gauge-high"></i></div>
+          <div class="proj-card-body">
+            <div class="proj-card-tags"><span class="proj-tag">Data</span><span class="proj-tag">Web</span></div>
+            <h3 class="proj-card-title">Data & Performance</h3>
+            <p class="proj-card-desc" data-lang="fr">Déploiement Power BI, plan de taggage GA4/GTM et SEO technique pour une visibilité complète sur les KPIs business.</p>
+            <p class="proj-card-desc" data-lang="en" hidden>Power BI deployment, GA4/GTM tagging plan and technical SEO for complete visibility on business KPIs.</p>
+            <div class="proj-result"><i class="fa-solid fa-bolt"></i><span data-lang="fr">Visibilité 360° sur les KPIs business</span><span data-lang="en" hidden>360° visibility on business KPIs</span></div>
+          </div>
+          <div class="proj-card-footer">
+            <span class="proj-card-footer-text" data-lang="fr">Voir le cas</span><span class="proj-card-footer-text" data-lang="en" hidden>View case</span>
+            <button class="proj-arrow-btn"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-col" data-categories="web data">
+        <div class="proj-card" onclick="openDetail('umbraco-tracking')">
+          <div class="proj-card-img"><i class="fa-solid fa-globe"></i></div>
+          <div class="proj-card-body">
+            <div class="proj-card-tags"><span class="proj-tag">Web</span><span class="proj-tag">Data</span></div>
+            <h3 class="proj-card-title" data-lang="fr">Delivery Web — Umbraco + Tracking</h3>
+            <h3 class="proj-card-title" data-lang="en" hidden>Web Delivery — Umbraco + Tracking</h3>
+            <p class="proj-card-desc" data-lang="fr">Refonte d'un site corporate sur Umbraco avec plan de taggage complet et suivi des conversions.</p>
+            <p class="proj-card-desc" data-lang="en" hidden>Corporate website redesign on Umbraco with complete tagging plan and conversion tracking.</p>
+            <div class="proj-result"><i class="fa-solid fa-bolt"></i><span data-lang="fr">Livré on-time, 100% des tags validés</span><span data-lang="en" hidden>Delivered on-time, 100% tags validated</span></div>
+          </div>
+          <div class="proj-card-footer">
+            <span class="proj-card-footer-text" data-lang="fr">Voir le cas</span><span class="proj-card-footer-text" data-lang="en" hidden>View case</span>
+            <button class="proj-arrow-btn"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-col" data-categories="crm automatisation">
+        <div class="proj-card" onclick="openDetail('transformation-crm')">
+          <div class="proj-card-img"><i class="fa-solid fa-people-arrows"></i></div>
+          <div class="proj-card-body">
+            <div class="proj-card-tags"><span class="proj-tag">CRM</span><span class="proj-tag">Automatisation</span></div>
+            <h3 class="proj-card-title" data-lang="fr">Transformation CRM</h3>
+            <h3 class="proj-card-title" data-lang="en" hidden>CRM Transformation</h3>
+            <p class="proj-card-desc" data-lang="fr">Migration HubSpot pour un réseau de franchises — lead nurturing, scoring et alignement marketing-ventes.</p>
+            <p class="proj-card-desc" data-lang="en" hidden>HubSpot migration for a franchise network — lead nurturing, scoring and marketing-sales alignment.</p>
+            <div class="proj-result"><i class="fa-solid fa-bolt"></i><span data-lang="fr">+40% de leads qualifiés transmis</span><span data-lang="en" hidden>+40% qualified leads transferred</span></div>
+          </div>
+          <div class="proj-card-footer">
+            <span class="proj-card-footer-text" data-lang="fr">Voir le cas</span><span class="proj-card-footer-text" data-lang="en" hidden>View case</span>
+            <button class="proj-arrow-btn"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-col" data-categories="genai">
+        <div class="proj-card" onclick="openDetail('assistant-ia')">
+          <div class="proj-card-img"><i class="fa-solid fa-robot"></i></div>
+          <div class="proj-card-body">
+            <div class="proj-card-tags"><span class="proj-tag">GenAI</span></div>
+            <h3 class="proj-card-title" data-lang="fr">Assistant IA Interne</h3>
+            <h3 class="proj-card-title" data-lang="en" hidden>Internal AI Assistant</h3>
+            <p class="proj-card-desc" data-lang="fr">Assistant ChatGPT interne pour standardiser les réponses client et décharger les équipes des questions répétitives.</p>
+            <p class="proj-card-desc" data-lang="en" hidden>Internal ChatGPT assistant to standardize client responses and offload repetitive questions from teams.</p>
+            <div class="proj-result"><i class="fa-solid fa-bolt"></i><span data-lang="fr">80% des questions résolues sans intervention</span><span data-lang="en" hidden>80% of questions resolved without intervention</span></div>
+          </div>
+          <div class="proj-card-footer">
+            <span class="proj-card-footer-text" data-lang="fr">Voir le cas</span><span class="proj-card-footer-text" data-lang="en" hidden>View case</span>
+            <button class="proj-arrow-btn"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-section">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo"><span class="brand-mm">MM</span></div>
+        <p class="footer-name">Maximilien Moreau</p>
+        <p class="footer-tagline" data-lang="fr">Marketing · Web · IA</p>
+        <p class="footer-tagline" data-lang="en" hidden>Marketing · Web · AI</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="index.html" data-lang="fr">Accueil</a>
+        <a href="index.html" data-lang="en" hidden>Home</a>
+        <a href="index.html#apropos" data-lang="fr">À propos</a>
+        <a href="index.html#apropos" data-lang="en" hidden>About</a>
+        <a href="index.html#expertises" data-lang="fr">Expertises</a>
+        <a href="index.html#expertises" data-lang="en" hidden>Expertise</a>
+        <a href="projets.html" data-lang="fr">Mes projets</a>
+        <a href="projets.html" data-lang="en" hidden>My projects</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="footer-copy">
+        <p>© 2026 Maximilien Moreau. <span data-lang="fr">Tous droits réservés.</span><span data-lang="en" hidden>All rights reserved.</span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== DETAIL OVERLAY ===== -->
+<div class="detail-overlay" id="detailOverlay" role="dialog" aria-modal="true">
+  <div class="detail-topbar">
+    <div class="container">
+      <button class="detail-back-btn" onclick="closeDetail()">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span data-lang="fr">Retour aux projets</span>
+        <span data-lang="en" hidden>Back to projects</span>
+      </button>
+    </div>
+  </div>
+  <div id="detailContent"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script>
+/* ============================================================
+   FILTER
+   ============================================================ */
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.proj-col').forEach(col => {
+      const show = filter === 'all' || col.dataset.categories.split(' ').includes(filter);
+      col.setAttribute('data-hidden', show ? 'false' : 'true');
+    });
+  });
+});
+
+/* ============================================================
+   PROJECT DATA
+   ============================================================ */
+const PROJECTS = {
+  'ls-analytics': {
+    tags: ['GenAI', 'Automatisation', 'Data'],
+    titleFr: 'LS Analytics', titleEn: 'LS Analytics',
+    descFr: 'Webapp d\'automatisation des reportings pour un cabinet de conseil, propulsée par l\'IA générative pour la synthèse et la mise en forme des analyses.',
+    descEn: 'Reporting automation webapp for a consulting firm, powered by generative AI for analysis synthesis and formatting.',
+    resultFr: 'Réduction de 60% du temps de production des rapports',
+    resultEn: '60% reduction in report production time',
+    contexte: { fr: 'Un cabinet de conseil produisait chaque semaine des dizaines de rapports d\'analyse pour ses clients. Le processus était entièrement manuel : collecte des données, mise en forme, rédaction des synthèses. Résultat : des journées entières mobilisées sur de la production documentaire, au détriment du conseil à valeur ajoutée.', en: 'A consulting firm produced dozens of analysis reports for its clients every week. The process was entirely manual: data collection, formatting, writing summaries. Result: entire days spent on document production, at the expense of high-value consulting.' },
+    role: { fr: 'J\'ai pris en charge la conception de la solution de bout en bout : de la phase de cadrage avec les équipes, jusqu\'au déploiement et à la formation des utilisateurs.', en: 'I led the solution design end-to-end: from the scoping phase with teams, to deployment and user training.' },
+    discovery: { fr: 'Audit des flux de production des rapports, interviews des consultants, identification des tâches automatisables et des points de friction majeurs.', en: 'Audit of report production flows, consultant interviews, identification of automatable tasks and major friction points.' },
+    build: { fr: 'Développement d\'une webapp connectée aux sources de données, avec prompts IA pour générer les synthèses, et templates de mise en forme automatique.', en: 'Development of a webapp connected to data sources, with AI prompts to generate summaries, and automatic formatting templates.' },
+    run: { fr: 'Déploiement progressif, recueil des retours utilisateurs, itérations sur les prompts et la mise en forme pour atteindre le niveau de qualité cible.', en: 'Progressive deployment, collection of user feedback, iterations on prompts and formatting to reach target quality level.' },
+    livrables: { fr: ['Webapp d\'automatisation des reportings', 'Bibliothèque de prompts IA sectoriels', 'Templates de mise en forme automatique', 'Documentation utilisateur', 'Formation des équipes'], en: ['Reporting automation webapp', 'Industry-specific AI prompt library', 'Automatic formatting templates', 'User documentation', 'Team training'] },
+    stack: ['Python', 'OpenAI API', 'Make', 'Google Sheets', 'Power BI', 'Notion'],
+    resultats: [{ value: '-60%', labelFr: 'Temps de production', labelEn: 'Production time' }, { value: '3h→45min', labelFr: 'Par rapport', labelEn: 'Per report' }, { value: '100%', labelFr: 'Adoption équipes', labelEn: 'Team adoption' }],
+    lecons: { fr: ['La qualité des prompts est plus déterminante que le choix du modèle IA', 'Impliquer les utilisateurs finaux dès la phase de Discovery évite les itérations coûteuses', 'Un déploiement progressif permet de corriger avant généralisation'], en: ['Prompt quality is more decisive than the choice of AI model', 'Involving end users from the Discovery phase avoids costly iterations', 'A progressive rollout allows correction before generalization'] }
+  },
+  'newsletters-data': {
+    tags: ['Automatisation', 'CRM'],
+    titleFr: 'Automatisation IA — Newsletters & Flux Data', titleEn: 'AI Automation — Newsletters & Data Feeds',
+    descFr: 'Mise en place de workflows Make connectant 5 sources CRM et automatisant la production de newsletters personnalisées.',
+    descEn: 'Make workflows connecting 5 CRM sources and automating the production of personalized newsletters.',
+    resultFr: 'Centralisation de 5 sources de données en temps réel', resultEn: 'Centralization of 5 data sources in real time',
+    contexte: { fr: 'Une organisation gérait ses contacts dans 5 outils différents (HubSpot, Brevo, fichiers Excel, Airtable, Notion) sans synchronisation entre eux. Les newsletters étaient produites manuellement chaque semaine, avec un fort risque d\'erreur et de désynchronisation des segments.', en: 'An organization managed its contacts across 5 different tools without synchronization. Newsletters were produced manually each week, with a high risk of errors and segment desynchronization.' },
+    role: { fr: 'Conception et déploiement des workflows d\'automatisation, choix de l\'architecture de données, paramétrage des outils et formation de l\'équipe marketing.', en: 'Design and deployment of automation workflows, data architecture choices, tool configuration and marketing team training.' },
+    discovery: { fr: 'Mapping des 5 sources de données, identification des doublons et des conflits, définition du référentiel cible et des règles de déduplication.', en: 'Mapping of 5 data sources, identification of duplicates and conflicts, definition of the target reference and deduplication rules.' },
+    build: { fr: 'Construction des scénarios Make pour la synchronisation en temps réel, paramétrage des templates de newsletter dans Brevo avec personnalisation dynamique.', en: 'Construction of Make scenarios for real-time synchronization, newsletter template configuration in Brevo with dynamic personalization.' },
+    run: { fr: 'Supervision du premier cycle d\'envoi automatisé, correction des erreurs de mapping, mise en place des alertes en cas d\'échec de workflow.', en: 'Supervision of the first automated send cycle, correction of mapping errors, setup of alerts in case of workflow failure.' },
+    livrables: { fr: ['Architecture de données unifiée', '12 scénarios Make déployés', 'Templates newsletter avec personnalisation dynamique', 'Dashboard de suivi des workflows', 'Guide de maintenance'], en: ['Unified data architecture', '12 Make scenarios deployed', 'Newsletter templates with dynamic personalization', 'Workflow monitoring dashboard', 'Maintenance guide'] },
+    stack: ['Make (Integromat)', 'HubSpot', 'Brevo', 'Airtable', 'Notion', 'Google Sheets'],
+    resultats: [{ value: '5', labelFr: 'Sources unifiées', labelEn: 'Unified sources' }, { value: '-80%', labelFr: 'Temps de prod newsletter', labelEn: 'Newsletter prod time' }, { value: '0', labelFr: 'Doublons contacts', labelEn: 'Contact duplicates' }],
+    lecons: { fr: ['La gouvernance des données doit être définie avant l\'automatisation, pas après', 'Un référentiel unique est indispensable pour éviter les conflits entre sources', 'Les alertes sur les workflows sont aussi importantes que les workflows eux-mêmes'], en: ['Data governance must be defined before automation, not after', 'A single reference is essential to avoid conflicts between sources', 'Workflow alerts are as important as the workflows themselves'] }
+  },
+  'data-performance': {
+    tags: ['Data', 'Web'],
+    titleFr: 'Data & Performance', titleEn: 'Data & Performance',
+    descFr: 'Mise en place d\'une infrastructure data complète : Power BI, plan de taggage GA4/GTM et SEO technique pour piloter les KPIs business.',
+    descEn: 'Setup of a complete data infrastructure: Power BI, GA4/GTM tagging plan and technical SEO to drive business KPIs.',
+    resultFr: 'Visibilité 360° sur les KPIs business', resultEn: '360° visibility on business KPIs',
+    contexte: { fr: 'Une entreprise prenait des décisions marketing à l\'aveugle, sans données fiables sur ses performances web, ses conversions ou ses coûts d\'acquisition. Les données disponibles étaient fragmentées entre plusieurs tableaux Excel.', en: 'A company was making marketing decisions blindly, without reliable data on its web performance, conversions or acquisition costs. Available data was fragmented across multiple Excel spreadsheets.' },
+    role: { fr: 'Audit de l\'existant, définition du plan de mesure, déploiement du plan de taggage GTM, connexion des sources dans Power BI et formation des équipes.', en: 'Audit of existing setup, definition of the measurement plan, GTM tagging plan deployment, source connection in Power BI and team training.' },
+    discovery: { fr: 'Audit technique du site (Core Web Vitals, structure URL, balises), audit du tracking existant et gap analysis par rapport aux KPIs business cibles.', en: 'Technical site audit (Core Web Vitals, URL structure, tags), audit of existing tracking and gap analysis vs target business KPIs.' },
+    build: { fr: 'Déploiement du plan de taggage via GTM, configuration GA4 avec événements personnalisés, construction des dashboards Power BI connectés aux sources (GA4, Ads, CRM).', en: 'Tagging plan deployment via GTM, GA4 configuration with custom events, Power BI dashboard construction connected to sources (GA4, Ads, CRM).' },
+    run: { fr: 'Validation du tracking avec les équipes, correction des anomalies, optimisations SEO techniques appliquées, formation des équipes marketing aux dashboards.', en: 'Tracking validation with teams, anomaly correction, applied technical SEO optimizations, marketing team training on dashboards.' },
+    livrables: { fr: ['Plan de mesure documenté', 'Plan de taggage GTM (40+ tags)', 'Configuration GA4 complète', 'Dashboards Power BI', 'Rapport SEO technique + recommandations'], en: ['Documented measurement plan', 'GTM tagging plan (40+ tags)', 'Complete GA4 configuration', 'Power BI dashboards', 'Technical SEO report + recommendations'] },
+    stack: ['Google Tag Manager', 'GA4', 'Power BI', 'Google Ads', 'Looker Studio', 'Screaming Frog'],
+    resultats: [{ value: '40+', labelFr: 'Tags déployés', labelEn: 'Tags deployed' }, { value: '100%', labelFr: 'Données fiables', labelEn: 'Reliable data' }, { value: '3', labelFr: 'Dashboards actifs', labelEn: 'Active dashboards' }],
+    lecons: { fr: ['Un plan de mesure écrit en amont est la clé d\'un tracking cohérent', 'La formation des équipes est aussi critique que la mise en place technique', 'Connecter GA4 et le CRM révèle des insights invisibles dans chaque outil seul'], en: ['A measurement plan written upfront is the key to consistent tracking', 'Team training is as critical as the technical setup', 'Connecting GA4 and the CRM reveals insights invisible in each tool alone'] }
+  },
+  'umbraco-tracking': {
+    tags: ['Web', 'Data'],
+    titleFr: 'Delivery Web — Umbraco + Tracking', titleEn: 'Web Delivery — Umbraco + Tracking',
+    descFr: 'Refonte complète d\'un site corporate sur Umbraco avec plan de taggage intégré dès la conception pour un suivi des conversions irréprochable.',
+    descEn: 'Complete redesign of a corporate site on Umbraco with a tagging plan integrated from conception for flawless conversion tracking.',
+    resultFr: 'Site livré on-time avec 100% des tags validés', resultEn: 'Site delivered on-time with 100% validated tags',
+    contexte: { fr: 'Une entreprise devait refondre son site corporate vieillissant sur un CMS moderne. L\'enjeu : livrer dans les délais tout en garantissant un tracking parfait des conversions dès le lancement, sans rattrapage post-go-live.', en: 'A company needed to redesign its aging corporate site on a modern CMS. The challenge: deliver on time while guaranteeing perfect conversion tracking from launch, with no post-go-live catch-up.' },
+    role: { fr: 'Pilotage du delivery côté marketing, coordination avec les équipes dev et agence, définition et recette du plan de taggage, contribution à la stratégie de contenu.', en: 'Delivery management on the marketing side, coordination with dev and agency teams, definition and testing of the tagging plan, contribution to content strategy.' },
+    discovery: { fr: 'Cadrage des objectifs business et des conversions à tracker, définition de l\'arborescence et de l\'architecture de contenu, choix des composants Umbraco.', en: 'Framing of business objectives and conversions to track, definition of the sitemap and content architecture, choice of Umbraco components.' },
+    build: { fr: 'Coordination agence/dev pour l\'intégration des dataLayer events, rédaction et paramétrage du plan de taggage GTM, recette des pages et des tags en parallèle.', en: 'Agency/dev coordination for dataLayer event integration, writing and configuration of the GTM tagging plan, simultaneous page and tag testing.' },
+    run: { fr: 'Validation finale du tracking avant go-live, checklist de recette complète, formation des équipes internes à la gestion du contenu Umbraco.', en: 'Final tracking validation before go-live, complete testing checklist, internal team training on Umbraco content management.' },
+    livrables: { fr: ['Site corporate livré sur Umbraco', 'Plan de taggage GTM complet', 'Recette tracking (checklist 80+ points)', 'Documentation éditoriale', 'Formation CMS équipes'], en: ['Corporate site delivered on Umbraco', 'Complete GTM tagging plan', 'Tracking testing (80+ point checklist)', 'Editorial documentation', 'CMS team training'] },
+    stack: ['Umbraco CMS', 'Google Tag Manager', 'GA4', 'HTML/CSS', 'Figma', 'Jira'],
+    resultats: [{ value: 'On-time', labelFr: 'Livraison', labelEn: 'Delivery' }, { value: '100%', labelFr: 'Tags validés', labelEn: 'Validated tags' }, { value: '80+', labelFr: 'Points de recette', labelEn: 'Testing points' }],
+    lecons: { fr: ['Intégrer le tracking dans le cahier des charges dès le début évite 80% des problèmes au go-live', 'Une recette tracking structurée est aussi importante que la recette fonctionnelle', 'La coordination agence/client est le facteur critique de succès sur ce type de projet'], en: ['Integrating tracking into the specifications from the start avoids 80% of go-live problems', 'Structured tracking testing is as important as functional testing', 'Agency/client coordination is the critical success factor for this type of project'] }
+  },
+  'transformation-crm': {
+    tags: ['CRM', 'Automatisation'],
+    titleFr: 'Transformation CRM', titleEn: 'CRM Transformation',
+    descFr: 'Migration et refonte complète du CRM HubSpot pour un réseau de franchises — lead nurturing, scoring et alignement marketing-ventes.',
+    descEn: 'Complete HubSpot CRM migration and redesign for a franchise network — lead nurturing, scoring and marketing-sales alignment.',
+    resultFr: '+40% de leads qualifiés transmis aux commerciaux', resultEn: '+40% of qualified leads transferred to sales',
+    contexte: { fr: 'Un réseau de franchises utilisait HubSpot de manière basique, sans scoring, sans nurturing et sans alignement entre les équipes marketing et commerciales. Les leads entrants étaient transmis sans qualification, générant de la friction côté ventes et un fort taux de perte.', en: 'A franchise network was using HubSpot in a basic way, without scoring, nurturing or alignment between marketing and sales teams. Incoming leads were transferred without qualification, generating friction on the sales side and a high loss rate.' },
+    role: { fr: 'Audit du CRM existant, refonte de l\'architecture HubSpot, mise en place du scoring et des workflows de nurturing, et accompagnement des équipes commerciales.', en: 'Audit of the existing CRM, redesign of the HubSpot architecture, implementation of scoring and nurturing workflows, and support of sales teams.' },
+    discovery: { fr: 'Audit de l\'architecture HubSpot existante, interviews des équipes marketing et commerciales, définition du SLA et des critères de qualification MQL/SQL.', en: 'Audit of the existing HubSpot architecture, interviews with marketing and sales teams, definition of the SLA and MQL/SQL qualification criteria.' },
+    build: { fr: 'Reconfiguration de HubSpot (pipeline, propriétés, stages), déploiement du lead scoring comportemental et démographique, création des séquences de nurturing par segment.', en: 'HubSpot reconfiguration (pipeline, properties, stages), deployment of behavioral and demographic lead scoring, creation of nurturing sequences by segment.' },
+    run: { fr: 'Suivi des premiers cycles de nurturing, calibration du scoring, ajustement des seuils MQL/SQL selon les retours commerciaux, reporting mensuel.', en: 'Monitoring of the first nurturing cycles, scoring calibration, adjustment of MQL/SQL thresholds based on sales feedback, monthly reporting.' },
+    livrables: { fr: ['Architecture HubSpot refondée', 'Modèle de lead scoring (20+ critères)', '8 séquences de nurturing', 'SLA marketing-ventes documenté', 'Dashboard de performance CRM'], en: ['Redesigned HubSpot architecture', 'Lead scoring model (20+ criteria)', '8 nurturing sequences', 'Documented marketing-sales SLA', 'CRM performance dashboard'] },
+    stack: ['HubSpot CRM', 'HubSpot Marketing Hub', 'Make', 'Google Sheets', 'Looker Studio'],
+    resultats: [{ value: '+40%', labelFr: 'Leads qualifiés transmis', labelEn: 'Qualified leads transferred' }, { value: '-35%', labelFr: 'Taux de perte leads', labelEn: 'Lead loss rate' }, { value: '20+', labelFr: 'Critères de scoring', labelEn: 'Scoring criteria' }],
+    lecons: { fr: ['Le scoring ne fonctionne que si marketing et ventes s\'accordent sur la définition du lead qualifié', 'Un SLA écrit entre les deux équipes est la clé de l\'alignement durable', 'Le nurturing doit être testé et itéré : le premier draft n\'est jamais le bon'], en: ['Scoring only works if marketing and sales agree on the definition of a qualified lead', 'A written SLA between the two teams is the key to lasting alignment', 'Nurturing must be tested and iterated: the first draft is never right'] }
+  },
+  'assistant-ia': {
+    tags: ['GenAI'],
+    titleFr: 'Assistant IA Interne', titleEn: 'Internal AI Assistant',
+    descFr: 'Déploiement d\'un assistant ChatGPT interne pour standardiser les réponses client et décharger les équipes des questions répétitives.',
+    descEn: 'Deployment of an internal ChatGPT assistant to standardize client responses and offload repetitive questions from teams.',
+    resultFr: '80% des questions résolues sans intervention humaine', resultEn: '80% of questions resolved without human intervention',
+    contexte: { fr: 'Une équipe support passait 60% de son temps à répondre aux mêmes questions clients. La qualité des réponses variait selon les personnes et les jours. L\'objectif : créer un assistant IA alimenté par la base de connaissance interne pour normaliser les réponses et libérer du temps à valeur ajoutée.', en: 'A support team was spending 60% of its time answering the same client questions. Response quality varied by person and by day. The goal: create an AI assistant powered by the internal knowledge base to normalize responses and free up value-added time.' },
+    role: { fr: 'Cadrage du projet, structuration de la base de connaissance, prompt engineering, déploiement et itérations selon les retours utilisateurs.', en: 'Project scoping, knowledge base structuring, prompt engineering, deployment and iterations based on user feedback.' },
+    discovery: { fr: 'Analyse des tickets support sur 6 mois, clustering des questions récurrentes, inventaire de la base de connaissance existante et identification des gaps.', en: 'Analysis of support tickets over 6 months, clustering of recurring questions, inventory of the existing knowledge base and identification of gaps.' },
+    build: { fr: 'Structuration et nettoyage de la base de connaissance, conception des prompts système, déploiement via une interface interne, tests avec l\'équipe support.', en: 'Structuring and cleaning of the knowledge base, system prompt design, deployment via an internal interface, testing with the support team.' },
+    run: { fr: 'Suivi du taux de résolution, itérations sur les prompts et la base de connaissance, mise en place d\'un processus d\'escalade pour les questions non résolues.', en: 'Monitoring of resolution rate, iterations on prompts and knowledge base, establishment of an escalation process for unresolved questions.' },
+    livrables: { fr: ['Base de connaissance structurée (200+ Q&R)', 'Assistant IA déployé (interface interne)', 'Bibliothèque de prompts système', 'Processus d\'escalade documenté', 'Dashboard de suivi du taux de résolution'], en: ['Structured knowledge base (200+ Q&A)', 'AI assistant deployed (internal interface)', 'System prompt library', 'Documented escalation process', 'Resolution rate monitoring dashboard'] },
+    stack: ['OpenAI API', 'ChatGPT', 'Notion', 'Make', 'Slack', 'Airtable'],
+    resultats: [{ value: '80%', labelFr: 'Questions auto-résolues', labelEn: 'Auto-resolved questions' }, { value: '-60%', labelFr: 'Charge équipe support', labelEn: 'Support team load' }, { value: '200+', labelFr: 'Q&R documentées', labelEn: 'Documented Q&As' }],
+    lecons: { fr: ['La qualité de la base de connaissance est le facteur #1 de succès d\'un assistant IA', 'Un assistant IA bien calibré améliore aussi la qualité des réponses humaines', 'L\'escalade doit être conçue dès le début : l\'IA ne résoudra jamais 100% des cas'], en: ['Knowledge base quality is the #1 success factor for an AI assistant', 'A well-calibrated AI assistant also improves the quality of human responses', 'Escalation must be designed from the start: AI will never resolve 100% of cases'] }
+  }
+};
+
+/* ============================================================
+   DETAIL VIEW
+   ============================================================ */
+function openDetail(id) {
+  const p = PROJECTS[id];
+  if (!p) return;
+  const lang = document.documentElement.lang || 'fr';
+  const isFr = lang === 'fr';
+
+  const t = k => isFr ? p[k + 'Fr'] || p[k].fr : p[k + 'En'] || p[k].en;
+
+  const tagsHtml = p.tags.map(t => `<span class="detail-hero-tag">${t}</span>`).join('');
+  const livrables = isFr ? p.livrables.fr : p.livrables.en;
+  const lecons = isFr ? p.lecons.fr : p.lecons.en;
+  const livrableHtml = livrables.map(l => `<div class="livrable-item"><i class="fa-solid fa-check livrable-icon"></i>${l}</div>`).join('');
+  const stackHtml = p.stack.map(s => `<span class="stack-tag">${s}</span>`).join('');
+  const resultatsHtml = p.resultats.map(r => `<div class="resultat-card"><div class="resultat-value">${r.value}</div><div class="resultat-label">${isFr ? r.labelFr : r.labelEn}</div></div>`).join('');
+  const leconsHtml = lecons.map(l => `<li>${l}</li>`).join('');
+
+  const L = {
+    contexte: isFr ? 'Contexte & objectifs' : 'Context & objectives',
+    role: isFr ? 'Mon rôle' : 'My role',
+    approche: isFr ? 'Approche' : 'Approach',
+    livrables: isFr ? 'Livrables' : 'Deliverables',
+    stack: isFr ? 'Stack & outils' : 'Stack & tools',
+    resultats: isFr ? 'Résultats' : 'Results',
+    lecons: isFr ? 'Leçons & next steps' : 'Lessons & next steps',
+    ctaTitle: isFr ? 'Un projet similaire en tête ?' : 'A similar project in mind?',
+    ctaDesc: isFr ? 'Discutons de vos enjeux et voyons comment je peux vous aider.' : 'Let\'s discuss your challenges and see how I can help.',
+    ctaBtn: isFr ? 'Discuter d\'un projet similaire' : 'Discuss a similar project',
+  };
+
+  document.getElementById('detailContent').innerHTML = `
+    <div class="detail-hero">
+      <div class="container detail-hero-inner">
+        <div class="detail-hero-tags">${tagsHtml}</div>
+        <h1 class="detail-hero-title">${isFr ? p.titleFr : p.titleEn}</h1>
+        <p class="detail-hero-desc">${isFr ? p.descFr : p.descEn}</p>
+        <div class="detail-result-banner"><i class="fa-solid fa-bolt"></i>${isFr ? p.resultFr : p.resultEn}</div>
+      </div>
+    </div>
+    <div class="container pb-5">
+      <div class="row"><div class="col-lg-8">
+        <div class="detail-section">
+          <div class="detail-section-label">${L.contexte}</div>
+          <div class="detail-text"><p>${isFr ? p.contexte.fr : p.contexte.en}</p></div>
+        </div>
+        <div class="detail-section">
+          <div class="detail-section-label">${L.role}</div>
+          <div class="detail-text"><p>${isFr ? p.role.fr : p.role.en}</p></div>
+        </div>
+        <div class="detail-section">
+          <div class="detail-section-label">${L.approche}</div>
+          <div class="approche-grid">
+            <div class="approche-card"><div class="approche-step">1</div><div class="approche-step-title">Discovery</div><div class="approche-step-desc">${isFr ? p.discovery.fr : p.discovery.en}</div></div>
+            <div class="approche-card"><div class="approche-step">2</div><div class="approche-step-title">Build</div><div class="approche-step-desc">${isFr ? p.build.fr : p.build.en}</div></div>
+            <div class="approche-card"><div class="approche-step">3</div><div class="approche-step-title">Run</div><div class="approche-step-desc">${isFr ? p.run.fr : p.run.en}</div></div>
+          </div>
+        </div>
+        <div class="detail-section">
+          <div class="detail-section-label">${L.livrables}</div>
+          <div class="livrables-grid">${livrableHtml}</div>
+        </div>
+        <div class="detail-section">
+          <div class="detail-section-label">${L.stack}</div>
+          <div class="stack-grid">${stackHtml}</div>
+        </div>
+        <div class="detail-section">
+          <div class="detail-section-label">${L.resultats}</div>
+          <div class="resultats-grid">${resultatsHtml}</div>
+        </div>
+        <div class="detail-section">
+          <div class="detail-section-label">${L.lecons}</div>
+          <ul class="lecons-list">${leconsHtml}</ul>
+        </div>
+        <div class="detail-cta-bloc">
+          <h3>${L.ctaTitle}</h3>
+          <p>${L.ctaDesc}</p>
+          <a href="index.html#contact" class="btn btn-primary btn-lg rounded-pill px-4">
+            <i class="fa-solid fa-calendar-check me-2"></i>${L.ctaBtn}
+          </a>
+        </div>
+      </div></div>
+    </div>`;
+
+  const overlay = document.getElementById('detailOverlay');
+  overlay.scrollTop = 0;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setLang(document.documentElement.lang || 'fr');
+}
+
+function closeDetail() {
+  document.getElementById('detailOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDetail(); });
+</script>
+</body>
+</html>

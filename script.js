@@ -17,7 +17,7 @@ function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   const icon = document.getElementById('themeIcon');
   if (icon) {
-    icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+    icon.className = theme === 'dark' ? 'fa-solid fa-lightbulb' : 'fa-solid fa-moon';
   }
   try {
     localStorage.setItem(THEME_KEY, theme);
