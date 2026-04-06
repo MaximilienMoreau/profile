@@ -591,7 +591,7 @@
       <button class="filter-btn" data-filter="genai">GenAI</button>
       <button class="filter-btn" data-filter="automatisation"><span data-lang="fr">Automatisation</span><span data-lang="en" hidden>Automation</span></button>
       <button class="filter-btn" data-filter="data">Data</button>
-      <button class="filter-btn" data-filter="web">Web</button>
+      <button class="filter-btn" data-filter="web">Web/Dev</button>
       <button class="filter-btn" data-filter="crm">CRM</button>
     </div>
 
@@ -681,6 +681,40 @@
           </div>
           <div class="proj-card-footer">
             <span class="proj-card-footer-text" data-lang="fr">Voir le cas</span><span class="proj-card-footer-text" data-lang="en" hidden>View case</span>
+            <button class="proj-arrow-btn"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-col" data-categories="web jeu">
+        <div class="proj-card" onclick="openDetail('re-gaiden')">
+          <div class="proj-card-img"><i class="fa-solid fa-skull"></i></div>
+          <div class="proj-card-body">
+            <div class="proj-card-tags"><span class="proj-tag">Web</span><span class="proj-tag">Jeu</span></div>
+            <h3 class="proj-card-title">RE: Gaiden Remake</h3>
+            <p class="proj-card-desc" data-lang="fr">Remake fan du jeu Resident Evil Gaiden — survival horror en JavaScript vanilla, entièrement dans le navigateur.</p>
+            <p class="proj-card-desc" data-lang="en" hidden>Fan remake of Resident Evil Gaiden — vanilla JavaScript survival horror game, fully browser-based.</p>
+            <div class="proj-result"><i class="fa-brands fa-github"></i><span data-lang="fr">Projet personnel open source</span><span data-lang="en" hidden>Personal open source project</span></div>
+          </div>
+          <div class="proj-card-footer">
+            <span class="proj-card-footer-text" data-lang="fr">Voir le projet</span><span class="proj-card-footer-text" data-lang="en" hidden>View project</span>
+            <button class="proj-arrow-btn"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-4 proj-col" data-categories="web jeu">
+        <div class="proj-card" onclick="openDetail('ombres-erebor')">
+          <div class="proj-card-img"><i class="fa-solid fa-dungeon"></i></div>
+          <div class="proj-card-body">
+            <div class="proj-card-tags"><span class="proj-tag">Web</span><span class="proj-tag">Jeu</span></div>
+            <h3 class="proj-card-title">Les Ombres d'Erebor</h3>
+            <p class="proj-card-desc" data-lang="fr">Jeu d'aventure/RPG inspiré de l'univers de Tolkien — développé en HTML/CSS/JS pur avec système de quêtes et combats.</p>
+            <p class="proj-card-desc" data-lang="en" hidden>Adventure/RPG game inspired by Tolkien's universe — built in pure HTML/CSS/JS with quest and combat systems.</p>
+            <div class="proj-result"><i class="fa-brands fa-github"></i><span data-lang="fr">Projet personnel open source</span><span data-lang="en" hidden>Personal open source project</span></div>
+          </div>
+          <div class="proj-card-footer">
+            <span class="proj-card-footer-text" data-lang="fr">Voir le projet</span><span class="proj-card-footer-text" data-lang="en" hidden>View project</span>
             <button class="proj-arrow-btn"><i class="fa-solid fa-arrow-right"></i></button>
           </div>
         </div>
@@ -854,6 +888,42 @@ const PROJECTS = {
     resultats: [{ value: '+40%', labelFr: 'Leads qualifiés transmis', labelEn: 'Qualified leads transferred' }, { value: '-35%', labelFr: 'Taux de perte leads', labelEn: 'Lead loss rate' }, { value: '20+', labelFr: 'Critères de scoring', labelEn: 'Scoring criteria' }],
     lecons: { fr: ['Le scoring ne fonctionne que si marketing et ventes s\'accordent sur la définition du lead qualifié', 'Un SLA écrit entre les deux équipes est la clé de l\'alignement durable', 'Le nurturing doit être testé et itéré : le premier draft n\'est jamais le bon'], en: ['Scoring only works if marketing and sales agree on the definition of a qualified lead', 'A written SLA between the two teams is the key to lasting alignment', 'Nurturing must be tested and iterated: the first draft is never right'] }
   },
+  're-gaiden': {
+    tags: ['Web', 'Jeu', 'JavaScript'],
+    github: 'https://github.com/MaximilienMoreau/RE-Gaiden-Remake',
+    titleFr: 'RE: Gaiden Remake', titleEn: 'RE: Gaiden Remake',
+    descFr: 'Remake fan du jeu Resident Evil Gaiden — survival horror en JavaScript vanilla, entièrement dans le navigateur, sans aucune librairie externe.',
+    descEn: 'Fan remake of Resident Evil Gaiden — vanilla JavaScript survival horror, fully browser-based, no external libraries.',
+    resultFr: 'Jeu complet jouable dans le navigateur — 100% vanilla JS',
+    resultEn: 'Full game playable in the browser — 100% vanilla JS',
+    contexte: { fr: 'Passionné par la saga Resident Evil, j\'ai voulu recréer Resident Evil Gaiden — un épisode peu connu sorti sur Game Boy Color — en version navigateur. L\'objectif : reproduire l\'ambiance survival horror du jeu original tout en approfondissant mes compétences en JavaScript pur, canvas et game loop.', en: 'As a Resident Evil fan, I wanted to recreate Resident Evil Gaiden — a lesser-known Game Boy Color episode — as a browser game. The goal: reproduce the survival horror atmosphere of the original while deepening my skills in vanilla JavaScript, canvas and game loop.' },
+    role: { fr: 'Projet personnel complet — conception du game design, développement front-end, gestion des assets et déploiement sur GitHub Pages.', en: 'Complete personal project — game design, front-end development, asset management and deployment on GitHub Pages.' },
+    discovery: { fr: 'Analyse du gameplay original (Resident Evil Gaiden, GBC), définition du périmètre fonctionnel du remake, choix technique : JavaScript vanilla + Canvas API, sans framework.', en: 'Analysis of the original gameplay (Resident Evil Gaiden, GBC), definition of the remake functional scope, technical choice: vanilla JavaScript + Canvas API, no framework.' },
+    build: { fr: 'Développement de la game loop, gestion des collisions, système d\'inventaire, intelligence artificielle des ennemis, scènes de dialogue et transitions entre niveaux.', en: 'Development of the game loop, collision handling, inventory system, enemy AI, dialogue scenes and level transitions.' },
+    run: { fr: 'Tests croisés sur différents navigateurs, optimisation des performances canvas, déploiement et mise à disposition du code source en open source sur GitHub.', en: 'Cross-browser testing, canvas performance optimization, deployment and open source release on GitHub.' },
+    livrables: { fr: ['Jeu jouable en navigateur', 'Game loop JS vanilla', 'Système d\'inventaire & combats', 'IA ennemis basique', 'Code source open source (GitHub)'], en: ['Browser-playable game', 'Vanilla JS game loop', 'Inventory & combat system', 'Basic enemy AI', 'Open source code (GitHub)'] },
+    stack: ['JavaScript', 'HTML5 Canvas', 'CSS3', 'GitHub Pages'],
+    resultats: [{ value: '100%', labelFr: 'Vanilla JS', labelEn: 'Vanilla JS' }, { value: 'Open', labelFr: 'Source ouverte', labelEn: 'Open source' }, { value: '0', labelFr: 'Dépendance externe', labelEn: 'External dependency' }],
+    lecons: { fr: ['Implémenter une game loop de zéro consolide profondément la compréhension du JS asynchrone', 'La Canvas API offre une flexibilité totale mais demande une gestion rigoureuse des états', 'Reproduire un jeu existant oblige à déconstruire chaque mécanisme de gameplay'], en: ['Implementing a game loop from scratch deeply consolidates async JS understanding', 'The Canvas API offers total flexibility but requires rigorous state management', 'Recreating an existing game forces you to deconstruct every gameplay mechanic'] }
+  },
+  'ombres-erebor': {
+    tags: ['Web', 'Jeu', 'HTML/CSS/JS'],
+    github: 'https://github.com/MaximilienMoreau/Les-Ombres-d-Erebor',
+    titleFr: 'Les Ombres d\'Erebor', titleEn: 'Les Ombres d\'Erebor',
+    descFr: 'Jeu d\'aventure RPG inspiré de l\'univers de Tolkien — développé entièrement en HTML, CSS et JavaScript avec un système de quêtes, de combats et d\'inventaire.',
+    descEn: 'RPG adventure game inspired by Tolkien\'s universe — built entirely in HTML, CSS and JavaScript with quest, combat and inventory systems.',
+    resultFr: 'RPG complet avec système de quêtes, combats et inventaire',
+    resultEn: 'Full RPG with quest system, combat and inventory',
+    contexte: { fr: 'Fan de l\'univers de Tolkien et passionné de RPG, j\'ai lancé ce projet pour créer un jeu d\'aventure/RPG textuel dans le navigateur, sans moteur de jeu externe. L\'objectif : concevoir une expérience narrative immersive avec mécaniques de RPG — tout en HTML/CSS/JS natif.', en: 'As a Tolkien fan and RPG enthusiast, I started this project to create a browser-based text adventure/RPG without any external game engine. The goal: design an immersive narrative experience with RPG mechanics — all in native HTML/CSS/JS.' },
+    role: { fr: 'Projet personnel complet — narration, game design, développement full-stack front-end et déploiement open source.', en: 'Complete personal project — storytelling, game design, full front-end development and open source deployment.' },
+    discovery: { fr: 'Définition de l\'univers narratif (lore Tolkien adapté), conception du système de progression du personnage, architecture des données (quêtes, ennemis, objets) en JSON.', en: 'Definition of the narrative universe (adapted Tolkien lore), design of the character progression system, data architecture (quests, enemies, items) in JSON.' },
+    build: { fr: 'Développement du moteur RPG custom : gestion des états joueur, système de combat au tour par tour, arbre de quêtes, inventaire dynamique et interface CSS full-screen.', en: 'Development of the custom RPG engine: player state management, turn-based combat system, quest tree, dynamic inventory and full-screen CSS interface.' },
+    run: { fr: 'Tests de l\'équilibrage du système de combat, validation des arbres de quêtes, optimisation du rendu CSS responsive, publication open source sur GitHub.', en: 'Testing of the combat system balancing, quest tree validation, responsive CSS rendering optimization, open source publication on GitHub.' },
+    livrables: { fr: ['Moteur RPG JS custom', 'Système de quêtes arborescent', 'Combats au tour par tour', 'Inventaire & statistiques joueur', 'Code source open source (GitHub)'], en: ['Custom JS RPG engine', 'Branching quest system', 'Turn-based combat', 'Inventory & player stats', 'Open source code (GitHub)'] },
+    stack: ['JavaScript', 'HTML5', 'CSS3', 'JSON', 'GitHub Pages'],
+    resultats: [{ value: 'RPG', labelFr: 'Complet', labelEn: 'Full game' }, { value: 'Open', labelFr: 'Source ouverte', labelEn: 'Open source' }, { value: '0', labelFr: 'Framework utilisé', labelEn: 'Framework used' }],
+    lecons: { fr: ['Concevoir un système de quêtes arborescent oblige à penser en graphe de données dès le départ', 'Le state management sans framework révèle vite l\'importance d\'une architecture claire', 'Un projet de jeu personnel est un excellent terrain d\'expérimentation technique sans pression client'], en: ['Designing a branching quest system forces graph-based data thinking from the start', 'State management without a framework quickly reveals the importance of clear architecture', 'A personal game project is an excellent technical experimentation ground without client pressure'] }
+  },
   'assistant-ia': {
     tags: ['GenAI'],
     titleFr: 'Assistant IA Interne', titleEn: 'Internal AI Assistant',
@@ -911,6 +981,7 @@ function openDetail(id) {
         <h1 class="detail-hero-title">${isFr ? p.titleFr : p.titleEn}</h1>
         <p class="detail-hero-desc">${isFr ? p.descFr : p.descEn}</p>
         <div class="detail-result-banner"><i class="fa-solid fa-bolt"></i>${isFr ? p.resultFr : p.resultEn}</div>
+        ${p.github ? `<div class="mt-4"><a href="${p.github}" target="_blank" rel="noopener" class="btn-hero-outline" style="display:inline-flex;align-items:center;gap:8px;color:#a78bfa;border-color:rgba(167,139,250,0.4);padding:10px 22px;border-radius:100px;text-decoration:none;font-size:14px;font-weight:600;"><i class="fa-brands fa-github"></i>${isFr ? 'Voir sur GitHub' : 'View on GitHub'}</a></div>` : ''}
       </div>
     </div>
     <div class="container pb-5">

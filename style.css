@@ -2012,3 +2012,90 @@ textarea.form-control-custom {
     gap: 4px 14px;
   }
 }
+
+/* ============================================================
+   TEAM PHOTO STRIP
+   ============================================================ */
+.team-photo-strip {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.team-photo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.9);
+  transition: filter 0.4s ease;
+}
+
+.team-photo-strip:hover .team-photo-img {
+  filter: brightness(1);
+}
+
+.team-photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 32px;
+  background: linear-gradient(to top, rgba(10,8,24,0.72) 0%, transparent 100%);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  line-height: 1;
+}
+
+/* ============================================================
+   STACK TECHNIQUE
+   ============================================================ */
+.stack-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px 16px;
+  border-radius: 14px;
+  background: var(--bg-card, #fff);
+  border: 1.5px solid var(--border, #e5e7eb);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  cursor: default;
+}
+
+.stack-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+  border-color: var(--accent, #6d28d9);
+}
+
+.stack-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.stack-card:hover .stack-icon {
+  transform: scale(1.15);
+}
+
+.stack-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary, #6b7280);
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+[data-theme="dark"] .stack-card {
+  background: var(--bg-card-dark, #1e293b);
+  border-color: rgba(255,255,255,0.08);
+}
+
+[data-theme="dark"] .stack-label {
+  color: rgba(255,255,255,0.6);
+}

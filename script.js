@@ -272,22 +272,50 @@ function initContactForm() {
       return;
     }
 
-    // Simulate sending (replace with actual backend/service)
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.innerHTML;
     btn.disabled = true;
     btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i>Envoi en cours...';
 
-    setTimeout(() => {
+    const data = {
+      name: name.value.trim(),
+      email: email.value.trim(),
+      subject: (form.querySelector('[name="subject"]:not([hidden])') || form.querySelector('[name="subject"]')).value,
+      message: message.value.trim()
+    };
+
+    fetch('https://formspree.io/f/xnjolbok', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(res => {
       btn.disabled = false;
       btn.innerHTML = originalText;
-      form.reset();
-      showFormMsg('success',
+      if (res.ok) {
+        form.reset();
+        showFormMsg('success',
+          document.documentElement.lang === 'en'
+            ? 'Message sent! I\'ll get back to you soon.'
+            : 'Message envoyé ! Je vous répondrai rapidement.'
+        );
+      } else {
+        showFormMsg('error',
+          document.documentElement.lang === 'en'
+            ? 'An error occurred. Please try again or email me directly.'
+            : 'Une erreur est survenue. Réessayez ou contactez-moi directement par email.'
+        );
+      }
+    })
+    .catch(() => {
+      btn.disabled = false;
+      btn.innerHTML = originalText;
+      showFormMsg('error',
         document.documentElement.lang === 'en'
-          ? 'Message sent! I\'ll get back to you soon.'
-          : 'Message envoyé ! Je vous répondrai rapidement.'
+          ? 'An error occurred. Please try again or email me directly.'
+          : 'Une erreur est survenue. Réessayez ou contactez-moi directement par email.'
       );
-    }, 1500);
+    });
   });
 
   function showFormMsg(type, text) {
