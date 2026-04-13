@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La DINUM quitte Windows pour Linux — Blog Maximilien Moreau</title>
+  <meta name="description" content="La direction du numérique de l'État quitte Windows pour Linux et demande aux ministères de préparer leur plan. Analyse de ce tournant pour la souveraineté numérique française.">
+  <meta name="author" content="Maximilien Moreau">
+  <meta property="og:title" content="La DINUM quitte Windows pour Linux et demande aux ministères de préparer leur plan">
+  <meta property="og:description" content="Analyse du tournant souveraineté numérique : DINUM, LaSuite, migrations Linux dans l'administration française.">
+  <meta property="og:type" content="article">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../images/Profile-Picture_Maximilien_Moreau.png">
+  <link rel="apple-touch-icon" href="../images/Profile-Picture_Maximilien_Moreau.png">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../style.css">
+  <!-- Dark mode init (prevents flash) -->
+  <script>(function(){var t=localStorage.getItem('mm_theme');if(t==='dark'||(t==null&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.setAttribute('data-theme','dark');}})();</script>
+  <style>
+    .article-hero {
+      padding: 140px 0 0;
+      background: var(--bg-primary);
+    }
+
+    .article-hero-inner {
+      padding-bottom: 60px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .article-cover {
+      width: 100%;
+      max-width: 720px;
+      margin: 40px auto 0;
+      display: block;
+      border-radius: var(--radius-md);
+      object-fit: cover;
+      max-height: 380px;
+    }
+
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color 0.2s;
+    }
+
+    .article-back:hover {
+      color: var(--primary);
+    }
+
+    .article-category {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: rgba(139, 92, 246, 0.12);
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+
+    .article-title {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(26px, 4vw, 44px);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .article-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .article-author-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .article-body {
+      padding: 64px 0 80px;
+    }
+
+    .article-content {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--text-secondary);
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .article-content h2 {
+      font-family: 'Sora', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 52px;
+      margin-bottom: 16px;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+    }
+
+    .article-content ul {
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+
+    .article-content li {
+      margin-bottom: 8px;
+    }
+
+    .article-content strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .article-content a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .article-blockquote {
+      border-left: 3px solid var(--primary);
+      margin: 36px 0;
+      padding: 20px 24px;
+      background: var(--bg-secondary);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .article-blockquote p {
+      font-size: 17px;
+      font-style: italic;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .article-blockquote cite {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .article-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    .article-author-card {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      margin-top: 48px;
+    }
+
+    .article-author-card img {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .article-author-card-name {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .article-author-card-bio {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .back-to-blog {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 1px solid rgba(139,92,246,0.3);
+      border-radius: 100px;
+      transition: all 0.2s;
+      margin-top: 48px;
+    }
+
+    .back-to-blog:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      .article-author-card {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg fixed-top scrolled" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html">
+      <span class="brand-mm">MM</span>
+      <span class="brand-name d-none d-sm-inline">Maximilien Moreau</span>
+    </a>
+
+    <div class="d-flex align-items-center gap-2 ms-auto order-lg-last">
+      <div class="lang-toggle">
+        <button class="lang-btn active" id="btnFr" onclick="setLang('fr')">FR</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" id="btnEn" onclick="setLang('en')">EN</button>
+      </div>
+      <button class="theme-toggle-btn" id="btnTheme" onclick="toggleTheme()" aria-label="Basculer mode sombre">
+        <i class="fa-solid fa-lightbulb" id="themeIcon"></i>
+      </button>
+      <a href="../index.html#contact" class="btn-nav-cta d-none d-lg-inline-flex">
+        <span data-lang="fr">Réserver un appel</span>
+        <span data-lang="en" hidden>Book a call</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav mx-auto gap-lg-1">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">
+            <span data-lang="fr">Accueil</span>
+            <span data-lang="en" hidden>Home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html#apropos">
+            <span data-lang="fr">À propos</span>
+            <span data-lang="en" hidden>About</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html#expertises">
+            <span data-lang="fr">Expertises</span>
+            <span data-lang="en" hidden>Expertise</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../projets.html">
+            <span data-lang="fr">Mes projets</span>
+            <span data-lang="en" hidden>My projects</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="../blog.html">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== ARTICLE HERO ===== -->
+<section class="article-hero">
+  <div class="container">
+    <div class="article-hero-inner" style="max-width:720px; margin:0 auto;">
+
+      <a href="../blog.html" class="article-back">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span data-lang="fr">Retour au blog</span>
+        <span data-lang="en" hidden>Back to blog</span>
+      </a>
+
+      <div class="article-category">Web</div>
+
+      <h1 class="article-title">
+        <span data-lang="fr">La direction du numérique de l'État quitte Windows pour Linux et demande aux ministères de préparer leur plan</span>
+        <span data-lang="en" hidden>France's digital government agency switches from Windows to Linux and asks ministries to prepare their plans</span>
+      </h1>
+
+      <div class="article-meta">
+        <div class="article-meta-item">
+          <img src="../images/Profile-Picture_Maximilien_Moreau.png" alt="Maximilien Moreau" class="article-author-img">
+          <span>Maximilien Moreau</span>
+        </div>
+        <div class="article-meta-item">
+          <i class="fa-regular fa-calendar"></i>
+          <span data-lang="fr">Avril 2026</span>
+          <span data-lang="en" hidden>April 2026</span>
+        </div>
+        <div class="article-meta-item">
+          <i class="fa-regular fa-clock"></i>
+          <span data-lang="fr">5 min de lecture</span>
+          <span data-lang="en" hidden>5 min read</span>
+        </div>
+      </div>
+
+      <img src="../images/windows_linux_kernel_logos.webp" alt="Windows et Linux" class="article-cover">
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== ARTICLE BODY ===== -->
+<section class="article-body">
+  <div class="container">
+    <div class="article-content">
+
+      <!-- VERSION FR -->
+      <div data-lang="fr">
+
+        <p>Depuis le début de l'année 2026, la souveraineté numérique occupe le devant de la scène politique française. L'hypothèse d'une coupure d'accès par les États-Unis à certaines de leurs technologies, les tensions géopolitiques persistantes et la fin du support de Windows 10 en octobre 2025 ont convergé pour faire de la dépendance aux outils américains un sujet brûlant.</p>
+
+        <p>Le Premier ministre a chargé la DINUM, la direction qui supervise l'informatique de l'État, de piloter la réponse. Un séminaire interministériel tenu le 8 avril, réunissant ministères, opérateurs publics et acteurs privés, a posé les premiers jalons.</p>
+
+        <div style="display:flex; justify-content:center; margin: 32px 0;">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:activity:7447962082399907841" height="570" width="100%" style="max-width:504px; border-radius:8px; border:none;" allowfullscreen title="Post LinkedIn DINUM"></iframe>
+        </div>
+
+        <p>Le communiqué officiel a été abondamment relayé. Certains médias ont titré que « la France dit adieu à Windows », d'autres que « l'État lâche Microsoft ». La réalité est plus modeste. La DINUM annonce sa propre sortie de Windows au profit de Linux, soit un périmètre estimé à 200 ou 250 postes. Chaque ministère devra formaliser <strong>un plan de réduction des dépendances d'ici l'automne</strong>, couvrant le poste de travail, les outils collaboratifs, l'antivirus, l'IA ou encore les bases de données. À ce stade, il s'agit de cartographier et planifier. Les objectifs chiffrés viendront après.</p>
+
+        <div class="article-blockquote">
+          <p>« Nous devons nous désensibiliser des outils américains et reprendre le contrôle de notre destin numérique. Nous ne pouvons plus accepter que nos données, nos infrastructures et nos décisions stratégiques dépendent de solutions dont nous ne maîtrisons ni les règles, ni les tarifs, ni les évolutions, ni les risques. »</p>
+          <cite>David Amiel, ministre de l'Action et des Comptes publics — communiqué du 8 avril 2026</cite>
+        </div>
+
+        <h2>Des avancées concrètes, mais des obstacles persistants</h2>
+
+        <p>Les progrès les plus tangibles se situent du côté de <a href="https://lasuite.numerique.gouv.fr/en" target="_blank" rel="noopener noreferrer"><strong>LaSuite</strong></a>, l'écosystème d'outils collaboratifs souverains de l'État. Tchap, la messagerie, compte environ 300 000 comptes actifs chaque mois. Visio, l'alternative à Zoom et Teams, en dénombrait 100 000 en février.</p>
+
+        <p>Le CNRS s'apprête à abandonner Zoom pour ses 34 000 agents et 120 000 chercheurs rattachés. L'Assurance maladie a engagé la bascule de ses 80 000 collaborateurs. À un million d'euros d'économies annuelles pour chaque tranche de 100 000 personnes migrées, l'argument budgétaire pèse. Le gouvernement a également confirmé que <strong>la plateforme des données de santé devra migrer vers un hébergement souverain d'ici fin 2026</strong>.</p>
+
+        <div class="article-blockquote">
+          <p>« La souveraineté numérique n'est pas une option, c'est une nécessité stratégique. L'Europe doit se doter des moyens de ses ambitions. »</p>
+          <cite>Anne Le Hénanff, ministre déléguée chargée de l'Intelligence artificielle et du Numérique — communiqué du 8 avril 2026</cite>
+        </div>
+
+        <p>Mais les obstacles restent sérieux. L'histoire des migrations Linux dans l'administration, de Munich à Grenoble, est jalonnée de revirements et d'enlisements. La DINUM elle-même souffre de moyens chroniquement insuffisants. Et la polémique avec les éditeurs français, qui dénoncent une concurrence déloyale de l'État développant ses propres outils sur leur terrain, n'est toujours pas tranchée.</p>
+
+        <h2>Un vocabulaire politique inédit, un chantier immense</h2>
+
+        <p>Au-delà des outils, le communiqué dessine une méthode nouvelle. Le gouvernement mise sur des « coalitions » associant ministères, opérateurs publics et industriels, appuyées sur les communs numériques et les standards d'interopérabilité (Open-Interop, OpenBuro). La direction des achats de l'État cartographie en parallèle l'ensemble des dépendances, pendant que la DGE travaille à définir ce que serait un « service numérique européen ».</p>
+
+        <p>Les premières « rencontres industrielles du numérique », prévues en juin, doivent formaliser une alliance public-privé autour de la souveraineté européenne.</p>
+
+        <p>Le ton employé par le gouvernement, qui parle ouvertement de « désensibilisation » vis-à-vis des outils américains, est sans précédent dans la communication officielle. Reste à voir si la mécanique administrative suivra le rythme de l'ambition politique.</p>
+
+      </div>
+
+      <!-- VERSION EN -->
+      <div data-lang="en" hidden>
+
+        <p>Since the beginning of 2026, digital sovereignty has been at the forefront of French political debate. The hypothesis of a US cut-off from certain technologies, persistent geopolitical tensions, and the end of Windows 10 support in October 2025 have converged to make dependence on American tools a burning issue.</p>
+
+        <p>The Prime Minister tasked DINUM, the body overseeing the State's IT infrastructure, with leading the response. An inter-ministerial seminar held on April 8th, bringing together ministries, public operators and private players, laid the first groundwork.</p>
+
+        <p>The official communiqué was widely covered. Some media ran headlines like "France says goodbye to Windows", others "The State drops Microsoft". The reality is more measured. DINUM is announcing its own exit from Windows in favor of Linux — a scope estimated at 200 to 250 workstations. Each ministry will have to formalize <strong>a dependency reduction plan by autumn</strong>, covering workstations, collaboration tools, antivirus, AI and databases. For now, it's about mapping and planning. Specific targets will come later.</p>
+
+        <div class="article-blockquote">
+          <p>"We must wean ourselves off American tools and take back control of our digital destiny. We can no longer accept that our data, our infrastructure and our strategic decisions depend on solutions over which we control neither the rules, nor the pricing, nor the evolution, nor the risks."</p>
+          <cite>David Amiel, Minister of Public Accounts — communiqué of April 8, 2026</cite>
+        </div>
+
+        <h2>Concrete progress, but persistent obstacles</h2>
+
+        <p>The most tangible progress lies with <strong>LaSuite</strong>, the State's sovereign collaborative tools ecosystem. Tchap, the messaging app, has around 300,000 active accounts per month. Visio, the alternative to Zoom and Teams, had 100,000 users in February.</p>
+
+        <p>The CNRS is preparing to abandon Zoom for its 34,000 staff and 120,000 affiliated researchers. The national health insurance body has begun migrating its 80,000 employees. At one million euros in annual savings for every 100,000 people migrated, the budget argument carries weight. The government also confirmed that <strong>the national health data platform must migrate to sovereign hosting by end of 2026</strong>.</p>
+
+        <div class="article-blockquote">
+          <p>"Digital sovereignty is not an option, it is a strategic necessity. Europe must equip itself with the means to match its ambitions."</p>
+          <cite>Anne Le Hénanff, Minister Delegate for Artificial Intelligence and Digital Affairs — communiqué of April 8, 2026</cite>
+        </div>
+
+        <p>But the obstacles remain serious. The history of Linux migrations in public administration, from Munich to Grenoble, is littered with reversals and stagnation. DINUM itself suffers from chronically insufficient resources. And the controversy with French software publishers — who denounce unfair competition from a State building its own tools on their turf — remains unresolved.</p>
+
+        <h2>Unprecedented political vocabulary, an immense undertaking</h2>
+
+        <p>Beyond the tools themselves, the communiqué sketches a new method. The government is betting on "coalitions" bringing together ministries, public operators and industry players, backed by digital commons and interoperability standards (Open-Interop, OpenBuro). The State's procurement directorate is simultaneously mapping all dependencies, while the DGE works to define what a "European digital service" would look like.</p>
+
+        <p>The first "industrial digital meetings", scheduled for June, are meant to formalize a public-private alliance around European digital sovereignty.</p>
+
+        <p>The tone used by the government — openly speaking of "desensitization" from American tools — is unprecedented in official communications. It remains to be seen whether the administrative machinery will keep pace with the political ambition.</p>
+
+      </div>
+
+      <hr class="article-divider">
+
+      <!-- Author card -->
+      <div class="article-author-card">
+        <img src="../images/Profile-Picture_Maximilien_Moreau.png" alt="Maximilien Moreau">
+        <div>
+          <div class="article-author-card-name">Maximilien Moreau</div>
+          <p class="article-author-card-bio" data-lang="fr">Expert en marketing digital, web et intelligence artificielle. Je suis de près les mutations du numérique, de la tech souveraine à l'IA générative.</p>
+          <p class="article-author-card-bio" data-lang="en" hidden>Digital marketing, web and AI expert. I closely follow digital transformation, from sovereign tech to generative AI.</p>
+        </div>
+      </div>
+
+      <a href="../blog.html" class="back-to-blog">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span data-lang="fr">Retour au blog</span>
+        <span data-lang="en" hidden>Back to blog</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer-section">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="brand-mm">MM</span>
+        </div>
+        <p class="footer-name">Maximilien Moreau</p>
+        <p class="footer-tagline" data-lang="fr">Marketing · Web · IA</p>
+        <p class="footer-tagline" data-lang="en" hidden>Marketing · Web · AI</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="../index.html" data-lang="fr">Accueil</a>
+        <a href="../index.html" data-lang="en" hidden>Home</a>
+        <a href="../index.html#apropos" data-lang="fr">À propos</a>
+        <a href="../index.html#apropos" data-lang="en" hidden>About</a>
+        <a href="../index.html#expertises" data-lang="fr">Expertises</a>
+        <a href="../index.html#expertises" data-lang="en" hidden>Expertise</a>
+        <a href="../projets.html" data-lang="fr">Mes projets</a>
+        <a href="../projets.html" data-lang="en" hidden>My projects</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+      <div class="footer-copy">
+        <p>© 2026 Maximilien Moreau. <span data-lang="fr">Tous droits réservés.</span><span data-lang="en" hidden>All rights reserved.</span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="../script.js"></script>
+</body>
+</html>
