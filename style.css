@@ -63,7 +63,6 @@
 [data-theme="dark"] .section-title,
 [data-theme="dark"] .expertise-title,
 [data-theme="dark"] .project-title,
-[data-theme="dark"] .blog-title,
 [data-theme="dark"] .timeline-title,
 [data-theme="dark"] .certif-section-title,
 [data-theme="dark"] .certif-name,
@@ -104,7 +103,6 @@
 
 [data-theme="dark"] .expertise-card,
 [data-theme="dark"] .project-card,
-[data-theme="dark"] .blog-card,
 [data-theme="dark"] .timeline-content,
 [data-theme="dark"] .certif-item {
   background: #1e293b;
@@ -157,18 +155,6 @@
 /* Suppression du dégradé sur les sections déjà sombres en dark mode */
 [data-theme="dark"] .bg-dark-custom {
   background: #131d30;
-}
-
-/* Blog : filter tabs */
-[data-theme="dark"] .filter-btn {
-  background: #1e293b;
-  color: var(--body);
-  border-color: var(--border);
-}
-
-/* Blog : carte article vedette */
-[data-theme="dark"] .blog-card-featured {
-  background: #1e293b;
 }
 
 /* About image border */
@@ -1454,69 +1440,6 @@ a {
   flex-shrink: 0;
 }
 
-/* ============================================================
-   BLOG CARDS
-   ============================================================ */
-.blog-card {
-  display: block;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  text-decoration: none;
-  color: inherit;
-  transition: var(--transition);
-  height: 100%;
-}
-
-.blog-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-  border-color: transparent;
-  color: inherit;
-}
-
-.blog-cat {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--primary);
-  background: var(--primary-ultra);
-  display: inline-block;
-  padding: 4px 12px;
-  border-radius: 50px;
-  margin-bottom: 14px;
-}
-
-.blog-title {
-  font-family: 'Sora', sans-serif;
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--dark);
-  line-height: 1.35;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-  transition: var(--transition-fast);
-}
-
-.blog-card:hover .blog-title {
-  color: var(--primary);
-}
-
-.blog-excerpt {
-  font-size: 14px;
-  color: var(--body);
-  line-height: 1.65;
-  margin-bottom: 16px;
-}
-
-.blog-meta {
-  font-size: 12px;
-  color: var(--body-light);
-  font-weight: 500;
-}
-
 .btn-link-arrow {
   display: inline-flex;
   align-items: center;
@@ -1640,12 +1563,6 @@ textarea.form-control-custom {
   color: var(--primary-light);
 }
 
-.social-links-contact {
-  display: grid;
-  grid-template-columns: repeat(5, auto);
-  justify-content: start;
-  gap: 10px;
-}
 
 .social-link-icon {
   display: inline-flex;
@@ -1701,6 +1618,22 @@ textarea.form-control-custom {
   background: var(--dark);
   padding: 56px 0 32px;
   border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-social {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+@media (max-width: 767.98px) {
+  .footer-social {
+    flex-wrap: wrap;
+  }
 }
 
 .footer-inner {
@@ -1895,8 +1828,7 @@ textarea.form-control-custom {
   .btn-hero-primary:hover,
   .btn-hero-outline:hover,
   .expertise-card:hover,
-  .project-card:hover,
-  .blog-card:hover {
+  .project-card:hover {
     transform: none;
   }
 }
@@ -1999,8 +1931,7 @@ textarea.form-control-custom {
   }
 
   .expertise-card,
-  .project-card,
-  .blog-card {
+  .project-card {
     padding: 22px;
   }
 
