@@ -705,6 +705,23 @@
         </div>
       </div>
 
+      <div class="col-md-6 col-lg-4 proj-col" data-categories="genai web">
+        <div class="proj-card" onclick="openDetail('nudge')">
+          <div class="proj-card-img"><i class="fa-solid fa-envelope-open-text"></i></div>
+          <div class="proj-card-body">
+            <div class="proj-card-tags"><span class="proj-tag">GenAI</span><span class="proj-tag">Web</span><span class="proj-tag">Java</span></div>
+            <h3 class="proj-card-title">Nudge — AI Email Assistant</h3>
+            <p class="proj-card-desc" data-lang="fr">Assistant email IA open source — tracking d'ouvertures en temps réel, scoring d'engagement et génération automatique de relances via OpenAI.</p>
+            <p class="proj-card-desc" data-lang="en" hidden>Open source AI email assistant — real-time open tracking, engagement scoring and automatic follow-up generation via OpenAI.</p>
+            <div class="proj-result"><i class="fa-solid fa-bolt"></i><span data-lang="fr">Relances IA intelligentes — ne sois plus jamais ghosté</span><span data-lang="en" hidden>Smart AI follow-ups — never get ghosted again</span></div>
+          </div>
+          <div class="proj-card-footer">
+            <span class="proj-card-footer-text" data-lang="fr">Voir le projet</span><span class="proj-card-footer-text" data-lang="en" hidden>View project</span>
+            <button class="proj-arrow-btn"><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+
       <div class="col-md-6 col-lg-4 proj-col" data-categories="web jeu">
         <div class="proj-card" onclick="openDetail('ombres-erebor')">
           <div class="proj-card-img"><i class="fa-solid fa-dungeon"></i></div>
@@ -967,6 +984,23 @@ const PROJECTS = {
     stack: ['JavaScript', 'HTML5', 'CSS3', 'JSON', 'GitHub Pages'],
     resultats: [{ value: 'RPG', labelFr: 'Complet', labelEn: 'Full game' }, { value: 'Open', labelFr: 'Source ouverte', labelEn: 'Open source' }, { value: '0', labelFr: 'Framework utilisé', labelEn: 'Framework used' }],
     lecons: { fr: ['Concevoir un système de quêtes arborescent oblige à penser en graphe de données dès le départ', 'Le state management sans framework révèle vite l\'importance d\'une architecture claire', 'Un projet de jeu personnel est un excellent terrain d\'expérimentation technique sans pression client'], en: ['Designing a branching quest system forces graph-based data thinking from the start', 'State management without a framework quickly reveals the importance of clear architecture', 'A personal game project is an excellent technical experimentation ground without client pressure'] }
+  },
+  'nudge': {
+    tags: ['GenAI', 'Web', 'Java'],
+    github: 'https://github.com/MaximilienMoreau/Nudge',
+    titleFr: 'Nudge — AI Email Assistant', titleEn: 'Nudge — AI Email Assistant',
+    descFr: 'Assistant email IA open source — tracking d\'ouvertures en temps réel, scoring d\'engagement et génération automatique de relances personnalisées via OpenAI.',
+    descEn: 'Open source AI email assistant — real-time open tracking, engagement scoring and automatic personalized follow-up generation via OpenAI.',
+    resultFr: 'Ne sois plus jamais ghosté — relances IA au bon moment', resultEn: 'Never get ghosted again — AI follow-ups at the right time',
+    contexte: { fr: 'Le suivi des prospects par email est souvent manuel, aléatoire et chronophage. L\'objectif de Nudge : automatiser l\'ensemble du cycle de relance — détecter les ouvertures en temps réel, scorer l\'engagement et générer des messages de relance adaptés au contexte via l\'API OpenAI.', en: 'Email prospect follow-up is often manual, inconsistent and time-consuming. Nudge\'s goal: automate the entire follow-up cycle — detect opens in real time, score engagement and generate context-aware follow-up messages via the OpenAI API.' },
+    role: { fr: 'Projet personnel full-stack — conception de l\'architecture, développement du backend Spring Boot, de l\'extension Chrome Gmail et du dashboard frontend.', en: 'Full-stack personal project — architecture design, Spring Boot backend development, Chrome Gmail extension and frontend dashboard.' },
+    discovery: { fr: 'Analyse des points de friction dans le suivi email, définition du flux tracking → scoring → suggestion, choix de l\'architecture : Spring Boot + WebSocket pour le temps réel, extension Chrome pour l\'intégration Gmail.', en: 'Analysis of friction points in email follow-up, definition of the tracking → scoring → suggestion flow, architecture choice: Spring Boot + WebSocket for real-time, Chrome extension for Gmail integration.' },
+    build: { fr: 'Développement du backend REST + WebSocket (Spring Boot 3 / Java 17), du schéma PostgreSQL, de l\'extension Chrome (Manifest V3) pour l\'injection dans Gmail, et du dashboard vanilla JS pour le suivi des prospects.', en: 'Development of the REST + WebSocket backend (Spring Boot 3 / Java 17), PostgreSQL schema, Chrome extension (Manifest V3) for Gmail injection, and vanilla JS dashboard for prospect tracking.' },
+    run: { fr: 'Tests d\'intégration end-to-end, gestion du fallback sans clé OpenAI, publication open source sur GitHub avec documentation complète (README, Quick Start).', en: 'End-to-end integration testing, fallback management without OpenAI key, open source publication on GitHub with full documentation (README, Quick Start).' },
+    livrables: { fr: ['Backend Spring Boot 3 (REST + WebSocket)', 'Extension Chrome Gmail (Manifest V3)', 'Dashboard frontend vanilla JS', 'Schéma PostgreSQL', 'Intégration OpenAI API (relances génératives)', 'Code source open source (GitHub)'], en: ['Spring Boot 3 backend (REST + WebSocket)', 'Chrome Gmail extension (Manifest V3)', 'Vanilla JS frontend dashboard', 'PostgreSQL schema', 'OpenAI API integration (generative follow-ups)', 'Open source code (GitHub)'] },
+    stack: ['Java 17', 'Spring Boot 3', 'JavaScript', 'Chrome Extension', 'PostgreSQL', 'OpenAI API', 'WebSocket'],
+    resultats: [{ value: 'RT', labelFr: 'Tracking en temps réel', labelEn: 'Real-time tracking' }, { value: 'IA', labelFr: 'Relances génératives', labelEn: 'Generative follow-ups' }, { value: 'Open', labelFr: 'Source ouverte', labelEn: 'Open source' }],
+    lecons: { fr: ['Le WebSocket est indispensable pour un tracking réellement en temps réel — le polling HTTP introduit trop de latence', 'Une extension Chrome en Manifest V3 impose des contraintes strictes sur les scripts injectés dans Gmail', 'Le scoring d\'engagement doit être calibré progressivement : trop sensible = bruit, pas assez = inutile'], en: ['WebSocket is essential for truly real-time tracking — HTTP polling introduces too much latency', 'A Chrome extension in Manifest V3 imposes strict constraints on scripts injected into Gmail', 'Engagement scoring must be calibrated progressively: too sensitive = noise, not enough = useless'] }
   },
   'assistant-ia': {
     tags: ['GenAI'],
