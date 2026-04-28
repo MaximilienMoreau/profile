@@ -30,8 +30,7 @@
 <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand" href="#accueil">
-      <span class="brand-mm">MM</span>
-      <span class="brand-name d-none d-sm-inline">Maximilien Moreau</span>
+      <span class="brand-name">Maximilien Moreau</span>
     </a>
 
     <div class="d-flex align-items-center gap-2 ms-auto order-lg-last">
@@ -447,90 +446,326 @@
 </section>
 
 
-<!-- ===== STACK TECHNIQUE ===== -->
+<!-- ===== STACK & OUTILS ===== -->
 <section id="stack" class="section-pad bg-white">
   <div class="container">
     <div class="text-center mb-5">
       <div class="section-label">
-        <span data-lang="fr">Technologies</span>
-        <span data-lang="en" hidden>Technologies</span>
+        <span data-lang="fr">Outils & Technologies</span>
+        <span data-lang="en" hidden>Tools & Technologies</span>
       </div>
       <h2 class="section-title">
-        <span data-lang="fr">Ma stack technique</span>
-        <span data-lang="en" hidden>My tech stack</span>
+        <span data-lang="fr">Ma boîte à outils</span>
+        <span data-lang="en" hidden>My toolbox</span>
       </h2>
       <p class="section-subtitle">
-        <span data-lang="fr">Les langages et frameworks avec lesquels je code au quotidien.</span>
-        <span data-lang="en" hidden>The languages and frameworks I code with every day.</span>
+        <span data-lang="fr">Sélectionne une catégorie pour explorer mes outils.</span>
+        <span data-lang="en" hidden>Select a category to explore my tools.</span>
       </p>
     </div>
 
-    <div class="row g-3 justify-content-center">
-
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <div class="stack-card">
-          <i class="fa-brands fa-js stack-icon" style="color:#f7df1e;"></i>
-          <span class="stack-label">JavaScript</span>
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <div class="stack-card">
-          <i class="fa-brands fa-java stack-icon" style="color:#007396;"></i>
-          <span class="stack-label">Java</span>
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <div class="stack-card">
-          <i class="fa-brands fa-angular stack-icon" style="color:#dd0031;"></i>
-          <span class="stack-label">Angular</span>
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <div class="stack-card">
-          <i class="fa-brands fa-react stack-icon" style="color:#61dafb;"></i>
-          <span class="stack-label">React</span>
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <div class="stack-card">
-          <i class="fa-brands fa-html5 stack-icon" style="color:#e34f26;"></i>
-          <span class="stack-label">HTML5</span>
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <div class="stack-card">
-          <i class="fa-brands fa-css3-alt stack-icon" style="color:#1572b6;"></i>
-          <span class="stack-label">CSS3</span>
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <div class="stack-card">
-          <i class="fa-brands fa-python stack-icon" style="color:#3776ab;"></i>
-          <span class="stack-label">Python</span>
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <div class="stack-card">
-          <i class="fa-solid fa-gem stack-icon" style="color:#cc342d;"></i>
-          <span class="stack-label">Ruby</span>
-        </div>
-      </div>
-
-      <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-        <div class="stack-card">
-          <i class="fa-solid fa-t stack-icon" style="color:#3178c6;"></i>
-          <span class="stack-label">TypeScript</span>
-        </div>
-      </div>
-
+    <div class="stack-tabs" role="tablist">
+      <button class="stack-tab-btn active" data-tab="product" role="tab">
+        <i class="fa-solid fa-layer-group"></i>
+        <span data-lang="fr">Product & Gestion de projet</span><span data-lang="en" hidden>Product & Project Mgmt</span>
+      </button>
+      <button class="stack-tab-btn" data-tab="dev" role="tab">
+        <i class="fa-solid fa-code"></i>
+        <span>Dev</span>
+      </button>
+      <button class="stack-tab-btn" data-tab="ia" role="tab">
+        <i class="fa-solid fa-microchip"></i>
+        <span>IA & Auto</span>
+      </button>
+      <button class="stack-tab-btn" data-tab="data" role="tab">
+        <i class="fa-solid fa-chart-bar"></i>
+        <span>Data</span>
+      </button>
+      <button class="stack-tab-btn" data-tab="crm" role="tab">
+        <i class="fa-solid fa-handshake"></i>
+        <span>CRM</span>
+      </button>
+      <button class="stack-tab-btn" data-tab="design" role="tab">
+        <i class="fa-solid fa-pen-ruler"></i>
+        <span>Design</span>
+      </button>
     </div>
+
+    <!-- Produit -->
+    <div class="stack-tab-content active" data-tab="product">
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-list-check stack-icon" style="color:#6d28d9;"></i>
+            <span class="stack-label">User Stories</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-layer-group stack-icon" style="color:#6d28d9;"></i>
+            <span class="stack-label">Backlog</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-map stack-icon" style="color:#6d28d9;"></i>
+            <span class="stack-label">Roadmap</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-arrows-rotate stack-icon" style="color:#6d28d9;"></i>
+            <span class="stack-label">Agile / Scrum</span>
+          </div>
+        </div>
+        <div class="w-100 d-none d-lg-block"></div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-brands fa-jira stack-icon" style="color:#0052cc;"></i>
+            <span class="stack-label">Jira</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-file-lines stack-icon" style="color:#64748b;"></i>
+            <span class="stack-label">Notion</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-brands fa-figma stack-icon" style="color:#f24e1e;"></i>
+            <span class="stack-label">Figma</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-circle-check stack-icon" style="color:#f06a6a;"></i>
+            <span class="stack-label">Asana</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-people-group stack-icon" style="color:#46c4f0;"></i>
+            <span class="stack-label">Teamwork</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-table-columns stack-icon" style="color:#6d28d9;"></i>
+            <span class="stack-label">Kanban</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dev -->
+    <div class="stack-tab-content" data-tab="dev">
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-brands fa-java stack-icon" style="color:#007396;"></i>
+            <span class="stack-label">Java / Spring</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-brands fa-js stack-icon" style="color:#f7df1e;"></i>
+            <span class="stack-label">JavaScript</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-brands fa-html5 stack-icon" style="color:#e34f26;"></i>
+            <span class="stack-label">HTML / CSS</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-brands fa-angular stack-icon" style="color:#dd0031;"></i>
+            <span class="stack-label">Angular</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-brands fa-react stack-icon" style="color:#61dafb;"></i>
+            <span class="stack-label">React</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-database stack-icon" style="color:#336791;"></i>
+            <span class="stack-label">SQL</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-brands fa-wordpress stack-icon" style="color:#21759b;"></i>
+            <span class="stack-label">WordPress</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-brands fa-drupal stack-icon" style="color:#0678be;"></i>
+            <span class="stack-label">Drupal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IA & Auto -->
+    <div class="stack-tab-content" data-tab="ia">
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-comment-dots stack-icon" style="color:#6d28d9;"></i>
+            <span class="stack-label" data-lang="fr">Prompting avancé</span>
+            <span class="stack-label" data-lang="en" hidden>Adv. Prompting</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-robot stack-icon" style="color:#10a37f;"></i>
+            <span class="stack-label">OpenAI API</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-microchip stack-icon" style="color:#d97706;"></i>
+            <span class="stack-label">Claude API</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-sitemap stack-icon" style="color:#6d28d9;"></i>
+            <span class="stack-label">Make</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-network-wired stack-icon" style="color:#ea4b71;"></i>
+            <span class="stack-label">n8n</span>
+          </div>
+        </div>
+        <div class="w-100 d-none d-lg-block"></div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-pen-nib stack-icon" style="color:#0ea5e9;"></i>
+            <span class="stack-label">Wisewand</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-chalkboard stack-icon" style="color:#f472b6;"></i>
+            <span class="stack-label">Gamma</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-magnifying-glass-chart stack-icon" style="color:#20b2aa;"></i>
+            <span class="stack-label">Perplexity</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-brain stack-icon" style="color:#d97706;"></i>
+            <span class="stack-label">Claude</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-wand-magic-sparkles stack-icon" style="color:#10a37f;"></i>
+            <span class="stack-label">ChatGPT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data -->
+    <div class="stack-tab-content" data-tab="data">
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-chart-column stack-icon" style="color:#f2a900;"></i>
+            <span class="stack-label">Power BI</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-chart-pie stack-icon" style="color:#4285f4;"></i>
+            <span class="stack-label">Looker Studio</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-brands fa-google stack-icon" style="color:#ea4335;"></i>
+            <span class="stack-label">Google Analytics</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-tags stack-icon" style="color:#246fdb;"></i>
+            <span class="stack-label">Tag Manager</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRM -->
+    <div class="stack-tab-content" data-tab="crm">
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-brands fa-hubspot stack-icon" style="color:#ff7a59;"></i>
+            <span class="stack-label">HubSpot</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-filter stack-icon" style="color:#1b9d38;"></i>
+            <span class="stack-label">Pipedrive</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-user-tie stack-icon" style="color:#6d28d9;"></i>
+            <span class="stack-label">Vincere</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-envelope stack-icon" style="color:#0ea5e9;"></i>
+            <span class="stack-label">Brevo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design -->
+    <div class="stack-tab-content" data-tab="design">
+      <div class="row g-3 justify-content-center">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-brands fa-figma stack-icon" style="color:#f24e1e;"></i>
+            <span class="stack-label">Figma</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-palette stack-icon" style="color:#ff0000;"></i>
+            <span class="stack-label" data-lang="fr">Suite Adobe</span>
+            <span class="stack-label" data-lang="en" hidden>Adobe Suite</span>
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="stack-card">
+            <i class="fa-solid fa-border-all stack-icon" style="color:#00a4ef;"></i>
+            <span class="stack-label" data-lang="fr">Suite Microsoft</span>
+            <span class="stack-label" data-lang="en" hidden>Microsoft Suite</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -802,9 +1037,6 @@
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
-        <div class="footer-logo">
-          <span class="brand-mm">MM</span>
-        </div>
         <p class="footer-name">Maximilien Moreau</p>
         <p class="footer-tagline" data-lang="fr">Marketing · Web · IA</p>
         <p class="footer-tagline" data-lang="en" hidden>Marketing · Web · AI</p>

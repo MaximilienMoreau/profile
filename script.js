@@ -339,4 +339,22 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initProjectCards();
   initContactForm();
+  initStackTabs();
 });
+
+/* ============================================================
+   STACK TABS
+   ============================================================ */
+function initStackTabs() {
+  const buttons = document.querySelectorAll('.stack-tab-btn');
+  const contents = document.querySelectorAll('.stack-tab-content');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.dataset.tab;
+      buttons.forEach(b => b.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelector(`.stack-tab-content[data-tab="${tab}"]`).classList.add('active');
+    });
+  });
+}
